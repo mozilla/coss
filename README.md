@@ -11,23 +11,25 @@ To get this to work:
     - windows: `pip install virtualenv`
     - unix/linux: `sudo pip install virtualenv`
     - OSX: `sudo -H pip3 install virtualenv`
-- clone the repo.
-- cd into the local coss directory.
-- change branch to the "mezzanine" branch.
+- clone this repository:
+    - all OS: find a suitable directory in which you like to manage your git projects (like Documents/git/mozilla, ~/temp, whatever floats your boat) and then in that direcetory, run `git clone git@github.com:mozilla/coss` 
+- cd into your local repository copy:
+    - all OS: `cd coss`
+- change your branch to the "mezzanine" branch:
+    - all OS: `git checkout mezzanine`
 - create a virtual environment; for consistency with other instructions, call this 'mezzanine':
-    - windows: `virtualenv mezzanine`
-    - unix/linux: `virtualenv -p /usr/bin/python3 mezzanine`
-    - OSX:  `virtualenv -p /usr/local/bin/python3 mezzanine`
-- activate the virtual environment:
+    - all OS: `virtualenv mezzanine`
+- this will create a virtual environment directory called "mezzanine". We then activate the virtual environment:
     - windows: `mezzanine\Scripts\Activate`
     - unix/linux/OSX: `source mezzanine/bin/activate`
-- use pip to install all the base Mezzanine and dependencies:
-    - windows: `pip install -r requirements.txt`
-    - unix/linux: probably the same command
-    - OSX: `pip3 install -r requirements.txt` **note the pip3 command**
-- with Mezzanine installed, set up a Mezzanine instance called `cmstest`:
-    - all OS: `mezzanine-project cmtest`
+    - to deactivate the virtual environment at any point:
+        - windows: `mezzanine\Scripts\Deactivate`
+        - unix/linus/OSX: simply type `deactivate`
+- use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
+    - all OS: `pip install -r requirements.txt`
+- with Mezzanine installed, we can now fire up the `cmstest` instance:
 - cd into the `cmstest` directory
-- run `python manage.py createdb` (or if you bound python to your environment, `manage createdb`)
 - run `python manage.py runserver` (or, same as above, `manage runserver`)
 - visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+By default this uses a database that is local to your machine called `dev.db` with a pregenerated superuser called `admin` with the email address `admin@example.org` and password `admin`.
