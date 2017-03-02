@@ -1,6 +1,6 @@
 # The Mezzanine Branch
 
-Good name for a 4 hour costume drama, but this is actually the branch for building out a CoSS prototype for clubs based on the Mezzanine CMS.
+Good name for a 4 hour costume drama, but this is actually the branch for building out a CoSS prototype for clubs based on the [Mezzanine CMS](http://mezzanine.jupo.org/).
 
 To get this to work:
 - make sure you have python3 and git
