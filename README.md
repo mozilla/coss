@@ -8,6 +8,9 @@ To get this to work:
     - unix/linux: presumably you know how to get these
     - OSX: use homebrew, and remember to get `python3`, not `python`. Then follow the instructions if there are any.
 - make sure you have `virtualenv`
+    - windows: `pip install virtualenv`
+    - unix/linux: `sudo pip install virtualenv`
+    - OSX: `sudo -H pip3 install virtualenv`
 - clone the repo
 - cd into the local coss directory
 - change branch to the "mezzanine" branch
