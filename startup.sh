@@ -8,4 +8,4 @@ python cmstest/manage.py makemigrations
 python cmstest/manage.py migrate
 
 # Finally, start up the system.
-python cmstestmanage.py runserver "0.0.0.0:$PORT"
+python cmstest/manage.py runserver "0.0.0.0:$PORT"
