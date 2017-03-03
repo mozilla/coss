@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "running startup..."
 
 # This is really funny, but necessary
 cd cmstest
