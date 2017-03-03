@@ -18,7 +18,7 @@ To get this to work:
     - unix/linux: `sudo pip install virtualenv`
     - OSX: `sudo -H pip3 install virtualenv`
 - clone this repository:
-    - all OS: find a suitable directory in which you like to manage your git projects (like Documents/git/mozilla, ~/temp, whatever floats your boat) and then in that direcetory, run `git clone git@github.com:mozilla/coss` 
+    - all OS: find a suitable directory in which you like to manage your git projects (like Documents/git/mozilla, ~/temp, whatever floats your boat) and then in that direcetory, run `git clone https://github.com/mozilla/coss` 
 - cd into your local repository copy:
     - all OS: `cd coss`
 - change your branch to the "mezzanine" branch:
