@@ -9,10 +9,11 @@ import dj_database_url
 # immediately.
 
 DEBUG = True
+SITE_ID = os.getenv('SITE_ID', '1')
 
 # Make these unique, and don't share it with anybody.
-SECRET_KEY = os.environ.get("SECRET_KEY", "supposedly there was no secret_key in the env so check this out this is now a key")
-NEVERCACHE_KEY = os.environ.get("NEVERCACHEKEY", "yeah this nevercache_key value wasn't set so no biggie just use this string")
+SECRET_KEY = os.getenv("SECRET_KEY", "supposedly there was no secret_key in the env so check this out this is now a key")
+NEVERCACHE_KEY = os.getenv("NEVERCACHEKEY", "yeah this nevercache_key value wasn't set so no biggie just use this string")
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
