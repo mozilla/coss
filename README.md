@@ -31,11 +31,11 @@ To get this to work:
     - to deactivate the virtual environment at any point:
         - windows: `mezzanine\Scripts\Deactivate`
         - unix/linus/OSX: simply type `deactivate`
-- use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
+- with the virtual environment activated, use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
     - all OS: `pip install -r requirements.txt`
 - with Mezzanine installed, we can now fire up the `cmstest` instance:
-- cd into the `cmstest` directory
-- run `python manage.py runserver` (or, same as above, `manage runserver`)
-- visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
+  - cd into the `cmstest` directory
+  - run `python manage.py runserver` (or, same as above, `manage runserver`)
+  - visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 By default this uses a database that is local to your machine called `dev.db` with a pregenerated superuser called `admin` with the email address `admin@example.org` and password `admin`.
