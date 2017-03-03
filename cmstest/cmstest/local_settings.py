@@ -1,6 +1,9 @@
 # This file is exec'd from settings.py, so it has access to and can
 # modify all the variables in settings.py.
 
+import os
+import dj_database_url
+
 # If this file is changed in development, the development server will
 # have to be manually restarted because changes will not be noticed
 # immediately.
@@ -8,8 +11,11 @@
 DEBUG = True
 
 # Make these unique, and don't share it with anybody.
-SECRET_KEY = "q@1%5m0y1r1(g^%9#x+_efj*2*m%ht8%)q=$1ndexk3o&f)=f7"
-NEVERCACHE_KEY = "8r5z=15=wx%o^s61t*4*b(eqhic#$oeh^kgwk-p#d!)(^mty20"
+SECRET_KEY = os.environ.get("SECRET_KEY", "supposedly there was no secret_key in the env so check this out this is now a key")
+NEVERCACHE_KEY = os.environ.get("NEVERCACHEKEY", "yeah this nevercache_key value wasn't set so no biggie just use this string")
+
+# Database
+# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
     "default": {
@@ -28,12 +34,17 @@ DATABASES = {
     }
 }
 
+DATABASE_URL = os.getenv('DATABASE_URL', False)
+
+if DATABASE_URL is not False:
+    DATABASES['default'].update(dj_database_url.config())
+
 ###################
 # DEPLOY SETTINGS #
 ###################
 
 # Domains for public site
-# ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS","localhost,127.0.0.1").split(",")
 
 # These settings are used by the default fabfile.py provided.
 # Check fabfile.py for defaults.

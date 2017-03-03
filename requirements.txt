@@ -1,1 +1,2 @@
+dj-database-url==0.4.2
 Mezzanine==4.2.2
