@@ -249,6 +249,8 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
+    "custompage",
+    "location_field.apps.DefaultConfig",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
