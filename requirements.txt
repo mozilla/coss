@@ -5,6 +5,7 @@ chardet==2.3.0
 dj-database-url==0.4.2
 Django==1.10.6
 django-contrib-comments==1.8.0
+django-location-field==2.0.2
 filebrowser-safe==0.4.6
 future==0.16.0
 grappelli-safe==0.4.5
