@@ -1,4 +1,6 @@
 {% extends "custombase.html" %}
+
+{% load static %}
 {% load mezzanine_tags keyword_tags %}
 
 {% block meta_title %}
@@ -18,12 +20,13 @@
 {% endmetablock %}{% endblock %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="http://localhost:8080/clubs.css">
+    <link rel="stylesheet" href="{% static "css/clubs.css" %} ">
+    <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
 {% endblock %}
 
 {% block header %}
     <header>
-        <img src="http://localhost:8080/logo-clubs.svg">
+        <img src="{% static "img/logo-clubs.svg" %}">
     </header>
 {% endblock %}
 
@@ -35,10 +38,10 @@
     {% editable page.club.club_description %}{{ page.club.club_description | richtext_filters | safe }}{% endeditable %}
 
     <h2>
-        <div class="col-2">
-          This club is run in {{ page.club.city }}
+        <div>
+            This club is run in {{ page.club.city }}
         </div>
-        <iframe class="col-2"
+        <iframe class=""
             width="600"
             height="450"
             frameborder="0" style="border:0"
@@ -50,4 +53,10 @@
     <p class="activity">
     {% editable page.club.activity %}This club meets {{ page.club.activity }}{% endeditable %}
     </p>
+{% endblock %}
+
+{% block footer %}
+<footer style="background: black">
+    <img src="{% static "img/logo-mozilla.svg" %}">
+</footer>
 {% endblock %}
