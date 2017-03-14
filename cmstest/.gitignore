@@ -3,3 +3,4 @@
 *.db
 .DS_Store
 .coverage
+/static
