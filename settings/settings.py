@@ -257,6 +257,15 @@ INSTALLED_APPS = (
     "network",
     "club",
 
+    # network-api
+    "rest_framework",
+    "storages",
+    "adminsortable",
+    "networkapi",
+    "networkapi.people",
+    "networkapi.opportunities",
+    "networkapi.news",
+
     # used by club - I'd love to have this setting housed inside the
     # club app, but right now I do not know how to do that...
     "location_field.apps.DefaultConfig",

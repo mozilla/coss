@@ -1,11 +1,16 @@
 appdirs==1.4.2
 beautifulsoup4==4.5.3
 bleach==1.5.0
+boto3==1.4.4
 chardet==2.3.0
 dj-database-url==0.4.2
 Django==1.10.6
+djangorestframework==3.5.4
+django-admin-sortable==2.0.21
 django-contrib-comments==1.8.0
+django-cors-headers==2.0.2
 django-location-field==2.0.2
+django-storages==1.5.2
 filebrowser-safe==0.4.6
 future==0.16.0
 grappelli-safe==0.4.5
@@ -17,6 +22,7 @@ packaging==16.8
 Pillow==4.0.0
 psycopg2==2.7
 pyparsing==2.1.10
+python-slugify==1.2.1
 pytz==2016.10
 requests==2.13.0
 requests-oauthlib==0.8.0
