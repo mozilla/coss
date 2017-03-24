@@ -62,3 +62,11 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS","localhost,127.0.0.1").split(",")
 #     "SECRET_KEY": SECRET_KEY,
 #     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
+
+
+LOCATION_FIELD = {
+    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+    'provider.google.api_key': 'AIzaSyCPOOltnRybC8TimX-9Uj1DmSK7RTdHGDc',
+    'provider.google.api_libraries': '',
+    'provider.google.map.type': 'ROADMAP',
+}

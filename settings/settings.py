@@ -230,6 +230,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
+    # Basic Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -238,6 +239,8 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+
+    # Predefined mezzanine apps
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
@@ -249,7 +252,24 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
+
+    # our own apps
+    "network",
+    "club",
+
+    # used by club - I'd love to have this setting housed inside the
+    # club app, but right now I do not know how to do that...
+    "location_field.apps.DefaultConfig",
 )
+
+# used by location_field.apps.DefaultConfig
+# I would like this in the club app, too...
+LOCATION_FIELD = {
+    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+    'provider.google.api_key': os.getenv('GOOGLE_API_KEY', 'no api key provided'),
+    'provider.google.api_libraries': '',
+    'provider.google.map.type': 'ROADMAP',
+}
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
@@ -257,6 +277,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     "mezzanine.core.middleware.UpdateCacheMiddleware",
 
+    # base Django middleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     # Uncomment if using internationalisation or localisation
     # 'django.middleware.locale.LocaleMiddleware',
@@ -267,6 +288,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
+    # sane static resource hosting
+    "whitenoise.middleware.WhiteNoiseMiddleware",
+
+    # mezzanine middleware
     "mezzanine.core.request.CurrentRequestMiddleware",
     "mezzanine.core.middleware.RedirectFallbackMiddleware",
     "mezzanine.core.middleware.TemplateForDeviceMiddleware",

@@ -1,0 +1,62 @@
+{% extends "custombase.html" %}
+
+{% load static %}
+{% load mezzanine_tags keyword_tags %}
+
+{% block meta_title %}
+    {{ page.meta_title }}
+{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static "css/clubs.css" %} ">
+    <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
+{% endblock %}
+
+{% block header %}
+    <header>
+        <img src="{% static "img/logo-clubs.svg" %}">
+    </header>
+{% endblock %}
+
+{% block title %}
+    <h1>{% editable page.title %}{{ page.title }}{% endeditable %}</h1>
+{% endblock %}
+
+{% block main %}
+    {% editable page.club.club_description %}{{ page.club.club_description | richtext_filters | safe }}{% endeditable %}
+
+    <h2>
+        <div>
+            This club is run in {{ page.club.city }}
+        </div>
+        <iframe class=""
+            width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCPOOltnRybC8TimX-9Uj1DmSK7RTdHGDc
+            &q={{ page.club.location }}" allowfullscreen>
+        </iframe>
+    </h2>
+
+    <p class="activity">
+    {% editable page.club.activity %}This club meets {{ page.club.activity }}{% endeditable %}
+    </p>
+{% endblock %}
+
+{% block footer %}
+<footer style="background: black">
+    <img src="{% static "img/logo-mozilla.svg" %}">
+</footer>
+{% endblock %}
