@@ -1,1 +1,17 @@
+# seriously get out of here
+.DS_Store
+.coverage
+
+# python files
+*.pyc
+*.pyo
+
+# mezzanine database
+*.db
+
+# the virtual environment directory
 mezzanine
+
+# static and pycache are transient fs entries
+**/static
+**/__pycache__

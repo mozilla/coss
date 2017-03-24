@@ -33,9 +33,26 @@ To get this to work:
         - unix/linus/OSX: simply type `deactivate`
 - with the virtual environment activated, use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
     - all OS: `pip install -r requirements.txt`
-- with Mezzanine installed, we can now fire up the `cmstest` instance:
-  - cd into the `cmstest` directory
-  - run `python manage.py runserver` (or, same as above, `manage runserver`)
-  - visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
+- with Mezzanine installed, bootstrap a database and superuser:
+	- run `python manage.py makemigrations`
+	- run `python manage.py migrate`
+	- create a superuser by running `python manage.py createsuperuser` and filling in sensible values
+ 
+## Running Mezzanine
 
-By default this uses a database that is local to your machine called `dev.db` with a pregenerated superuser called `admin` with the email address `admin@example.org` and password `admin`.
+we can now fire up the Mezzanine instance
+- run `python manage.py runserver` (or, same as above, `manage runserver`)
+- visit [http://127.0.0.1:8000](http://127.0.0.1:8000)
+
+## For dev work, make sure Mezzanine knows it's on localhost
+
+On a first time run, before you do anything else, navigate to [the "sites" configuration](http://127.0.0.1:8000/admin/sites/site/) for Mezzanine, and change the entry listed from "example.com" to "127.0.0.1:8000" as both the `Domain name` and `Display name`. 
+
+## Adding apps
+
+To add a new app to the collection of apps, use `python manage.py startapp AppNameHere` with the obvious substitution of the actual app name you need for the `AppNameHere` string.
+
+There are two apps currently defined, in addition to the general prepackaged Mezzanine app hidden away deep in a pip dependency:
+
+- "`./network`" for stubbing out pages and functionality relating to the Mozilla Network project.
+- "`./clubs`" for stubbing out pages and functionality relating to CoSS clubs work.
