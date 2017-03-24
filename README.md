@@ -58,7 +58,7 @@ There are two apps currently defined, in addition to the general prepackaged Mez
 - "`./network`" for stubbing out pages and functionality relating to the Mozilla Network project.
 - "`./clubs`" for stubbing out pages and functionality relating to CoSS clubs work.
 
-### templates, images, css, etc.
+### Templates, images, css, etc.
 
 Templates are automatically resolved based on model name. For instance, the `club` app defines a model `class Club(Page)`, that is: a model called `Club` that extends Mezzanine's `Page` concept. As such, is associated template that gets used to render the model in the browser is `./templates/pages/club.html`. If we had a model called `Elephant` that implemented a Mezzanine `Page` then its associated template would be `./templates/pages/elephant.html`, and if we had a model called `Orange` that implemented a Mezzanine `Blog` then its associated template would be `./templates/blog/orange.html`.
 
