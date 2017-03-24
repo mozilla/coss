@@ -37,6 +37,7 @@ To get this to work:
 	- run `python manage.py makemigrations`
 	- run `python manage.py migrate`
 	- create a superuser by running `python manage.py createsuperuser` and filling in sensible values
+	- create the pool of static assets for `whitenoise` to host, using `python manage.py collectstatic`
  
 ## Running Mezzanine
 
@@ -56,3 +57,14 @@ There are two apps currently defined, in addition to the general prepackaged Mez
 
 - "`./network`" for stubbing out pages and functionality relating to the Mozilla Network project.
 - "`./clubs`" for stubbing out pages and functionality relating to CoSS clubs work.
+
+### templates, images, css, etc.
+
+Templates are automatically resolved based on model name. For instance, the `club` app defines a model `class Club(Page)`, that is: a model called `Club` that extends Mezzanine's `Page` concept. As such, is associated template that gets used to render the model in the browser is `./templates/pages/club.html`. If we had a model called `Elephant` that implemented a Mezzanine `Page` then its associated template would be `./templates/pages/elephant.html`, and if we had a model called `Orange` that implemented a Mezzanine `Blog` then its associated template would be `./templates/blog/orange.html`.
+
+Static assets that are used in templates such as CSS, images, scripts, etc. go in each app's `static` directory. As such, the club app has two directories:
+
+- `./club/static/img/`
+- `./club/static/css/`
+
+In order to have templates use this data, you need to run `python manage collectstatic`, which copies all static assets declared in each app, and copies them over into a master root `./static` dir, which is then used by Mezzanine (technically: whitenoise, a static server that can be used with Django) when rendering CMS content. 
