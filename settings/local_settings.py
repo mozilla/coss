@@ -70,3 +70,5 @@ LOCATION_FIELD = {
     'provider.google.api_libraries': '',
     'provider.google.map.type': 'ROADMAP',
 }
+
+USE_S3=False
