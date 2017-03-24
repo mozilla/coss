@@ -3,17 +3,9 @@ from mezzanine.pages.models import Page
 from mezzanine.core.fields import RichTextField
 from location_field.models.plain import PlainLocationField
 
+class ClubTopic(models.Model):
+    name = models.CharField(max_length=300)
 
-
-# Interest (subjects) that can apply to a club
-
-class InterestQuerySet(models.query.QuerySet):
-    def public(self):
-        return self
-
-class Interest(models.Model):
-    name = models.CharField(unique=True, max_length=150)
-    objects = InterestQuerySet.as_manager()
     def __str__(self):
         return str(self.name)
 
@@ -52,15 +44,6 @@ class Club(Page):
         default='weekly',
     )
 
-    # events tied to this club
-    # - events
-
-    interests = models.ManyToManyField(
-        Interest,
-        related_name='club',
-        blank=True
-    )
-
     affiliated = models.CharField(
         max_length=500,
         blank=True
@@ -70,3 +53,6 @@ class Club(Page):
 
     def __str__(self):
         return str(self.title)
+
+    def get_topics(self):
+        return ClubTopic.objects.all()
