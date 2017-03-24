@@ -16,5 +16,5 @@ mezzanine
 local_settings.py
 
 # static and pycache are transient fs entries
-**/static
+/static
 **/__pycache__
