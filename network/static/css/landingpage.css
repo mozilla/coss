@@ -1,0 +1,43 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 0 10em;
+}
+
+header, footer {
+	display: block;
+	background: #77CC00;
+	color: white;
+    height: 5em;
+    overflow: none;
+}
+
+header img, footer img {
+	height: 100%;
+}
+
+footer {
+	padding: 1em 0 0.7em 1em;
+}
+
+footer img {
+	height: 60%;
+}
+
+footer ul {
+	display: block;
+	margin: 0;
+}
+
+footer ul li {
+	text-indent: 0;
+	padding: 0;
+	display: inline-block;
+}
+
+footer ul li + li {
+	margin-left: 2em;
+}
