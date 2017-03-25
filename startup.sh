@@ -8,7 +8,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 # Gather the static assets...
-python manage.py collectstatic
+python manage.py collectstatic --noinput
 
 # Finally, start up the system.
 python manage.py runserver "0.0.0.0:$PORT"
