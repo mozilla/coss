@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import PageWithCallout, Signup, FooterLink
 
-# Register your models here.
+admin.site.register(PageWithCallout)
+admin.site.register(Signup)
+admin.site.register(FooterLink)

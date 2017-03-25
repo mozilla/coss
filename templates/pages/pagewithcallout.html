@@ -1,0 +1,59 @@
+{% extends "custombase.html" %}
+
+{% load static %}
+{% load mezzanine_tags keyword_tags %}
+
+{% block meta_title %}
+    {{ page.meta_title }}
+{% endblock %}
+
+{% block meta_keywords %}{% metablock %}
+{% keywords_for page as keywords %}
+{% for keyword in keywords %}
+    {% if not forloop.first %}, {% endif %}
+    {{ keyword }}
+{% endfor %}
+{% endmetablock %}{% endblock %}
+
+{% block meta_description %}{% metablock %}
+{{ page.description }}
+{% endmetablock %}{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static "css/landingpage.css" %} ">
+    <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
+{% endblock %}
+
+{% block header %}
+    <header>
+        <img src="{% static "img/logo-clubs.svg" %}">
+    </header>
+{% endblock %}
+
+{% block title %}
+    <h1>{% editable page.pagewithcallout.header %}{{ page.pagewithcallout.header }}{% endeditable %}</h1>
+{% endblock %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-sm">
+            {{ page.pagewithcallout.content | safe }}
+        </div>
+
+        <div class="col-sm" style="background: #CCC">
+            <h1>{{ page.pagewithcallout.signup.header }}</h1>
+            {{ page.pagewithcallout.signup.description | safe }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+<footer style="background: black">
+    <ul>
+        {% for link in page.pagewithcallout.get_footer_links %}
+        <li>{{ link.header }}</li>
+        {% endfor %}
+    </ul>
+    <img src="{% static "img/logo-mozilla.svg" %}">
+</footer>
+{% endblock %}
