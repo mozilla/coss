@@ -22,6 +22,7 @@
 {% block extra_head %}
     <link rel="stylesheet" href="{% static "css/landingpage.css" %} ">
     <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block header %}
@@ -37,12 +38,16 @@
 {% block main %}
     <div class="row">
         <div class="col-sm">
+            {% editable page.pagewithcallout.content %}
             {{ page.pagewithcallout.content | safe }}
+            {% endeditable %}
         </div>
 
         <div class="col-sm" style="background: #CCC">
+            {% editable page.pagewithcallout.signup.header page.pagewithcallout.signup.description %}
             <h1>{{ page.pagewithcallout.signup.header }}</h1>
             {{ page.pagewithcallout.signup.description | safe }}
+            {% endeditable %}
         </div>
     </div>
 {% endblock %}
@@ -51,7 +56,7 @@
 <footer style="background: black">
     <ul>
         {% for link in page.pagewithcallout.get_footer_links %}
-        <li>{{ link.header }}</li>
+        <li><span class="fa fa-{{ link.iconclass }}"></span><a href="{{ link.link }}">{{ link.linktext }}</a></li>
         {% endfor %}
     </ul>
     <img src="{% static "img/logo-mozilla.svg" %}">

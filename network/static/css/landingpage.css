@@ -41,3 +41,8 @@ footer ul li {
 footer ul li + li {
 	margin-left: 2em;
 }
+
+footer span.fa {
+	color: #3d9ae9;
+	margin-right: 0.3em;
+}

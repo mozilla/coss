@@ -5,12 +5,14 @@ from location_field.models.plain import PlainLocationField
 
 
 class FooterLink(models.Model):
-  header = models.CharField(max_length=500)
-  link = models.URLField(max_length=2048)
-  icon = models.CharField(max_length=2048)
+  linktext = models.CharField(max_length=500)
+  # the following can't be a URLField because it also needs to
+  # do things like relative links and mailto
+  link = models.CharField(max_length=2048)
+  iconclass = models.CharField(max_length=2048)
 
   def __str__(self):
-    return str(self.header)
+    return str(self.linktext)
 
 
 class Signup(models.Model):
