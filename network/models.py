@@ -3,14 +3,23 @@ from mezzanine.pages.models import Page
 from mezzanine.core.fields import RichTextField
 from location_field.models.plain import PlainLocationField
 
+
 class FooterLink(models.Model):
   header = models.CharField(max_length=500)
   link = models.URLField(max_length=2048)
   icon = models.CharField(max_length=2048)
 
+  def __str__(self):
+    return str(self.header)
+
+
 class Signup(models.Model):
   header = models.CharField(max_length=500)
   description = RichTextField("description")
+
+  def __str__(self):
+    return str(self.header)
+
 
 class PageWithCallout(Page):
   name = models.CharField(max_length=500)
@@ -39,6 +48,9 @@ class PageWithCallout(Page):
       null=True,
       on_delete=models.SET_NULL,
   )
+
+  def __str__(self):
+    return str(self.name)
 
   def get_footer_links(self):
     return FooterLink.objects.all()
