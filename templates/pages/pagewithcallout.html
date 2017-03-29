@@ -20,45 +20,82 @@
 {% endmetablock %}{% endblock %}
 
 {% block extra_head %}
-    <link rel="stylesheet" href="{% static "css/landingpage.css" %} ">
-    <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
+    <link rel="stylesheet" href="{% static "css/landingpage.css" %} ">
 {% endblock %}
 
 {% block header %}
-    <header>
-        <img src="{% static "img/logo-mozilla.svg" %}">
+    <header class="container">
+        <div class="row">
+            <div class="col-1">
+                <img src="{% static "img/menu.jpg" %}">
+            </div>
+            <div class="col-1 logo">
+                <div class="row"><img src="{% static "img/logo-mozilla.svg" %}"></div>
+                <div class="row"><span class="text-block text-block-500">Network</span></div>
+            </div>
+            <div class="col-8 header-title">
+                <span class="intro">{{ page.title }}</span>
+            </div>
+            <div class="col-1">
+                <button class="btn btn-warning">join us</button>
+            </div>
     </header>
 {% endblock %}
 
 {% block title %}
-    <h1>{% editable page.pagewithcallout.header %}{{ page.pagewithcallout.header }}{% endeditable %}</h1>
+    <h1 class="title">{% editable page.pagewithcallout.header %}{{ page.pagewithcallout.header }}{% endeditable %}</h1>
 {% endblock %}
 
 {% block main %}
-    <div class="row">
+    <div class="main-content row">
         <div class="col-sm">
             {% editable page.pagewithcallout.content %}
             {{ page.pagewithcallout.content | safe }}
             {% endeditable %}
         </div>
 
-        <div class="col-sm" style="background: #CCC">
-            {% editable page.pagewithcallout.signup.header page.pagewithcallout.signup.description %}
-            <h1>{{ page.pagewithcallout.signup.header }}</h1>
-            {{ page.pagewithcallout.signup.description | safe }}
-            {% endeditable %}
+        <div class="col-sm">
+            <div class="call-out">
+                {% editable page.pagewithcallout.signup.header page.pagewithcallout.signup.description %}
+                <h4>{{ page.pagewithcallout.signup.header }}</h4>
+                <div class="call-out-description">
+                    {{ page.pagewithcallout.signup.description | safe }}
+                </div>
+                {% endeditable %}
+                <input name="email" type="text" placeholder="EMAIL ADDRESS">
+                <label>
+                    <input type="checkbox" name="consent">
+                    <small>
+                        Sign up to receive email about The Internet Health Report and Mozilla. I'm OK with Mozilla handling my info as explained in this <a href="/privacy">Privacy Notice</a>.
+                    </small>
+                </label>
+                <button name="signup" class="btn btn-warning">SIGN UP</button>
+            </div>
         </div>
     </div>
 {% endblock %}
 
 {% block footer %}
-<footer style="background: black">
-    <ul>
+<footer class="container">
+    <ul class="icons row">
         {% for link in page.pagewithcallout.get_footer_links %}
-        <li><span class="fa fa-{{ link.iconclass }}"></span><a href="{{ link.link }}">{{ link.linktext }}</a></li>
+        <li class="col nowrap"><span class="fa fa-{{ link.iconclass }}"></span><a href="{{ link.link }}">{{ link.linktext }}</a></li>
         {% endfor %}
     </ul>
-    <img src="{% static "img/logo-mozilla.svg" %}">
+    <div class="moz-notice">
+        <div class="logo">
+            <img src="{% static "img/logo-mozilla.svg" %}">
+        </div>
+        <div class="sep">
+            <div class="sep"></div>
+        </div>
+        <div>
+            Mozilla is a global non-profit dedicated to putting you in control of your online experience and shaping the future of the web for the public good. Visit us at <a href="https://mozilla.org">mozilla.org</a>.
+        </div>
+    </ul>
 </footer>
 {% endblock %}

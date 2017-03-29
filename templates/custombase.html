@@ -46,7 +46,7 @@
 
         {% block header %}{% endblock %}
 
-        <div class="container">
+        <div class="main container">
             {% nevercache %}
             {% if messages %}
             <div class="messages">
@@ -62,9 +62,7 @@
 
 
             {% block title %}{% endblock %}
-        </div>
 
-        <div class="container">
             {% block main %}{% endblock %}
         </div>
 
