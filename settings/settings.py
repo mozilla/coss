@@ -129,7 +129,12 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = False
 
-AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
+AUTHENTICATION_BACKENDS = (
+    "mezzanine.core.auth_backends.MezzanineBackend",
+    "mozilla_django_oidc.auth.OIDCAuthenticationBackend",
+)
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 # The numeric mode to set newly-uploaded files to. The value should be
 # a mode you'd pass directly to os.chmod.
@@ -269,6 +274,9 @@ INSTALLED_APPS = (
     # used by club - I'd love to have this setting housed inside the
     # club app, but right now I do not know how to do that...
     "location_field.apps.DefaultConfig",
+
+    # 3rd party dependencies
+    "mozilla_django_oidc",
 )
 
 # used by location_field.apps.DefaultConfig
