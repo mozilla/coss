@@ -33,6 +33,7 @@ To get this to work:
         - unix/linus/OSX: simply type `deactivate`
 - with the virtual environment activated, use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
     - all OS: `pip install -r requirements.txt`
+- rename `.env-dist` file to `.env`. There you can override config entries to your local environment.
 - with Mezzanine installed, bootstrap a database and superuser:
 	- run `python manage.py makemigrations`
 	- run `python manage.py migrate`
