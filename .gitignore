@@ -20,3 +20,6 @@ local_settings.py
 **/__pycache__
 /.vscode
 /node_modules
+
+# django-environ env
+.env

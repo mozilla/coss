@@ -279,15 +279,6 @@ INSTALLED_APPS = (
     "mozilla_django_oidc",
 )
 
-# used by location_field.apps.DefaultConfig
-# I would like this in the club app, too...
-LOCATION_FIELD = {
-    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
-    'provider.google.api_key': os.getenv('GOOGLE_API_KEY', 'no api key provided'),
-    'provider.google.api_libraries': '',
-    'provider.google.map.type': 'ROADMAP',
-}
-
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
