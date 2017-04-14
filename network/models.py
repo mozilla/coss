@@ -14,10 +14,21 @@ class FooterLink(models.Model):
   def __str__(self):
     return str(self.linktext)
 
+class BasketNewsletter(models.Model):
+  name = models.CharField(max_length=140)
+
+  def __str__(self):
+    return str(self.name)
 
 class Signup(models.Model):
   header = models.CharField(max_length=500)
   description = RichTextField("description")
+  newsletter = models.ForeignKey(
+    BasketNewsletter,
+    related_name='form',
+    null=True,
+    on_delete=models.PROTECT
+  )
 
   def __str__(self):
     return str(self.header)

@@ -18,3 +18,5 @@ local_settings.py
 # static and pycache are transient fs entries
 /static
 **/__pycache__
+/.vscode
+/node_modules
