@@ -38,9 +38,11 @@
     {% editable page.club.club_description %}{{ page.club.club_description | richtext_filters | safe }}{% endeditable %}
 
     <h2>
+        {% editable page.club.city page.club.location %}
         <div>
             This club is run in {{ page.club.city }}
         </div>
+        {% endeditable %}
         <iframe class=""
             width="600"
             height="450"
@@ -53,6 +55,11 @@
     <p class="activity">
     {% editable page.club.activity %}This club meets {{ page.club.activity }}{% endeditable %}
     </p>
+
+    <h3>Topics:</h3>
+    {% for topic in page.club.get_topics %}
+    <p>topic: {{ topic }}</p>
+    {% endfor %}
 {% endblock %}
 
 {% block footer %}
