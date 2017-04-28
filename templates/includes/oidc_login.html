@@ -1,0 +1,9 @@
+<div class="nav navbar-nav navbar-right">
+  <li>
+    {% if request.user.is_authenticated %}
+      <a href="#">{{ request.user.username }}</a>
+    {% else %}
+      <a href="{% url 'oidc_authentication_init' %}">Login</a>
+    {% endif %}
+  </li>
+</div>

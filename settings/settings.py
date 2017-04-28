@@ -129,7 +129,12 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = False
 
-AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
+AUTHENTICATION_BACKENDS = (
+    "mezzanine.core.auth_backends.MezzanineBackend",
+    "mozilla_django_oidc.auth.OIDCAuthenticationBackend",
+)
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 # The numeric mode to set newly-uploaded files to. The value should be
 # a mode you'd pass directly to os.chmod.
@@ -269,16 +274,10 @@ INSTALLED_APPS = (
     # used by club - I'd love to have this setting housed inside the
     # club app, but right now I do not know how to do that...
     "location_field.apps.DefaultConfig",
-)
 
-# used by location_field.apps.DefaultConfig
-# I would like this in the club app, too...
-LOCATION_FIELD = {
-    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
-    'provider.google.api_key': os.getenv('GOOGLE_API_KEY', 'no api key provided'),
-    'provider.google.api_libraries': '',
-    'provider.google.map.type': 'ROADMAP',
-}
+    # 3rd party dependencies
+    "mozilla_django_oidc",
+)
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the

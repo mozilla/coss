@@ -1,19 +1,22 @@
 # This file is exec'd from settings.py, so it has access to and can
 # modify all the variables in settings.py.
 
-import os
-import dj_database_url
-
 # If this file is changed in development, the development server will
 # have to be manually restarted because changes will not be noticed
 # immediately.
 
-DEBUG = True
-SITE_ID = os.getenv('SITE_ID', '1')
+import environ
+
+root = environ.Path(__file__) - 2
+env = environ.Env()
+environ.Env.read_env()
+
+DEBUG = env('DEBUG', default=True, cast=bool)
+SITE_ID = env('SITE_ID', default='1', cast=int)
 
 # Make these unique, and don't share it with anybody.
-SECRET_KEY = os.getenv("SECRET_KEY", "supposedly there was no secret_key in the env so check this out this is now a key")
-NEVERCACHE_KEY = os.getenv("NEVERCACHEKEY", "yeah this nevercache_key value wasn't set so no biggie just use this string")
+SECRET_KEY = env('SECRET_KEY')
+NEVERCACHE_KEY = env('NEVERCACHE_KEY')
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -35,17 +38,16 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = os.getenv('DATABASE_URL', False)
-
-if DATABASE_URL is not False:
-    DATABASES['default'].update(dj_database_url.config())
+DATABASES = {
+    'default': env.db('DB_URL', default='sqlite:///{0}/default.db'.format(root))
+}
 
 ###################
 # DEPLOY SETTINGS #
 ###################
 
 # Domains for public site
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS","localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['localhost', '127.0.0.1'])
 
 # These settings are used by the default fabfile.py provided.
 # Check fabfile.py for defaults.
@@ -63,12 +65,21 @@ ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS","localhost,127.0.0.1").split(",")
 #     "NEVERCACHE_KEY": NEVERCACHE_KEY,
 # }
 
-
 LOCATION_FIELD = {
-    'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
-    'provider.google.api_key': 'AIzaSyCPOOltnRybC8TimX-9Uj1DmSK7RTdHGDc',
-    'provider.google.api_libraries': '',
-    'provider.google.map.type': 'ROADMAP',
+    'provider.google.api_key': env('GOOGLE_MAPS_API_KEY', default=''),
 }
 
-USE_S3=False
+USE_S3 = env.bool('USE_S3', default=False)
+
+# OIDC configuration
+
+SITE_URL = env('SITE_URL')
+OIDC_RP_CLIENT_SECRET_ENCODED = env.bool('OIDC_RP_CLIENT_SECRET_ENCODED', default=True)
+AUTH0_DOMAIN = env('AUTH0_DOMAIN', default='')
+AUTH0_CLIENT_ID = env('AUTH0_CLIENT_ID', default='')
+OIDC_OP_AUTHORIZATION_ENDPOINT = env('OIDC_OP_AUTHORIZATION_ENDPOINT', default='')
+OIDC_OP_TOKEN_ENDPOINT = env('OIDC_OP_TOKEN_ENDPOINT', default='')
+OIDC_OP_USER_ENDPOINT = env('OIDC_OP_USER_ENDPOINT', default='')
+OIDC_RP_CLIENT_ID = env('OIDC_RP_CLIENT_ID', default='')
+OIDC_RP_CLIENT_SECRET = env('OIDC_RP_CLIENT_SECRET', default='')
+OIDC_OP_DOMAIN = env('OIDC_OP_DOMAIN', default='')
