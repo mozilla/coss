@@ -4,27 +4,28 @@ from mezzanine.core.fields import RichTextField
 from location_field.models.plain import PlainLocationField
 
 
-
 # Interest (subjects) that can apply to a club
-
 class InterestQuerySet(models.query.QuerySet):
     def public(self):
         return self
 
+
 class Interest(models.Model):
     name = models.CharField(unique=True, max_length=150)
     objects = InterestQuerySet.as_manager()
+
     def __str__(self):
         return str(self.name)
+
 
 # The members of Page will be inherited by the Author model, such
 # as title, slug, etc. For clubs we can use the title field to
 # store the club's name. For our model definition, we just add
 # any extra fields that aren't part of the Page model.
-
 class ClubQuerySet(models.query.QuerySet):
     def public(self):
         return self
+
 
 class Club(Page):
 

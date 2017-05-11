@@ -142,8 +142,10 @@ def update_changed_requirements():
     Checks for changes in the requirements file across an update,
     and gets new requirements if changes have occurred.
     """
+    def get_reqs():
+        return run("cat %s" % reqs_path, show=False)
+
     reqs_path = join(env.proj_path, env.reqs_path)
-    get_reqs = lambda: run("cat %s" % reqs_path, show=False)
     old_reqs = get_reqs() if env.reqs_path else ""
     yield
     if old_reqs:
@@ -227,6 +229,10 @@ def upload_template_and_reload(name):
     Uploads a template only if it has changed, and if so, reload the
     related service.
     """
+
+    def clean(data):
+        return data.replace('\n', '').replace('\r', '').strip()
+
     template = get_templates()[name]
     local_path = template["local_path"]
     if not os.path.exists(local_path):
@@ -247,7 +253,6 @@ def upload_template_and_reload(name):
         if "%(db_pass)s" in local_data:
             env.db_pass = db_pass()
         local_data %= env
-    clean = lambda s: s.replace("\n", "").replace("\r", "").strip()
     if clean(remote_data) == clean(local_data):
         return
     upload_template(local_path, remote_path, env, use_sudo=True, backup=False)

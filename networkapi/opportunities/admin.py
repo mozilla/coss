@@ -9,4 +9,5 @@ class OpportunityAdmin(SortableAdmin):
         'shared/adminsortable_change_list_custom.html'
     )
 
+
 admin.site.register(Opportunity, OpportunityAdmin)

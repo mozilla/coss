@@ -16,13 +16,16 @@ club_extra_fieldsets = (
     }),
 )
 
+
 class InterestInline(admin.TabularInline):
     model = Interest.club.through
+
 
 class ClubAdmin(PageAdmin):
     inlines = (
         InterestInline,
     )
     fieldsets = deepcopy(PageAdmin.fieldsets) + club_extra_fieldsets
+
 
 admin.site.register(Club, ClubAdmin)
