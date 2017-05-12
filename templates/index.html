@@ -4,25 +4,55 @@
 {% block meta_title %}{% trans "Home" %}{% endblock %}
 {% block title %}{% trans "Home" %}{% endblock %}
 
-{% block breadcrumb_menu %}
-  <li class="active">{% trans "Home" %}</li>
+{% block jumbotron %}
+  <div class="container jumbotron">
+    <h2>Local Groups</h2><br>
+    <h2>Working Together</h2>
+    <p class="lead">
+      Local-groups organized by network members, meeting regularly
+      in-person to teach, build and protect the open web.
+    </p>
+  </div>
 {% endblock %}
 
 {% block main %}
-  {% blocktrans %}
-    <h2>Congratulations!</h2>
-    <p>
-      Welcome to your new Mezzanine powered website.
-      Here are some quick links to get you started:
-    </p>
-    <ul>
-      <li><a href="/admin/">Log in to the admin interface</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/content-architecture.html">Creating custom page types</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html#templates">Modifying HTML templates</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html#why-isn-t-the-homepage-a-page-object-i-can-edit-via-the-admin">Changing this homepage</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/frequently-asked-questions.html">Other frequently asked questions</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/configuration.html#default-settings">Full list of settings</a></li>
-      <li><a href="http://mezzanine.jupo.org/docs/deployment.html">Deploying to a production server</a></li>
-    </ul>
-  {% endblocktrans %}
+  <h2>Types of Clubs</h2>
+
+  <div class="row club-types">
+    <div class="col-md-6">
+      <img class="img-responsive" src="/static/img/opensource.jpg" alt="">
+
+      <h4>Open Source</h4>
+
+      <div>
+        Students with a passion for technology working together to build the open web
+        of University and College campuses.
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <img class="img-responsive" src="/static/img/weblit.jpg" alt="">
+
+      <h4>Web Literacy</h4>
+
+      <div>
+        Share Mozilla's mission to ensure the Internet is a global
+        public resource, open and accessible to all.
+      </div>
+    </div>
+  </div>
+
+  <div class="row testimonial">
+    <div class="col-md-2">
+      <img class="img-responsive" src="/static/img/asisipho.jpg" alt="">
+    </div>
+    <div class="col-md-10">
+      <blockquote>
+        I want to teach the girls how to code. Right now they know the basics but there's a lot of interest in developing
+        these skills further. Therefore I am working with my school to use study time as an opportunity to hold club
+        activities and events so to have a learning space.<br>
+        - Asisipho, Club Captain, South Africa
+      </blockquote>
+    </div>
+  </div>
 {% endblock %}
