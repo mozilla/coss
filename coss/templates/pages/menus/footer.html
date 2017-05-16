@@ -1,10 +1,37 @@
 {% load i18n %}
 
-{% for link in page.club.footerlink %}
+{% if settings.GITHUB_LINK %}
   <div class="icon-container">
     <div class="icon">
-      <img class="footer-icon" src="/static/img/{{ link.icon }}.svg">
-      <a href="{{ link.target }}" target="_blank">{{ link.text }}</a>
+      <img class="footer-icon" src="/static/img/github.svg">
+      <a href="{{ settings.GITHUB_LINK }}" target="_blank">Contribute</a>
     </div>
   </div>
-{% endfor %}
+{% endif %}
+
+{% if settings.DISCOURSE_LINK %}
+  <div class="icon-container">
+    <div class="icon">
+      <img class="footer-icon" src="/static/img/feedback.svg">
+      <a href="{{ settings.DISCOURSE_LINK }}" target="_blank">Feedback</a>
+    </div>
+  </div>
+{% endif %}
+
+{% if settings.LEGAL_LINK %}
+  <div class="icon-container">
+    <div class="icon">
+      <img class="footer-icon" src="/static/img/legal.svg">
+      <a href="{{ settings.LEGAL_LINK }}" target="_blank">Legal</a>
+    </div>
+  </div>
+{% endif %}
+
+{% if settings.LICENSE_LINK %}
+  <div class="icon-container">
+    <div class="icon">
+      <img class="footer-icon" src="/static/img/privacy.svg">
+      <a href="{{ settings.LICENSE_LINK }}" target="_blank">License</a>
+    </div>
+  </div>
+{% endif %}
