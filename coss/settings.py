@@ -236,7 +236,7 @@ if DJANGO_VERSION < (1, 9):
 # STATICFILES Handling
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
-    # "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 ################
 # APPLICATIONS #

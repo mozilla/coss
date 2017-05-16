@@ -95,6 +95,10 @@ header a {
     font-weight: bold;
 }
 
+.jumbotron .row {
+    align-items: center;
+}
+
 .lead {
     margin-top: 10px;
     width: 50%;
@@ -122,6 +126,10 @@ h4 {
 .testimonial blockquote {
     padding: 20px;
     font-size: 1.4em;
+}
+
+.section {
+    margin-bottom: 30px;
 }
 
 footer {

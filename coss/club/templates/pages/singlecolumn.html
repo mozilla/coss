@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% load i18n %}
+
+{% block meta_title %}{{ page.singlecolumn.meta_title }}{% endblock %}
+{% block title %}{{ page.singlecolumn.title }}{% endblock %}
+
+{% block jumbotron %}
+  <div class="container jumbotron">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>
+          Why Clubs?
+        </h2>
+      </div>
+      <div class="col-sm-6">
+        <p class="lead">
+          {{ page.singlecolumn.content|safe }}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block main %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="section">
+        <h4>Elements of a Club</h4>
+
+        {{ page.singlecolumn.club_roles|safe }}
+      </div>
+
+      <div class="section">
+        <h4>Club Roles</h4>
+
+        {{ page.singlecolumn.club_roles|safe }}
+
+        <a href="{{ page.singlecolumn.regional_link_url }}">{{ page.singlecolumn.regional_link_text }}</a>
+      </div>
+
+      <div class="section">
+        <h4>Types of Clubs</h4>
+
+        {{ page.singlecolumn.club_roles|safe }}
+      </div>
+
+    </div>
+  </div>
+{% endblock %}
