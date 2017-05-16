@@ -4,8 +4,7 @@ import sys
 
 if __name__ == "__main__":
 
-    settings_module = "settings.settings"
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_module)
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "coss.settings")
 
     from django.core.management import execute_from_command_line
 

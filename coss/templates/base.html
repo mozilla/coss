@@ -22,12 +22,6 @@
       {% block extra_css %}{% endblock %}
     {% endcompress %}
 
-    {% compress js %}
-      <script src="{% static "lib/jquery-3.2.1.min.js" %}"></script>
-      <script src="{% static "lib/tether.min.js" %}"></script>
-      <script src="{% static "lib/bootstrap/bootstrap.min.js" %}"></script>
-      {% block extra_js %}{% endblock %}
-    {% endcompress %}
 
     <!--[if lt IE 9]>
     <script src="{% static "js/html5shiv.js" %}"></script>
@@ -93,9 +87,16 @@
       </div>
     </footer>
 
+
     {% block footer_js %}
       {% include "includes/footer_scripts.html" %}
     {% endblock %}
 
+    {% compress js %}
+      <script src="{% static "lib/jquery-3.2.1.min.js" %}"></script>
+      <script src="{% static "lib/tether.min.js" %}"></script>
+      <script src="{% static "lib/bootstrap/bootstrap.min.js" %}"></script>
+      {% block extra_js %}{% endblock %}
+    {% endcompress %}
   </body>
 </html>
