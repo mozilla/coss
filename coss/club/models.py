@@ -103,3 +103,17 @@ class HomePage(Page, RichText):
                                       null=True,
                                       blank=True,
                                       help_text='Items from a club will be shown on the home page')
+
+
+class SingleColumn(Page, RichText):
+    """Single Column model."""
+    # Text blocks
+    club_elements = RichTextField('Elements of a Club')
+    club_roles = RichTextField('Club Roles')
+    club_types = RichTextField('Types of Clubs')
+
+    # Regional coordinators link
+    regional_link_text = models.CharField(max_length=200,
+                                          help_text='Link Text')
+    regional_link_url = models.CharField(max_length=200,
+                                         help_text='Link URL')
