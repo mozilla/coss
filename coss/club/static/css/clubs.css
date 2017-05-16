@@ -3,7 +3,7 @@
     font-weight: normal;
     font-style: normal;
     src: url('../fonts/opensans-light.woff2') format('woff2'),
-        url('../fonts/opensans-light.woff') format('woff');
+         url('../fonts/opensans-light.woff') format('woff');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
     font-weight: bold;
     font-style: normal;
     src: url('../fonts/opensans-semibold.woff2') format('woff2'),
-        url('../fonts/opensans-semibold.woff') format('woff');
+         url('../fonts/opensans-semibold.woff') format('woff');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
     font-weight: normal;
     font-style: italic;
     src: url('../fonts/opensans-lightitalic.woff2') format('woff2'),
-        url('../fonts/opensans-lightitalic.woff') format('woff');
+         url('../fonts/opensans-lightitalic.woff') format('woff');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
     font-weight: bold;
     font-style: italic;
     src: url('../fonts/opensans-semibolditalic.woff2') format('woff2'),
-        url('../fonts/opensans-semibolditalic.woff') format('woff');
+         url('../fonts/opensans-semibolditalic.woff') format('woff');
 }
 
 html, body {
@@ -151,27 +151,27 @@ footer img {
 }
 
 .footer-content {
-	display: flex;
-	align-items: center;
-	flex-shrink: 0;
-	justify-content: center;
-	max-width: 35.625rem;
-	margin: 15px auto;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    max-width: 35.625rem;
+    margin: 15px auto;
 }
 
 .footer-content img {
-	border-bottom: 0;
-	border-right: 0.0625rem solid #666;
-	padding: 0.8rem 1.25rem 0.8rem 0;
-	margin-bottom: 0;
-	margin-right: 1.25rem;
+    border-bottom: 0;
+    border-right: 0.0625rem solid #666;
+    padding: 0.8rem 1.25rem 0.8rem 0;
+    margin-bottom: 0;
+    margin-right: 1.25rem;
     width: 105px;
 }
 
 .footer-content p {
-	text-align: left;
-	width: calc(100% - 10.375rem);
-	margin-bottom: 0;
+    text-align: left;
+    width: calc(100% - 10.375rem);
+    margin-bottom: 0;
     font-size: .9em;
 }
 

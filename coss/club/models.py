@@ -1,6 +1,9 @@
 from django.db import models
-from mezzanine.pages.models import Page
+
 from mezzanine.core.fields import RichTextField
+from mezzanine.core.models import RichText
+from mezzanine.pages.models import Page
+
 from location_field.models.plain import PlainLocationField
 
 
@@ -25,6 +28,12 @@ class Interest(models.Model):
 class ClubQuerySet(models.query.QuerySet):
     def public(self):
         return self
+
+
+class Testimonial(models.Model):
+    """Testimonial model."""
+    photo = models.ImageField()
+    quote = RichTextField('Testimonial quote')
 
 
 class Club(Page):
@@ -71,3 +80,26 @@ class Club(Page):
 
     def __str__(self):
         return str(self.title)
+
+
+class Signup(Page):
+    """Signup model."""
+    heading = models.CharField(max_length=200, help_text='Signup heading')
+
+
+class HomePage(Page, RichText):
+    """Base homepage model."""
+
+    # Header configuration
+    header_heading = models.CharField(max_length=200,
+                                      help_text='The heading of the header.')
+    header_subheading = models.CharField(max_length=200,
+                                         help_text='The heading of the sub-header.')
+    header_text = RichTextField('Header text.')
+    header_link = models.CharField(max_length=200,
+                                   help_text='Header link.')
+    # club block
+    featured_club = models.ForeignKey('Club',
+                                      null=True,
+                                      blank=True,
+                                      help_text='Items from a club will be shown on the home page')

@@ -1,7 +1,10 @@
 from copy import deepcopy
+
 from django.contrib import admin
+
 from mezzanine.pages.admin import PageAdmin
-from .models import Club, Interest
+
+from coss.club.models import Club, HomePage, Interest
 
 club_extra_fieldsets = (
     (None, {
@@ -29,3 +32,4 @@ class ClubAdmin(PageAdmin):
 
 
 admin.site.register(Club, ClubAdmin)
+admin.site.register(HomePage, PageAdmin)

@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "page.html" %}
 {% load i18n %}
 
 {% block meta_title %}{% trans "Home" %}{% endblock %}
@@ -6,11 +6,17 @@
 
 {% block jumbotron %}
   <div class="container jumbotron">
-    <h2>Local Groups</h2><br>
-    <h2>Working Together</h2>
+    <h2>
+      {{ page.homepage.header_heading }}
+    </h2><br>
+    <h2>
+      {{ page.homepage.header_subheading }}
+    </h2>
     <p class="lead">
-      Local-groups organized by network members, meeting regularly
-      in-person to teach, build and protect the open web.
+      {{ page.homepage.header_text|safe }}
+    </p>
+    <p class="lead">
+      <a href="{{ page.homepage.header_link }}">Signup Now!</a>
     </p>
   </div>
 {% endblock %}
