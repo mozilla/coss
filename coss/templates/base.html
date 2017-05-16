@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+  {% load pages_tags mezzanine_tags i18n staticfiles %}
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+    <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+
+    {% ifinstalled mezzanine.blog %}
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+      <link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+    {% endifinstalled %}
+
+    {% compress css %}
+      <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+      <link rel="stylesheet" href="{% static "lib/bootstrap/bootstrap.min.css" %}">
+      <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %}">
+      <link rel="stylesheet" href="{% static "css/clubs.css" %}">
+      {% block extra_css %}{% endblock %}
+    {% endcompress %}
+
+
+    <!--[if lt IE 9]>
+    <script src="{% static "js/html5shiv.js" %}"></script>
+    <script src="{% static "js/respond.min.js" %}"></script>
+    <![endif]-->
+
+    {% block extra_head %}{% endblock %}
+  </head>
+
+  <body id="{% block body_id %}body{% endblock %}">
+
+    <header>
+      <nav class="navbar navbar-default navbar-toggleable-md navbar-inverse" role="navigation">
+        <div class="container">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="/static/img/logo-clubs.svg" alt="mozilla clubs">
+          </a>
+
+          <div class="navbar-collapse collapse" id="navbarContent">
+            {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+            {% include "includes/oidc_login.html" %}
+          </div>
+        </div>
+      </nav>
+
+      {% block jumbotron %}{% endblock %}
+    </header>
+
+    <div class="container content">
+      {% nevercache %}
+        {% if messages %}
+          <div class="messages">
+            {% for message in messages %}
+              <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endnevercache %}
+
+      {% block main %}{% endblock %}
+
+    </div>
+
+
+    <footer>
+      <div class="container text-center">
+        {% page_menu "pages/menus/footer.html" %}
+      </div>
+
+      <div class="footer-content">
+        <a class="logo" href="https://mozilla.org" target="_blank"><img src="/static/img/logo-mozilla.svg"></a>
+        <p>
+          Mozilla is a global non-profit dedicated to putting you in control of your online experience and shaping the future of the web
+          for the public good. Visit us at <a href="//mozilla.org" target="_blank">mozilla.org</a>
+        </p>
+      </div>
+    </footer>
+
+
+    {% block footer_js %}
+      {% include "includes/footer_scripts.html" %}
+    {% endblock %}
+
+    {% compress js %}
+      <script src="{% static "lib/jquery-3.2.1.min.js" %}"></script>
+      <script src="{% static "lib/tether.min.js" %}"></script>
+      <script src="{% static "lib/bootstrap/bootstrap.min.js" %}"></script>
+      {% block extra_js %}{% endblock %}
+    {% endcompress %}
+  </body>
+</html>

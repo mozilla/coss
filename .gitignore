@@ -12,9 +12,6 @@
 # the virtual environment directory
 mezzanine
 
-# machine-local settings
-local_settings.py
-
 # static and pycache are transient fs entries
 /static
 **/__pycache__
