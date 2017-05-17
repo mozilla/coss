@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Open Sans';
+    font-family: OpenSans;
     font-weight: normal;
     font-style: normal;
     src: url('../fonts/opensans-light.woff2') format('woff2'),
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: OpenSans;
     font-weight: bold;
     font-style: normal;
     src: url('../fonts/opensans-semibold.woff2') format('woff2'),
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: OpenSans;
     font-weight: normal;
     font-style: italic;
     src: url('../fonts/opensans-lightitalic.woff2') format('woff2'),
@@ -23,11 +23,53 @@
 }
 
 @font-face {
-    font-family: 'Open Sans';
+    font-family: OpenSans;
     font-weight: bold;
     font-style: italic;
     src: url('../fonts/opensans-semibolditalic.woff2') format('woff2'),
          url('../fonts/opensans-semibolditalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Bold.woff') format('woff');
 }
 
 html, body {
@@ -41,7 +83,11 @@ body {
     color: black;
     font-size: 16px;
     line-height: 1.4;
-    font-family: 'Open Sans', sans-serif;
+    font-family: OpenSans, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: ZillaSlab;
 }
 
 header {
@@ -85,14 +131,14 @@ header a {
 
 }
 
-.jumbotron h2 {
-    background-color: black;
-    color: #b0b3e8;
+.jumbotron h3 {
+    font-family: ZillaSlabHighLight;
+    color: black;
     width: auto;
-    display: inline-block;
+    display: block;
     margin-bottom: 5px;
-    padding: 3px;
     font-weight: bold;
+    line-height: 1.1;
 }
 
 .jumbotron .row {
@@ -125,7 +171,7 @@ h4 {
 
 .testimonial blockquote {
     padding: 20px;
-    font-size: 1.4em;
+    font-size: 1.3em;
 }
 
 .section {
@@ -205,8 +251,12 @@ footer a:hover {
         width: 100%;
     }
 
-    h2 {
-        font-size: 2.5em;
+    h3 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.6em;
     }
 
     .club-types > div {
