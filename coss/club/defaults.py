@@ -28,3 +28,14 @@ register_setting(
     editable=True,
     default='https://www.mozilla.org/en-US/foundation/licensing/website-content/',
 )
+
+register_setting(
+    name='TEMPLATE_ACCESSIBLE_SETTINGS',
+    append=True,
+    default=(
+        'GITHUB_LINK',
+        'DISCOURSE_LINK',
+        'LEGAL_LINK',
+        'LICENSE_LINK',
+    )
+)

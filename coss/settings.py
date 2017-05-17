@@ -86,8 +86,6 @@ from django.utils.translation import ugettext_lazy as _
 USE_MODELTRANSLATION = False
 
 
-# Accessible settings
-TEMPLATE_ACCESSIBLE_SETTINGS = ('GITHUB_LINK', 'DISCOURSE_LINK', 'LEGAL_LINK', 'LICENSE_LINK',)
 ########################
 # MAIN DJANGO SETTINGS #
 ########################
