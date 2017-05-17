@@ -18,7 +18,7 @@ To get this to work:
     - unix/linux: `sudo pip install virtualenv`
     - OSX: `sudo -H pip3 install virtualenv`
 - clone this repository:
-    - all OS: find a suitable directory in which you like to manage your git projects (like Documents/git/mozilla, ~/temp, whatever floats your boat) and then in that direcetory, run `git clone https://github.com/mozilla/coss` 
+    - all OS: find a suitable directory in which you like to manage your git projects (like Documents/git/mozilla, ~/temp, whatever floats your boat) and then in that direcetory, run `git clone https://github.com/mozilla/coss`
 - cd into your local repository copy:
     - all OS: `cd coss`
 - change your branch to the "mezzanine" branch:
@@ -32,14 +32,14 @@ To get this to work:
         - windows: `mezzanine\Scripts\Deactivate`
         - unix/linus/OSX: simply type `deactivate`
 - with the virtual environment activated, use pip to install all the base Mezzanine and dependencies nicely contained in your virtual environment dir:
-    - all OS: `pip install -r requirements.txt`
+    - all OS: `pip install --require-hashes --no-deps -r requirements.txt`
 - rename `.env-dist` file to `.env`. There you can override config entries to your local environment.
 - with Mezzanine installed, bootstrap a database and superuser:
 	- run `python manage.py makemigrations`
 	- run `python manage.py migrate`
 	- create a superuser by running `python manage.py createsuperuser` and filling in sensible values
 	- create the pool of static assets for `whitenoise` to host, using `python manage.py collectstatic`
- 
+
 ## Running Mezzanine
 
 we can now fire up the Mezzanine instance
@@ -48,7 +48,7 @@ we can now fire up the Mezzanine instance
 
 ## For dev work, make sure Mezzanine knows it's on localhost
 
-On a first time run, before you do anything else, navigate to [the "sites" configuration](http://127.0.0.1:8000/admin/sites/site/) for Mezzanine, and change the entry listed from "example.com" to "127.0.0.1:8000" as both the `Domain name` and `Display name`. 
+On a first time run, before you do anything else, navigate to [the "sites" configuration](http://127.0.0.1:8000/admin/sites/site/) for Mezzanine, and change the entry listed from "example.com" to "127.0.0.1:8000" as both the `Domain name` and `Display name`.
 
 ## Adding apps
 
@@ -68,4 +68,4 @@ Static assets that are used in templates such as CSS, images, scripts, etc. go i
 - `./club/static/img/`
 - `./club/static/css/`
 
-In order to have templates use this data, you need to run `python manage collectstatic`, which copies all static assets declared in each app, and copies them over into a master root `./static` dir, which is then used by Mezzanine (technically: whitenoise, a static server that can be used with Django) when rendering CMS content. 
+In order to have templates use this data, you need to run `python manage collectstatic`, which copies all static assets declared in each app, and copies them over into a master root `./static` dir, which is then used by Mezzanine (technically: whitenoise, a static server that can be used with Django) when rendering CMS content.
