@@ -1,0 +1,317 @@
+@font-face {
+    font-family: OpenSans;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/opensans-light.woff2') format('woff2'),
+         url('../fonts/opensans-light.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/opensans-semibold.woff2') format('woff2'),
+         url('../fonts/opensans-semibold.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/opensans-lightitalic.woff2') format('woff2'),
+         url('../fonts/opensans-lightitalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/opensans-semibolditalic.woff2') format('woff2'),
+         url('../fonts/opensans-semibolditalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Bold.woff') format('woff');
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: OpenSans, sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: ZillaSlab;
+}
+
+.highlight {
+    font-family: ZillaSlabHighLight;
+    color: black;
+    width: auto;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+}
+
+header {
+    background-color: #b0b3e8;
+
+    a {
+        color: black;
+    }
+
+    .navbar-right {
+
+        a {
+            display: block;
+            padding: 0.5em 1em;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .navbar-brand {
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .navbar-collapse {
+        padding-top: 5px;
+    }
+
+    .navbar-inverse .navbar-nav .nav-link {
+        color: black;
+    }
+
+    .jumbotron {
+        background-color: transparent;
+        padding: 30px 15px 20px 15px;
+        margin-bottom: 0;
+
+        h3 {
+            font-family: ZillaSlabHighLight;
+            color: black;
+            width: auto;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .row {
+            align-items: center;
+        }
+    }
+
+    .lead {
+        margin-top: 10px;
+        width: 50%;
+    }
+}
+
+.content {
+    margin-top: 30px;
+
+    .row {
+        margin-bottom: 40px;
+    }
+
+    h4 {
+        padding-top: 10px;
+    }
+
+    .testimonial {
+        border-top: 4px solid black;
+        margin-left: 0;
+        margin-right: 0;
+
+        div {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        blockquote {
+            padding: 20px;
+            font-size: 1.3em;
+        }
+    }
+
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .club-registration {
+        margin-top: 30px;
+
+        ul {
+            padding-left: 0;
+            padding-right: 60px;
+
+            li {
+                font-weight: bold;
+                list-style-position: outside;
+                list-style-type: none;
+                color: lightgray;
+                border-bottom: 1px solid lightgray;
+                padding: 5px 0;
+
+                &.active {
+                    color: black;
+                    border-bottom-color: black;
+                }
+            }
+        }
+
+        .card {
+            background-color: #fafafa;
+            border: none;
+            box-shadow: 7px 7px 0px 0px rgba(183, 183, 183, 1);
+            margin-bottom: 30px;
+            display: none;
+
+            &.active {
+                display: inherit;
+            }
+        }
+    }
+}
+
+footer {
+    display: block;
+    height: auto;
+    background: black;
+    color: white;
+    padding: 35px;
+
+    .icon-container {
+        display: inline-block;
+        margin: 0 1em;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+
+            img {
+                width: 20px;
+                margin-right: 10px;
+                display: inline-block;
+                opacity: .8;
+            }
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        justify-content: center;
+        max-width: 35.625rem;
+        margin: 15px auto;
+
+        img {
+            border-bottom: 0;
+            border-right: 0.0625rem solid #666;
+            padding: 0.8rem 1.25rem 0.8rem 0;
+            margin-bottom: 0;
+            margin-right: 1.25rem;
+            width: 105px;
+        }
+
+        p {
+            text-align: left;
+            width: calc(100% - 10.375rem);
+            margin-bottom: 0;
+            font-size: .9em;
+        }
+    }
+
+    a {
+        color: lightgray;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .navbar-brand img {
+        width: 150px;
+        margin-left: 0;
+    }
+
+    .lead {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 2em;
+    }
+
+    h4 {
+        font-size: 1.6em;
+    }
+
+    .club-types > div {
+        margin-bottom: 15px;
+    }
+}

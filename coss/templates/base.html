@@ -15,10 +15,9 @@
     {% endifinstalled %}
 
     {% compress css %}
-      <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
       <link rel="stylesheet" href="{% static "lib/bootstrap/bootstrap.min.css" %}">
       <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %}">
-      <link rel="stylesheet" href="{% static "css/clubs.css" %}">
+      <link rel="stylesheet" type="text/x-scss" href="{% static "css/clubs.scss" %}">
       {% block extra_css %}{% endblock %}
     {% endcompress %}
 
@@ -86,13 +85,11 @@
       </div>
     </footer>
 
-
     {% block footer_js %}
       {% include "includes/footer_scripts.html" %}
     {% endblock %}
 
     {% compress js %}
-      <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
       <script src="{% static "lib/jquery-3.2.1.min.js" %}"></script>
       <script src="{% static "lib/tether.min.js" %}"></script>
       <script src="{% static "lib/bootstrap/bootstrap.min.js" %}"></script>
