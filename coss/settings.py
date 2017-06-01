@@ -235,7 +235,18 @@ if DJANGO_VERSION < (1, 9):
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "compressor.finders.CompressorFinder",
 )
+# Storage of static files
+COMPRESS_ROOT = STATIC_ROOT
+COMPRESS_CSS_FILTERS = (
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+)
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'node-sass {infile} {outfile}'),
+)
+
 ################
 # APPLICATIONS #
 ################
@@ -271,6 +282,7 @@ INSTALLED_APPS = (
 
     # 3rd party dependencies
     "mozilla_django_oidc",
+    "compressor",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
@@ -316,7 +328,6 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 OPTIONAL_APPS = (
     "debug_toolbar",
     "django_extensions",
-    "compressor",
     PACKAGE_NAME_FILEBROWSER,
     PACKAGE_NAME_GRAPPELLI,
 )
