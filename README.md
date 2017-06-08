@@ -35,7 +35,6 @@ To get this to work:
     - all OS: `pip install --require-hashes --no-deps -r requirements.txt`
 - rename `.env-dist` file to `.env`. There you can override config entries to your local environment.
 - with Mezzanine installed, bootstrap a database and superuser:
-	- run `python manage.py makemigrations`
 	- run `python manage.py migrate`
 	- create a superuser by running `python manage.py createsuperuser` and filling in sensible values
 	- create the pool of static assets for `whitenoise` to host, using `python manage.py collectstatic`
