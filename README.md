@@ -9,6 +9,8 @@ This branch is deployed as web experiment over at https://mezzanine-cms-experime
 ## installing things locally
 
 To get this to work:
+- Install node-sass
+    - `npm install node-sass`
 - make sure you have python3 and git:
     - windows: git-scm.com and python.org, download the relevant installers
     - unix/linux: presumably you know how to get these
