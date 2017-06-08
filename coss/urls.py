@@ -30,6 +30,10 @@ urlpatterns += [
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
+    # Mozilla Django OIDC urls
+    # ------------------------
+    url(r"^oidc/", include("mozilla_django_oidc.urls")),
+
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------
     # This pattern simply loads the index.html template. It isn't
@@ -78,7 +82,6 @@ urlpatterns += [
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
     url("^", include("mezzanine.urls")),
-    url(r"^oidc/", include("mozilla_django_oidc.urls")),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
