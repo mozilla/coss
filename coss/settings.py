@@ -199,6 +199,9 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip('/').split('/'))
 # Package/module name to import the root urlpatterns from for the project.
 ROOT_URLCONF = '%s.urls' % PROJECT_APP
 
+# Django User model
+AUTH_USER_MODEL = 'users.User'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -262,6 +265,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     # our own apps
+    'coss.users',
     'coss.club',
     # Predefined mezzanine apps
     'mezzanine.boot',
@@ -273,7 +277,7 @@ INSTALLED_APPS = (
     'mezzanine.forms',
     'mezzanine.galleries',
     'mezzanine.twitter',
-    # 'mezzanine.accounts',
+    'mezzanine.accounts',
     # 'mezzanine.mobile',
 
     # used by club - I'd love to have this setting housed inside the
