@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 ######################
 
 # The following settings are already defined with default values in
-# the ``defaults.py`` module within each of Mezzanine"s apps, but are
+# the ``defaults.py`` module within each of Mezzanine's apps, but are
 # common enough to be put here, commented out, for conveniently
 # overriding. Please consult the settings documentation for a full list
 # of settings Mezzanine implements:
@@ -20,19 +20,19 @@ from django.utils.translation import ugettext_lazy as _
 # Controls the ordering and grouping of the admin menu.
 #
 # ADMIN_MENU_ORDER = (
-#     ("Content", ("pages.Page", "blog.BlogPost",
-#        "generic.ThreadedComment", (_("Media Library"), "media-library"),)),
-#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
-#     ("Users", ("auth.User", "auth.Group",)),
+#     ('Content', ('pages.Page', 'blog.BlogPost',
+#        'generic.ThreadedComment', (_('Media Library'), 'media-library'),)),
+#     ('Site', ('sites.Site', 'redirects.Redirect', 'conf.Setting')),
+#     ('Users', ('auth.User', 'auth.Group',)),
 # )
 
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
 #
 # DASHBOARD_TAGS = (
-#     ("blog_tags.quick_blog", "mezzanine_tags.app_list"),
-#     ("comment_tags.recent_comments",),
-#     ("mezzanine_tags.recent_actions",),
+#     ('blog_tags.quick_blog', 'mezzanine_tags.app_list'),
+#     ('comment_tags.recent_comments',),
+#     ('mezzanine_tags.recent_actions',),
 # )
 
 # A sequence of templates used by the ``page_menu`` template tag. Each
@@ -40,16 +40,16 @@ from django.utils.translation import ugettext_lazy as _
 # for the template, a label for the template, and the template path.
 # These templates are then available for selection when editing which
 # menus a page should appear in. Note that if a menu template is used
-# that doesn"t appear in this setting, all pages will appear in it.
+# that doesn't appear in this setting, all pages will appear in it.
 
 # PAGE_MENU_TEMPLATES = (
-#     (1, _("Top navigation bar"), "pages/menus/dropdown.html"),
-#     (2, _("Left-hand tree"), "pages/menus/tree.html"),
-#     (3, _("Footer"), "pages/menus/footer.html"),
+#     (1, _('Top navigation bar'), 'pages/menus/dropdown.html'),
+#     (2, _('Left-hand tree'), 'pages/menus/tree.html'),
+#     (3, _('Footer'), 'pages/menus/footer.html'),
 # )
 
-# A sequence of fields that will be injected into Mezzanine"s (or any
-# library"s) models. Each item in the sequence is a four item sequence.
+# A sequence of fields that will be injected into Mezzanine's (or any
+# library's) models. Each item in the sequence is a four item sequence.
 # The first two items are the dotted path to the model and its field
 # name to be added, and the dotted path to the field class to use for
 # the field. The third and fourth items are a sequence of positional
@@ -60,20 +60,20 @@ from django.utils.translation import ugettext_lazy as _
 # EXTRA_MODEL_FIELDS = (
 #     (
 #         # Dotted path to field.
-#         "mezzanine.blog.models.BlogPost.image",
+#         'mezzanine.blog.models.BlogPost.image',
 #         # Dotted path to field class.
-#         "somelib.fields.ImageField",
+#         'somelib.fields.ImageField',
 #         # Positional args for field class.
-#         (_("Image"),),
+#         (_('Image'),),
 #         # Keyword args for field class.
-#         {"blank": True, "upload_to": "blog"},
+#         {'blank': True, 'upload_to': 'blog'},
 #     ),
-#     # Example of adding a field to *all* of Mezzanine"s content types:
+#     # Example of adding a field to *all* of Mezzanine's content types:
 #     (
-#         "mezzanine.pages.models.Page.another_field",
-#         "IntegerField", # "django.db.models." is implied if path is omitted.
-#         (_("Another name"),),
-#         {"blank": True, "default": 1},
+#         'mezzanine.pages.models.Page.another_field',
+#         'IntegerField', # 'django.db.models.' is implied if path is omitted.
+#         (_('Another name'),),
+#         {'blank': True, 'default': 1},
 #     ),
 # )
 
@@ -101,18 +101,18 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = "UTC"
+TIME_ZONE = 'UTC'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = 'en'
 
 # Supported languages
 LANGUAGES = (
-    ("en", _("English")),
+    ('en', _('English')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -120,7 +120,7 @@ LANGUAGES = (
 # production. Best set to ``True`` in local_settings.py
 DEBUG = False
 
-# Whether a user"s session cookie expires when the Web browser is closed.
+# Whether a user's session cookie expires when the Web browser is closed.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 SITE_ID = 1
@@ -130,14 +130,14 @@ SITE_ID = 1
 USE_I18N = False
 
 AUTHENTICATION_BACKENDS = (
-    "mezzanine.core.auth_backends.MezzanineBackend",
-    "mozilla_django_oidc.auth.OIDCAuthenticationBackend",
+    'mezzanine.core.auth_backends.MezzanineBackend',
+    'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
 )
-LOGIN_URL = "/"
-LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = '/'
+LOGIN_REDIRECT_URL = '/'
 
 # The numeric mode to set newly-uploaded files to. The value should be
-# a mode you"d pass directly to os.chmod.
+# a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
 
@@ -146,19 +146,19 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 #############
 
 DATABASES = {
-    "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+    'default': {
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.',
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        'NAME': '',
         # Not used with sqlite3.
-        "USER": "",
+        'USER': '',
         # Not used with sqlite3.
-        "PASSWORD": "",
+        'PASSWORD': '',
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        'HOST': '',
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        'PORT': '',
     }
 }
 
@@ -178,64 +178,64 @@ PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
 CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
 
 # URL prefix for static files.
-# Example: "http://media.lawrence.com/static/"
-STATIC_URL = "/static/"
+# Example: 'http://media.lawrence.com/static/'
+STATIC_URL = '/static/'
 
 # Absolute path to the directory static files should be collected to.
-# Don"t put anything in this directory yourself; store your static files
-# in apps" "static/" subdirectories and in STATICFILES_DIRS.
-# Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
+# Don't put anything in this directory yourself; store your static files
+# in apps' 'static/' subdirectories and in STATICFILES_DIRS.
+# Example: '/home/media/media.lawrence.com/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip('/'))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
-# Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = STATIC_URL + "media/"
+# Examples: 'http://media.lawrence.com/media/', 'http://example.com/media/'
+MEDIA_URL = STATIC_URL + 'media/'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
-# Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
+# Example: '/home/media/media.lawrence.com/media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip('/').split('/'))
 
 # Package/module name to import the root urlpatterns from for the project.
-ROOT_URLCONF = "%s.urls" % PROJECT_APP
+ROOT_URLCONF = '%s.urls' % PROJECT_APP
 
 TEMPLATES = [
     {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(PROJECT_APP_PATH, "templates")
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(PROJECT_APP_PATH, 'templates')
         ],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "debug": DEBUG,
-            "context_processors": [
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-                "django.template.context_processors.debug",
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.static",
-                "django.template.context_processors.media",
-                "django.template.context_processors.request",
-                "django.template.context_processors.tz",
-                "mezzanine.conf.context_processors.settings",
-                "mezzanine.pages.context_processors.page",
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'debug': DEBUG,
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.static',
+                'django.template.context_processors.media',
+                'django.template.context_processors.request',
+                'django.template.context_processors.tz',
+                'mezzanine.conf.context_processors.settings',
+                'mezzanine.pages.context_processors.page',
             ],
-            "builtins": [
-                "mezzanine.template.loader_tags",
+            'builtins': [
+                'mezzanine.template.loader_tags',
             ],
         },
     },
 ]
 
 if DJANGO_VERSION < (1, 9):
-    del TEMPLATES[0]["OPTIONS"]["builtins"]
+    del TEMPLATES[0]['OPTIONS']['builtins']
 
 
 # STATICFILES Handling
 STATICFILES_FINDERS = (
-    "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
-    "compressor.finders.CompressorFinder",
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 # Storage of static files
 COMPRESS_ROOT = STATIC_ROOT
@@ -253,72 +253,73 @@ COMPRESS_PRECOMPILERS = (
 
 INSTALLED_APPS = (
     # Basic Django apps
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.redirects",
-    "django.contrib.sessions",
-    "django.contrib.sites",
-    "django.contrib.sitemaps",
-    "django.contrib.staticfiles",
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.redirects',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django.contrib.staticfiles',
     # our own apps
-    "coss.club",
+    'coss.club',
     # Predefined mezzanine apps
-    "mezzanine.boot",
-    "mezzanine.conf",
-    "mezzanine.core",
-    "mezzanine.generic",
-    "mezzanine.pages",
-    "mezzanine.blog",
-    "mezzanine.forms",
-    "mezzanine.galleries",
-    "mezzanine.twitter",
-    # "mezzanine.accounts",
-    # "mezzanine.mobile",
+    'mezzanine.boot',
+    'mezzanine.conf',
+    'mezzanine.core',
+    'mezzanine.generic',
+    'mezzanine.pages',
+    'mezzanine.blog',
+    'mezzanine.forms',
+    'mezzanine.galleries',
+    'mezzanine.twitter',
+    # 'mezzanine.accounts',
+    # 'mezzanine.mobile',
 
-    # used by club - I"d love to have this setting housed inside the
+    # used by club - I'd love to have this setting housed inside the
     # club app, but right now I do not know how to do that...
-    "location_field.apps.DefaultConfig",
+    'location_field.apps.DefaultConfig',
 
     # 3rd party dependencies
-    "mozilla_django_oidc",
-    "compressor",
+    'cities_light',
+    'mozilla_django_oidc',
+    'compressor',
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
-    "mezzanine.core.middleware.UpdateCacheMiddleware",
+    'mezzanine.core.middleware.UpdateCacheMiddleware',
     # base Django middleware
-    "django.contrib.sessions.middleware.SessionMiddleware",
+    'django.contrib.sessions.middleware.SessionMiddleware',
     # Uncomment if using internationalisation or localisation
-    # "django.middleware.locale.LocaleMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.auth.middleware.SessionAuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # 'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # sane static resource hosting
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # mezzanine middleware
-    "mezzanine.core.request.CurrentRequestMiddleware",
-    "mezzanine.core.middleware.RedirectFallbackMiddleware",
-    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
-    "mezzanine.core.middleware.TemplateForHostMiddleware",
-    "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
-    "mezzanine.core.middleware.SitePermissionMiddleware",
-    "mezzanine.pages.middleware.PageMiddleware",
-    "mezzanine.core.middleware.FetchFromCacheMiddleware",
+    'mezzanine.core.request.CurrentRequestMiddleware',
+    'mezzanine.core.middleware.RedirectFallbackMiddleware',
+    'mezzanine.core.middleware.TemplateForDeviceMiddleware',
+    'mezzanine.core.middleware.TemplateForHostMiddleware',
+    'mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware',
+    'mezzanine.core.middleware.SitePermissionMiddleware',
+    'mezzanine.pages.middleware.PageMiddleware',
+    'mezzanine.core.middleware.FetchFromCacheMiddleware',
 )
 
 # Store these package names here as they may change in the future since
 # at the moment we are using custom forks of them.
-PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
-PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+PACKAGE_NAME_FILEBROWSER = 'filebrowser_safe'
+PACKAGE_NAME_GRAPPELLI = 'grappelli_safe'
 
 #########################
 # OPTIONAL APPLICATIONS #
@@ -326,8 +327,8 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 
 # These will be added to ``INSTALLED_APPS``, only if available.
 OPTIONAL_APPS = (
-    "debug_toolbar",
-    "django_extensions",
+    'debug_toolbar',
+    'django_extensions',
     PACKAGE_NAME_FILEBROWSER,
     PACKAGE_NAME_GRAPPELLI,
 )
@@ -346,19 +347,19 @@ HOST_THEMES = [
 # ignored in your version control system allowing for settings to be
 # defined per machine.
 
-# Instead of doing "from .local_settings import *", we use exec so that
+# Instead of doing 'from .local_settings import *', we use exec so that
 # local_settings has full access to everything defined in this module.
-# Also force into sys.modules so it"s visible to Django"s autoreload.
+# Also force into sys.modules so it's visible to Django's autoreload.
 
-f = os.path.join(PROJECT_APP_PATH, "local_settings.py")
+f = os.path.join(PROJECT_APP_PATH, 'local_settings.py')
 if os.path.exists(f):
     import sys
     import imp
-    module_name = "%s.local_settings" % PROJECT_APP
+    module_name = '%s.local_settings' % PROJECT_APP
     module = imp.new_module(module_name)
     module.__file__ = f
     sys.modules[module_name] = module
-    exec(open(f, "rb").read())
+    exec(open(f, 'rb').read())
 
 
 ####################
@@ -369,7 +370,7 @@ if os.path.exists(f):
 # defined so far, in order to provide some better defaults where
 # applicable. We also allow this settings module to be imported
 # without Mezzanine installed, as the case may be when using the
-# fabfile, where setting the dynamic settings below isn"t strictly
+# fabfile, where setting the dynamic settings below isn't strictly
 # required.
 try:
     from mezzanine.utils.conf import set_dynamic_settings
