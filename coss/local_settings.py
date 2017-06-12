@@ -72,7 +72,6 @@ LOCATION_FIELD = {
 USE_S3 = env.bool('USE_S3', default=False)
 
 # OIDC configuration
-
 SITE_URL = env('SITE_URL')
 OIDC_RP_CLIENT_SECRET_ENCODED = env.bool('OIDC_RP_CLIENT_SECRET_ENCODED', default=True)
 AUTH0_DOMAIN = env('AUTH0_DOMAIN', default='')
@@ -83,3 +82,7 @@ OIDC_OP_USER_ENDPOINT = env('OIDC_OP_USER_ENDPOINT', default='')
 OIDC_RP_CLIENT_ID = env('OIDC_RP_CLIENT_ID', default='')
 OIDC_RP_CLIENT_SECRET = env('OIDC_RP_CLIENT_SECRET', default='')
 OIDC_OP_DOMAIN = env('OIDC_OP_DOMAIN', default='')
+
+# Mozillians.org API v2 configuration
+MOZILLIANS_API_KEY = env('MOZILLIANS_API_KEY', default='')
+MOZILLIANS_API_URL = env('MOZILLIANS_API_URL', default='')
