@@ -72,6 +72,16 @@
     src: url('../fonts/ZillaSlabHighlight-Bold.woff') format('woff');
 }
 
+:root {
+    --main-color: rgba(86, 128, 146, 1);
+    --secondary-color: rgba(135, 207, 239, 1);
+}
+
+.clubs {
+    --main-color: rgba(250, 186, 47, 1);
+    --secondary-color: rgba(254, 228, 56, 1);
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -105,47 +115,64 @@ h1, h2, h3, h4 {
 }
 
 header {
-    background-color: #b0b3e8;
+    background-color: var(--main-color);;
 
-    a {
-        color: black;
-    }
+    .navbar-light {
+        background-color: white;
+        height: 60px;
 
-    .navbar-right {
+        &.height-fix {
+            height: auto;
+        }
 
-        a {
-            display: block;
-            padding: 0.5em 1em;
+        .navbar-toggler {
+        	border-color: rgba(0, 0, 0, .1);
+            color: black;
+        }
 
-            &:hover {
-                text-decoration: none;
+        .navbar-nav {
+
+            a.nav-link {
+                color: black;
+                font-weight: bold;
+            }
+        }
+
+        .navbar-right {
+
+            a.nav-link {
+                display: block;
+                padding: 0.5em 1em;
+                color: var(--main-color);
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .navbar-brand {
+
+            .category-logo {
+                padding-top: 20px;
+                width: 80px;
+            }
+
+            img {
+                width: 120px;
             }
         }
     }
 
-    .navbar-brand {
-
-        img {
-            width: 200px;
-        }
-    }
-
-    .navbar-collapse {
-        padding-top: 5px;
-    }
-
-    .navbar-inverse .navbar-nav .nav-link {
-        color: black;
-    }
-
     .jumbotron {
         background-color: transparent;
-        padding: 30px 15px 20px 15px;
+        padding: 60px 15px 50px 15px;
         margin-bottom: 0;
+        color: white;
 
         h3 {
             font-family: ZillaSlabHighLight;
-            color: black;
+            color: white;
             width: auto;
             display: block;
             margin-bottom: 5px;
@@ -159,8 +186,17 @@ header {
     }
 
     .lead {
-        margin-top: 10px;
-        width: 50%;
+        margin-top: 20px;
+        padding-left: 0;
+
+        .btn {
+            border: 1px solid var(--secondary-color);
+            color: white;
+
+            &:hover {
+                background-color: inherit;
+            }
+        }
     }
 }
 
@@ -175,10 +211,35 @@ header {
         padding-top: 10px;
     }
 
+    .card {
+        background-color: #f4f4f4;
+        border: none;
+        box-shadow: 7px 7px 0px 0px rgba(231,231,231,1);
+
+        &.active {
+            display: inherit;
+        }
+
+        .btn {
+            background-color: rgba(231, 231, 231, 1);
+            color: black;
+            font-weight: bold;
+            border: none;
+            width: 100%;
+        }
+    }
+
+    .group-types {
+
+        .card {
+            background-color: #f4f4f4;
+        }
+    }
+
     .testimonial {
-        border-top: 4px solid black;
-        margin-left: 0;
-        margin-right: 0;
+        border: 3px solid var(--secondary-color);
+        margin: 40px 60px;
+        padding: 20px;
 
         div {
             padding-left: 0;
@@ -186,8 +247,13 @@ header {
         }
 
         blockquote {
-            padding: 20px;
-            font-size: 1.3em;
+            padding: 20px 60px 0 40px;
+            line-height: 1.6;
+
+            div {
+                margin-top: 10px;
+                font-weight: bold;
+            }
         }
     }
 
@@ -218,15 +284,8 @@ header {
         }
 
         .card {
-            background-color: #fafafa;
-            border: none;
-            box-shadow: 7px 7px 0px 0px rgba(183, 183, 183, 1);
             margin-bottom: 30px;
             display: none;
-
-            &.active {
-                display: inherit;
-            }
         }
     }
 }
@@ -292,11 +351,19 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 995px) {
 
-    .navbar-brand img {
-        width: 150px;
-        margin-left: 0;
+    header {
+
+        .navbar-light {
+
+            .navbar-brand {
+
+                .category-logo {
+                    padding-top: 0;
+                }
+            }
+        }
     }
 
     .lead {
@@ -311,7 +378,30 @@ footer {
         font-size: 1.6em;
     }
 
-    .club-types > div {
+    .group-types > div {
         margin-bottom: 15px;
     }
+}
+
+
+@media (max-width: 575px) {
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .content {
+
+        .testimonial {
+            margin: 40px 20px;
+            padding: 10px;
+
+            blockquote {
+                padding: 20px 10px 10px 10px;
+                line-height: 1.4;
+            }
+        }
+    }
+
 }

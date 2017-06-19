@@ -35,6 +35,9 @@ class Testimonial(models.Model):
     photo = models.ImageField()
     quote = RichTextField('Testimonial quote')
 
+    def __str__(self):
+        return str(self.quote)
+
 
 class Club(Page):
 
@@ -98,6 +101,13 @@ class HomePage(Page, RichText):
     header_text = RichTextField('Header text.')
     header_link = models.CharField(max_length=200,
                                    help_text='Header link.')
+
+    # testimonial
+    testimonial = models.ForeignKey('Testimonial',
+                                    null=True,
+                                    blank=True,
+                                    help_text='Choose a testimonial quote to display')
+
     # club block
     featured_club = models.ForeignKey('Club',
                                       null=True,
