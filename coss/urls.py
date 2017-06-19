@@ -8,6 +8,8 @@ from django.views.i18n import set_language
 import mezzanine
 from mezzanine.conf import settings
 
+from coss.club import views as club_views
+
 
 admin.autodiscover()
 
@@ -58,6 +60,8 @@ urlpatterns += [
     # NOTE: Don't forget to import the view function too!
 
     url("^$", mezzanine.pages.views.page, {"slug": "/"}, name="home"),
+    url("^clubs/registration_complete/", club_views.registration_complete,
+        name="registration_complete"),
 
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------

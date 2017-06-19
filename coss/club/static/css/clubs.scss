@@ -80,6 +80,17 @@
 .clubs {
     --main-color: rgba(250, 186, 47, 1);
     --secondary-color: rgba(254, 228, 56, 1);
+
+    .nav-invert {
+        background-color: var(--main-color);
+
+        .navbar-right {
+
+            a.nav-link {
+                color: white;
+            }
+        }
+    }
 }
 
 html, body {
@@ -288,6 +299,50 @@ header {
             display: none;
         }
     }
+
+    .ack {
+        margin: 4rem;
+
+        .highlight {
+            max-width: 340px;
+        }
+
+        .card-block {
+
+            div {
+                border-bottom: 1px solid lightgray;
+                line-height: 0.1em;
+                color: gray;
+                margin: 20px 0;
+
+                span {
+                    background-color: #f4f4f4;
+                    padding: 0 15px;
+                }
+            }
+
+            .btn {
+                background-color: transparent;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .breadcrumbs {
+        font-size: .9em;
+
+        a {
+            color: black;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .info-muted {
+        color: gray;
+    }
 }
 
 footer {
@@ -400,6 +455,34 @@ footer {
             blockquote {
                 padding: 20px 10px 10px 10px;
                 line-height: 1.4;
+            }
+        }
+
+        .ack {
+            margin: 1rem;
+
+            .highlight {
+                max-width: 340px;
+            }
+
+            .card-block {
+
+                div {
+                    border-bottom: 1px solid lightgray;
+                    line-height: 0.1em;
+                    color: gray;
+                    margin: 20px 0;
+
+                    span {
+                        background-color: #f4f4f4;
+                        padding: 0 15px;
+                    }
+                }
+
+                .btn {
+                    background-color: transparent;
+                    border: 1px solid black;
+                }
             }
         }
     }
