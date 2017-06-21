@@ -273,30 +273,22 @@ header {
     }
 
     .club-registration {
-        margin-top: 30px;
 
-        ul {
+        ul.errorlist {
             padding-left: 0;
-            padding-right: 60px;
-
-            li {
-                font-weight: bold;
-                list-style-position: outside;
-                list-style-type: none;
-                color: lightgray;
-                border-bottom: 1px solid lightgray;
-                padding: 5px 0;
-
-                &.active {
-                    color: black;
-                    border-bottom-color: black;
-                }
-            }
+            list-style-position: outside;
+            list-style-type: none;
         }
 
         .card {
             margin-bottom: 30px;
-            display: none;
+
+            .btn {
+                width: auto;
+                background-color: transparent;
+                border: 1px solid black;
+                cursor: pointer;
+            }
         }
     }
 

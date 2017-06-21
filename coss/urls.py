@@ -60,6 +60,7 @@ urlpatterns += [
     # NOTE: Don't forget to import the view function too!
 
     url("^$", mezzanine.pages.views.page, {"slug": "/"}, name="home"),
+    url("^clubs/registration/", club_views.registration, name="registration"),
     url("^clubs/registration_complete/", club_views.registration_complete,
         name="registration_complete"),
 
