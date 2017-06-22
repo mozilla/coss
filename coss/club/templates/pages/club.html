@@ -1,70 +1,102 @@
-{% extends "base.html" %}
+{% extends "pages/index.html" %}
+{% load i18n %}
 
-{% load static %}
-{% load mezzanine_tags keyword_tags %}
+{% block meta_title %}{% trans "Clubs" %} - {{ club.club_name }}{% endblock %}
+{% block title %}{% trans "Clubs" %} - {{ club.club_name }}{% endblock %}
 
-{% block meta_title %}
-  {{ page.meta_title }}
+{% block body_class %}clubs{% endblock %}
+
+{% block brand-logo %}
+  <img src="/static/img/mozilla-clubs.png" alt="mozilla clubs" class="category-logo">
 {% endblock %}
 
-{% block meta_keywords %}{% metablock %}
-{% keywords_for page as keywords %}
-  {% for keyword in keywords %}
-    {% if not forloop.first %},
-    {% endif %}
-    {{ keyword }}
-  {% endfor %}
-{% endmetablock %}{% endblock %}
+{% block jumbotron %}
+  <div class="jumbotron club">
+    <div class="container">
+      <div class="breadcrumbs">
+        <img class="ml-2" src="/static/img/left-arrow-small-black.svg" alt="back">
+        <a href="/clubs/">
+          Open Source Clubs
+        </a>
+      </div>
 
-{% block meta_description %}
-  {% metablock %}
-    {{ page.description }}
-  {% endmetablock %}
-{% endblock %}
-
-{% block extra_head %}
-  <link rel="stylesheet" href="{% static "css/clubs.css" %} ">
-  <link rel="stylesheet" href="{% static "css/mofo-bootstrap.css" %} ">
-{% endblock %}
-
-{% block header %}
-  <header>
-    <img src="{% static "img/logo-clubs.svg" %}">
-  </header>
-{% endblock %}
-
-{% block title %}
-  <h1>
-    {% editable page.title %}
-      {{ page.title }}
-    {% endeditable %}
-  </h1>
+      <h3 class="highlight mt-4 club-title">{{ club.club_name }}</h3>
+    </div>
+  </div>
 {% endblock %}
 
 {% block main %}
-  {% editable page.club.club_description %}
-    {{ page.club.club_description | richtext_filters | safe }}
-  {% endeditable %}
-
-  <h2>
-    <div>
-      This club is run in {{ page.club.city }}
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <span class="align-middle">{{ club.club_location }}</span>
     </div>
-    <iframe class=""
-            width="600"
-            height="450"
-            frameborder="0" style="border:0"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCPOOltnRybC8TimX-9Uj1DmSK7RTdHGDc
-                            &q={{ page.club.location }}" allowfullscreen>
-    </iframe>
-  </h2>
+    <div class="col-md-6 text-right">
+      <a class="btn btn-outline-primary">Edit Club Page</a>
+    </div>
+  </div>
 
-  <p class="activity">
-    {% editable page.club.activity %}
-      This club meets {{ page.club.activity }}
-    {% endeditable %}
-  </p>
-{% endblock %}
+  <div class="card mt-4">
+    <div class="card-block">
+      <div class="row mb-0">
+        <div class="col-md-4">
+          <div class="icon"><img src="/static/img/world-black.svg" alt="web"></div>
+          <div class="icon"><img src="/static/img/facebook-black-large.svg" alt="web"></div>
+          <div class="club-interests">
+            <span>VR</span>
+            <span>AR</span>
+            <span>AI</span>
+          </div>
+        </div>
+        <div class="col-md-8">
+          {{ club.club_description|safe }}
+        </div>
+      </div>
+    </div>
+  </div>
 
-{% block footer %}
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <div class="profile-listing">
+        <div class="avatar">
+          <img src="/static/img/avatar.png" alt="{{ club.fullname }}">
+        </div>
+        <div class="profile-details ml-3 mt-3">
+          {{ club.fullname }}
+          <div class="profile-title">Club Captain</div>
+          {{ club.location }}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mt-3 mt-md-0">
+      <img src="/static/img/campus.jpg" alt="{{ club.place }}" class="img-fluid">
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <h4>
+        <img src="/static/img/docs-black.svg" alt="resources">
+        Club Resources
+      </h4>
+      <div class="row info-box">
+        <div class="col-md-12">
+          Add some club resources to help your club members get started and stay involved!
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>
+        <img src="/static/img/calendar-black.svg" alt="calendar">
+        Upcoming Events
+      </h4>
+      <div class="row info-box">
+        <div class="col-lg-7">
+          Plan your first event, a monthly team meeting is a great place to start!
+        </div>
+        <div class="col-lg-5 mt-2 mt-lg-0">
+          <a href="#" class="btn btn-default">Manage Events</a>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

@@ -63,6 +63,7 @@ urlpatterns += [
     url("^clubs/registration/", club_views.registration, name="registration"),
     url("^clubs/registration_complete/", club_views.registration_complete,
         name="registration_complete"),
+    url("^clubs/(?P<club_pk>\d+)/", club_views.club_view, name="club_view"),
 
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------
