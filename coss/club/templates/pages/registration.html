@@ -1,0 +1,165 @@
+{% extends "pages/clubs.html" %}
+{% load i18n staticfiles %}
+
+{% block meta_title %}{% trans "Club Registration" %}{% endblock %}
+{% block title %}{% trans "Club Registration" %}{% endblock %}
+
+{% block nav-class %}nav-invert{% endblock %}
+
+{% block jumbotron %}{% endblock %}
+
+{% block main %}
+  <div class="breadcrumbs">
+    <a href="/clubs/">
+      <img class="ml-2" src="/static/img/left-arrow-small-black.svg" alt="back">
+      Open Source Clubs
+    </a>
+  </div>
+
+  <h3 class="highlight mt-4">Club Registration</h3>
+
+  <div class="row club-registration mt-4">
+    <div class="col-sm-8">
+      <form action="/clubs/registration/" method="post">
+        {% csrf_token %}
+        <div class="card" id="reg-club-type-tab">
+          <div class="card-block">
+            <h4>Which type of club is this?</h4>
+            <fieldset class="form-group {% if form.club_type.errors %}has-danger{% endif %}">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_type" id="club-type-1" value="opensource" checked>
+                  Open Source
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_type" id="club-type-2" value="webliteracy">
+                  Web Literacy
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_type" id="club-type-3" value="womenchildren">
+                  Women &amp; Children
+                </label>
+              </div>
+              <div class="form-control-feedback">{{ form.club_type.errors }}</div>
+            </fieldset>
+
+            <h4>Is this a new club or an already existing club?</h4>
+            <fieldset class="form-group {% if form.club_status.errors %}has-danger{% endif %}">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_status" id="club-new-1" value="new" checked>
+                  New Club
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_status" id="club-new-2" value="existing">
+                  Existing Club
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_status" id="club-new-3" value="notsure">
+                  Not Sure
+                </label>
+              </div>
+              <div class="form-control-feedback">{{ form.club_status.errors }}</div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="card" id="reg-club-info-tab">
+          <div class="card-block">
+            <h4>Club Information</h4>
+            <div class="form-group {% if form.club_name.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="club-name">Club Name</label>
+              {{ form.club_name }}
+              <div class="form-control-feedback">{{ form.club_name.errors }}</div>
+            </div>
+            <div class="form-group {% if form.club_description.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="club-description">Club Description</label>
+              {{ form.club_description }}
+              <div class="form-control-feedback">{{ form.club_description.errors }}</div>
+            </div>
+            <div class="form-group {% if form.club_location.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="club-location">Location Address</label>
+              {{ form.club_location }}
+              <div class="form-control-feedback">{{ form.club_location.errors }}</div>
+            </div>
+            <div class="form-group {% if form.club_place.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="club-place">Meeting Place</label>
+              {{ form.club_place }}
+              <div class="form-control-feedback">{{ form.club_place.errors }}</div>
+            </div>
+
+            <h4>Club Page Privacy Settings</h4>
+            <fieldset class="form-group {% if form.club_privacy.errors %}has-danger{% endif %}">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_privacy" id="club-privacy-1" value="public" checked>
+                  Public Visibility
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_privacy" id="club-privacy-2" value="open">
+                  Anyone Can Join
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="club_privacy" id="club-privacy-3" value="open">
+                  Private &amp; Closed
+                </label>
+              </div>
+              <div class="form-control-feedback">{{ form.club_privacy.errors }}</div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="card" id="reg-your-info-tab">
+          <div class="card-block">
+            <h4>Your information</h4>
+            <div class="form-group {% if form.fullname.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="fullname">Full Name</label>
+              {{ form.fullname }}
+              <div class="form-control-feedback">{{ form.fullname.errors }}</div>
+            </div>
+            <div class="form-group {% if form.location.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="location">Location</label>
+              {{ form.location }}
+              <div class="form-control-feedback">{{ form.location.errors }}</div>
+            </div>
+            <div class="form-group {% if form.email.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="email">Email</label>
+              {{ form.email }}
+              <div class="form-control-feedback">{{ form.email.errors }}</div>
+            </div>
+            <div class="form-group {% if form.occupation.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="occupation">Occupation</label>
+              {{ form.occupation }}
+              <div class="form-control-feedback">{{ form.occupation.errors }}</div>
+            </div>
+            <div class="form-group {% if form.github_username.errors %}has-danger{% endif %}">
+              <label class="sr-only" for="github-username">Github Username</label>
+              {{ form.github_username }}
+              <div class="form-control-feedback">{{ form.github_username.errors }}</div>
+            </div>
+            <hr>
+            <div class="form-check mb-4">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" name="tos" id="tos" value="1" checked>
+                I agree to <a href="https://www.mozilla.org/privacy/websites/" target="_blank">these terms</a>
+              </label>
+            </div>
+            <button class="btn btn-primary" id="reg-your-info">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

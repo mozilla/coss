@@ -1,0 +1,48 @@
+{% extends "pages/clubs.html" %}
+{% load i18n %}
+
+{% block nav-class %}nav-invert{% endblock %}
+
+{% block jumbotron %}{% endblock %}
+
+{% block main %}
+  <div class="breadcrumbs">
+    <a href="/clubs/">
+      <img class="ml-2" src="/static/img/left-arrow-small-black.svg" alt="back">
+      Open Source Clubs
+    </a>
+  </div>
+  <div class="ack">
+    <h3 class="highlight">
+      Thank you for your application!
+    </h3>
+    <div class="row mt-4">
+      <div class="col-lg-6">
+        <div class="lead mb-3">
+          Your club is on the way to being registered.
+        </div>
+
+        <div class="info-muted mb-3">
+          We've received your application and will review it within a week.
+          Once reviewed, we'll send you an email with a status update.
+        </div>
+
+        <div class="info-muted mb-3">
+          In the meantime, get a head start by completing your Club Captain
+          orientation and updating your Club page!
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card mx-sm-5">
+          <div class="card-block">
+            <a href="#" class="btn btn-primary">Start Orientation</a>
+            <div class="text-center">
+              <span>or</span>
+            </div>
+            <a href="#" class="btn btn-primary">Update Club Page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

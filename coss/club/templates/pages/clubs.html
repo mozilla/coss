@@ -9,3 +9,74 @@
 {% block brand-logo %}
   <img src="/static/img/mozilla-clubs.png" alt="mozilla clubs" class="category-logo">
 {% endblock %}
+
+{% block main %}
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Features Clubs</h4>
+    </div>
+    <div class="col-md-6 text-right">
+      <a href="/clubs/registration/" class="btn btn-outline-primary">Register a Club</a>
+    </div>
+  </div>
+
+  <div class="row group-types">
+    <div class="col-sm-4">
+      <div href="#" class="card">
+        <h4 class="card-header">Open Source Club - Occidental College <img class="float-right mt-2" src="/static/img/right-arrow-black.svg" alt="more"></h4>
+        <img class="img-fluid" src="/static/img/top-1.jpg" alt="Card image cap">
+        <div class="card-block">
+          <p class="card-text">
+            Open Source seeks to further the structured environment produced by Occidental
+            College and to supplement knowledge via project-based learning and peer-to-peer education...
+          </p>
+          <a href="#" class="btn btn-primary">More details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card">
+        <h4 class="card-header">Campus Club - Daffodil Intl University <img class="float-right mt-2" src="/static/img/right-arrow-black.svg" alt="more"></h4>
+        <img class="img-fluid" src="/static/img/top-2.jpg" alt="Card image cap">
+        <div class="card-block">
+          <p class="card-text">
+            Firefox Student Ambassadors are individuals who are passionate about
+            Mozilla and raise awareness about the many benefits of Firefox and other Mozilla products...
+          </p>
+          <a href="#" class="btn btn-primary">More details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card">
+        <h4 class="card-header">Open Michigan - University of Michigan <img class="float-right mt-2" src="/static/img/right-arrow-black.svg" alt="more"></h4>
+        <img class="img-fluid" src="/static/img/top-3.jpg" alt="Card image cap">
+        <div class="card-block">
+          <p class="card-text">
+            Open.Michigan is a University of Michigan initiative, based in the Medical School's
+            Office of Enabling Technologies, that helps faculty, staff and students find, use and create...
+          </p>
+          <a href="#" class="btn btn-primary">More details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    See All Of Our Clubs <img class="ml-2" src="/static/img/right-arrow-black.svg" alt="more">
+  </div>
+
+  <div class="row testimonial">
+    <div class="col-sm-2">
+
+      <img class="img-fluid" src="/static/media/{{ page.homepage.testimonial.photo }}" alt="testimony">
+    </div>
+    <div class="col-sm-10">
+      <blockquote>
+        {{ page.homepage.testimonial.quote|safe }}
+      </blockquote>
+    </div>
+  </div>
+{% endblock %}

@@ -7,6 +7,48 @@ from mezzanine.pages.models import Page
 from location_field.models.plain import PlainLocationField
 
 
+class ClubRegistration(models.Model):
+    OPENSOURCE = 'OSS'
+    WEBLITERACY = 'WEB'
+    WOMENCHILDREN = 'WNC'
+    CLUB_TYPE = (
+        (OPENSOURCE, 'Open Source'),
+        (WEBLITERACY, 'Web Literacy'),
+        (WOMENCHILDREN, 'Women & Children'),
+    )
+
+    CLUB_NEW = 'new'
+    CLUB_EXISTING = 'existing'
+    CLUB_UNKNOWN = 'notsure'
+    CLUB_STATUS = (
+        (CLUB_NEW, 'New Club'),
+        (CLUB_EXISTING, 'Existing Club'),
+        (CLUB_UNKNOWN, 'Not Sure'),
+    )
+
+    PUBLIC = 'public'
+    OPEN = 'open'
+    PRIVATE = 'private'
+    CLUB_PRIVACY = (
+        (PUBLIC, 'Public Visibility'),
+        (OPEN, 'Anyone Can Join'),
+        (PRIVATE, 'Private & Closed'),
+    )
+
+    club_type = models.CharField(max_length=40, choices=CLUB_TYPE, default=OPENSOURCE)
+    club_status = models.CharField(max_length=40, choices=CLUB_STATUS, default=CLUB_NEW)
+    club_name = models.CharField(max_length=40)
+    club_description = RichTextField()
+    club_location = models.CharField(max_length=255)
+    club_place = models.CharField(max_length=255)
+    club_privacy = models.CharField(max_length=40, choices=CLUB_PRIVACY, default=PUBLIC)
+    fullname = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    occupation = models.CharField(max_length=255, blank=True)
+    github_username = models.CharField(max_length=255, blank=True)
+
+
 # Interest (subjects) that can apply to a club
 class InterestQuerySet(models.query.QuerySet):
     def public(self):

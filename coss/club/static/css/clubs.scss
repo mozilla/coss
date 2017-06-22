@@ -80,6 +80,17 @@
 .clubs {
     --main-color: rgba(250, 186, 47, 1);
     --secondary-color: rgba(254, 228, 56, 1);
+
+    .nav-invert {
+        background-color: var(--main-color);
+
+        .navbar-right {
+
+            a.nav-link {
+                color: white;
+            }
+        }
+    }
 }
 
 html, body {
@@ -262,31 +273,67 @@ header {
     }
 
     .club-registration {
-        margin-top: 30px;
 
-        ul {
+        ul.errorlist {
             padding-left: 0;
-            padding-right: 60px;
-
-            li {
-                font-weight: bold;
-                list-style-position: outside;
-                list-style-type: none;
-                color: lightgray;
-                border-bottom: 1px solid lightgray;
-                padding: 5px 0;
-
-                &.active {
-                    color: black;
-                    border-bottom-color: black;
-                }
-            }
+            list-style-position: outside;
+            list-style-type: none;
         }
 
         .card {
             margin-bottom: 30px;
-            display: none;
+
+            .btn {
+                width: auto;
+                background-color: transparent;
+                border: 1px solid black;
+                cursor: pointer;
+            }
         }
+    }
+
+    .ack {
+        margin: 4rem;
+
+        .highlight {
+            max-width: 340px;
+        }
+
+        .card-block {
+
+            div {
+                border-bottom: 1px solid lightgray;
+                line-height: 0.1em;
+                color: gray;
+                margin: 20px 0;
+
+                span {
+                    background-color: #f4f4f4;
+                    padding: 0 15px;
+                }
+            }
+
+            .btn {
+                background-color: transparent;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .breadcrumbs {
+        font-size: .9em;
+
+        a {
+            color: black;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .info-muted {
+        color: gray;
     }
 }
 
@@ -400,6 +447,34 @@ footer {
             blockquote {
                 padding: 20px 10px 10px 10px;
                 line-height: 1.4;
+            }
+        }
+
+        .ack {
+            margin: 1rem;
+
+            .highlight {
+                max-width: 340px;
+            }
+
+            .card-block {
+
+                div {
+                    border-bottom: 1px solid lightgray;
+                    line-height: 0.1em;
+                    color: gray;
+                    margin: 20px 0;
+
+                    span {
+                        background-color: #f4f4f4;
+                        padding: 0 15px;
+                    }
+                }
+
+                .btn {
+                    background-color: transparent;
+                    border: 1px solid black;
+                }
             }
         }
     }

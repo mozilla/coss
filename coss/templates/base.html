@@ -32,7 +32,7 @@
   <body id="{% block body_id %}body{% endblock %}" class="{% block body_class %}{% endblock %}">
 
     <header>
-      <nav class="navbar navbar-light navbar-toggleable-md" role="navigation">
+      <nav class="navbar navbar-light navbar-toggleable-md {% block nav-class %}{% endblock %}" role="navigation">
         <div class="container">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
                   aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
