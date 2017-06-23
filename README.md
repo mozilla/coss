@@ -2,10 +2,6 @@
 
 Good name for a 4 hour costume drama, but this is actually the branch for building out a CoSS prototype for clubs based on the [Mezzanine CMS](http://mezzanine.jupo.org/).
 
-## playing with the CMS on the web
-
-This branch is deployed as web experiment over at https://mezzanine-cms-experiment.herokuapp.com/
-
 ## installing things locally
 
 To get this to work:
