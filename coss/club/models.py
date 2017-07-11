@@ -159,13 +159,7 @@ class HomePage(Page, RichText):
 
 class SingleColumn(Page, RichText):
     """Single Column model."""
-    # Text blocks
-    club_elements = RichTextField('Elements of a Club')
-    club_roles = RichTextField('Club Roles')
-    club_types = RichTextField('Types of Clubs')
-
-    # Regional coordinators link
-    regional_link_text = models.CharField(max_length=200,
-                                          help_text='Link Text')
-    regional_link_url = models.CharField(max_length=200,
-                                         help_text='Link URL')
+    # Header configuration
+    header_heading = models.CharField(max_length=200, default='',
+                                      help_text='The heading of the header.')
+    header_text = RichTextField('Header text.', default='')
