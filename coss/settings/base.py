@@ -26,8 +26,9 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    'home',
-    'search',
+    'coss.base',
+    'coss.home',
+    'coss.search',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
