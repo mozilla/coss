@@ -11,20 +11,23 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 from __future__ import absolute_import, unicode_literals
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
-PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE_DIR = os.path.dirname(PROJECT_DIR)
+from decouple import config
+from dj_database_url import parse as db_url
+from unipath import Path
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+PROJECT_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent.parent.parent
+ROOT_URLCONF = 'coss.urls'
+STATIC_ROOT = Path('static').resolve()
+STATIC_URL = config('STATIC_URL', default='/static/')
+MEDIA_ROOT = Path('media').resolve()
+MEDIA_URL = config('MEDIA_URL', default='/media/')
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'coss.base',
     'coss.home',
@@ -67,8 +70,6 @@ MIDDLEWARE = [
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'coss.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -89,55 +90,60 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'coss.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'default': config('DATABASE_URL', cast=db_url)
     }
 }
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.11/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_L10N = True
-
-USE_TZ = True
-
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
+
+#######################
+# Environment Variables
+#######################
+
+# Internationalization
+# https://docs.djangoproject.com/en/1.11/topics/i18n/
+LANGUAGE_CODE = config('LANGUAGE_CODE', default='en-us')
+TIME_ZONE = config('TIME_ZONE', default='UTC')
+USE_I18N = config('USE_I18N', default=True, cast=bool)
+USE_L10N = config('USE_L10N', default=True, cast=bool)
+USE_TZ = config('USE_TZ', default=True, cast=bool)
+
+
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+DEBUG = config('DEBUG', default=False, cast=bool)
+DEV = config('DEV', default=False, cast=bool)
+EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
+SECRET_KEY = config('SECRET_KEY')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# Cache
+CACHES = {
+    'default': {
+        'BACKEND': config('CACHE_BACKEND',
+                          default='django.core.cache.backends.memcached.MemcachedCache'),
+        'LOCATION': config('CACHE_URL', default='127.0.0.1:11211'),
+    }
+}
 
-
-# Wagtail settings
+##################
+# Wagtail Settings
+##################
 
 WAGTAIL_SITE_NAME = "coss"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'http://example.com'
+BASE_URL = config('BASE_URL', default='http://127.0.0.1:8000')

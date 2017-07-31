@@ -1,0 +1,12 @@
+SECRET_KEY = 'secret_key'
+# Site settings
+SITE_URL = http://127.0.0.1:8000
+ALLOWED_HOSTS = 127.0.0.1
+# Assuming user coss with password coss and db name db_1
+DATABASE_URL = 'mysql://coss:coss@127.0.0.1:3306/db_1'
+# Debug flag
+DEBUG = True
+DEV = True
+# Cache
+CACHE_BACKEND = 'django.core.cache.backends.locmem.LocMemCache'
+CACHE_URL = '127.0.0.1:11211'

@@ -30,8 +30,6 @@ traitlets==4.3.2 \
 backports.shutil_get_terminal_size==1.0.0 \
     --hash=sha256:0975ba55054c15e346944b38956a4c9cbee9009391e41b86c68990effb8c1f64 \
     --hash=sha256:713e7a8228ae80341c70586d1cc0a8caa5207346927e23d09dcbcaf18eadec80
-decorators==0.1.1 \
-    --hash=sha256:196ac810d92cffb65eea66ee76f54834904451dca9a1a06288f39f4855e30d44
 Pygments==2.2.0 \
     --hash=sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d \
     --hash=sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc
@@ -60,3 +58,8 @@ ipython==5.4.1 \
     --hash=sha256:af2b1ca3e073b7230b975858c0f5fcc659aa25181335b40ab09b00bf91134d93 \
     --hash=sha256:0a45d844d11bec910974ed4adf5de60d42dc34b60960f8cc2b857e2008fba550 \
     --hash=sha256:afaa92343c20cf4296728161521d84f606d8817f963beaf7198e63dfede897fb
+simplegeneric==0.8.1 \
+    --hash=sha256:dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173
+decorator==4.1.2 \
+    --hash=sha256:95a26b17806e284452bfd97fa20aa1e8cb4ee23542bda4dbac5e4562aa1642cd \
+    --hash=sha256:7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5
