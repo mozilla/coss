@@ -10,10 +10,9 @@ https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 from __future__ import absolute_import, unicode_literals
 
 import os
-import site
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.dev")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
 
 application = get_wsgi_application()
