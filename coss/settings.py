@@ -94,9 +94,7 @@ WSGI_APPLICATION = 'coss.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'default': config('DATABASE_URL', cast=db_url)
-    }
+    'default': config('DATABASE_URL', cast=db_url)
 }
 
 # Static files (CSS, JavaScript, Images)
@@ -118,11 +116,6 @@ TIME_ZONE = config('TIME_ZONE', default='UTC')
 USE_I18N = config('USE_I18N', default=True, cast=bool)
 USE_L10N = config('USE_L10N', default=True, cast=bool)
 USE_TZ = config('USE_TZ', default=True, cast=bool)
-
-
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'static'),
-]
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 DEV = config('DEV', default=False, cast=bool)
