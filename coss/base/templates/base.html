@@ -1,4 +1,5 @@
 {% load static wagtailuserbar %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html>
@@ -22,12 +23,14 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {# Global stylesheets #}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/coss.css' %}">
+    {% compress css %}
+      {# Global stylesheets #}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/coss.css' %}">
 
-    {% block extra_css %}
-    {# Override this in templates to add extra stylesheets #}
-    {% endblock %}
+      {% block extra_css %}
+      {# Override this in templates to add extra stylesheets #}
+      {% endblock %}
+    {% endcompress %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
@@ -35,11 +38,13 @@
 
     {% block content %}{% endblock %}
 
+    {% compress js %}
       {# Global javascript #}
-      <script src="{% static 'js/coss.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/coss.js' %}"></script>
 
-    {% block extra_js %}
-    {# Override this in templates to add extra javascript #}
-    {% endblock %}
+      {% block extra_js %}
+      {# Override this in templates to add extra javascript #}
+      {% endblock %}
+    {% endcompress %}
   </body>
 </html>
