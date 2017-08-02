@@ -5,5 +5,8 @@ sudo: false
 dist: trusty
 before_install:
   - pip install flake8
+  - npm install -g eslint stylelint
 script:
   - flake8 coss
+  - eslint 'coss/**/static/js/*.js'
+  - stylelint 'coss/**/static/css/*.scss'

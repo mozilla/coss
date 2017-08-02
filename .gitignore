@@ -5,3 +5,5 @@
 .sass-cache
 *.css.map
 /media/
+node_modules
+yarn-error.log

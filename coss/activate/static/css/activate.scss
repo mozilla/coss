@@ -1,36 +1,35 @@
-@import 'colors';
+:root {
+    --primary-color: #3f4b73;
+}
 
-.activate {
+header {
 
-    header {
+    .navbar-light {
+        background-color: $activate-primary;
 
-        .navbar-light {
-            background-color: $activate-primary;
+        .navbar-brand {
+            padding-top: 30px;
 
-            .navbar-brand {
-                padding-top: 30px;
+            @media (max-width: 992px) {
+                padding-top: inherit;
+            }
 
-                @media (max-width: 992px) {
-                    padding-top: inherit;
-                }
-
-                img {
-                    width: 120px;
-                }
+            img {
+                width: 120px;
             }
         }
+    }
 
-        .jumbotron {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/static/img/top-header.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 0;
+    .jumbotron {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/static/img/top-header.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 0;
 
-            .rich-text {
-                color: white;
-                text-align: center;
-                font-size: 1.2em;
-            }
+        .rich-text {
+            color: white;
+            text-align: center;
+            font-size: 1.2em;
         }
     }
 }

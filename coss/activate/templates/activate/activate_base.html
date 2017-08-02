@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static compress %}
 
-{% block body_class %}activate{% endblock %}
-
 {% compress css %}
   {% block extra_css %}
     <link rel="stylesheet" type="text/scss" href="{% static 'css/activate.scss' %}">

@@ -1,0 +1,34 @@
+{
+    "name": "coss",
+    "version": "0.1.0",
+    "description": "Mozilla Community Support Software",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mozilla/coss.git"
+    },
+    "author": "Mozilla",
+    "private": true,
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/mozilla/coss/issues"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-stylelint": "^5.0.0"
+    },
+    "dependencies": {
+        "bootstrap": "4.0.0-beta",
+        "dnt-helper": "git://github.com/schalkneethling/dnt-helper.git",
+        "jquery": "^3.2.1",
+        "mofo-bootstrap": "^4.0.1",
+        "popper.js": "^1.12.5"
+    },
+    "assets": [
+        "bootstrap/dist/js/bootstrap.min.js",
+        "dnt-helper/js/dnt-helper.js",
+        "jquery/dist/jquery.min.js",
+        "mofo-bootstrap/dest/css/mofo-bootstrap.css",
+        "popper.js/dist/umd/popper.min.js"
+    ]
+}
