@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / zoom-out</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-zoom-out" fill="#9B9B9B">
+            <path d="M5,0 C6.38393549,0 7.56323917,0.487346317 8.53794643,1.46205357 C9.51265368,2.43676083 10,3.61606451 10,5 C10,6.38393549 9.51265368,7.56323917 8.53794643,8.53794643 C7.56323917,9.51265368 6.38393549,10 5,10 C3.61606451,10 2.43676083,9.51265368 1.46205357,8.53794643 C0.487346317,7.56323917 0,6.38393549 0,5 C0,3.61606451 0.487346317,2.43676083 1.46205357,1.46205357 C2.43676083,0.487346317 3.61606451,0 5,0 Z M7.85714286,5.35714286 L7.85714286,4.64285714 L2.14285714,4.64285714 L2.14285714,5.35714286 L7.85714286,5.35714286 Z" id="zoom-out"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / privacy-white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-privacy-white">
+            <g id="privacy-white">
+                <path d="M10,0 C4.47676291,0 0,4.47783621 0,10 C0,15.5232371 4.47676291,20 10,20 C15.5232371,20 20,15.5232371 20,10 C20,4.47783621 15.5232371,0 10,0 L10,0 Z" id="Combined-Shape" fill="#808080"></path>
+                <path d="M14,15 L6,15 L6,8.44457688 L7.034,8.44457688 L7.034,7.23947159 C7.034,5.45421136 8.365,4 10,4 C11.636,4 12.967,5.45421136 12.967,7.23947159 L12.967,8.44457688 L14,8.44457688 L14,15 Z" id="Fill-14" fill="#F4F4F4"></path>
+                <path d="M8,6.80455202 L8,8.35351562 L12,8.35351562 L12,6.80455202 C12,5.80960983 11.1029721,5 9.99939958,5 C8.89702792,5 8,5.80960983 8,6.80455202 Z" id="Combined-Shape" fill="#808080"></path>
+            </g>
+        </g>
+    </g>
+</svg>

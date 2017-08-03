@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="8px" viewBox="0 0 8 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / field-expand</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-field-expand" fill-rule="nonzero" fill="#9B9B9B">
+            <g id="field-expand">
+                <polygon id="Line" points="1.64313008e-14 8.34386002 8.34386002 -1.64313008e-14 7.77817459 -0.565685425 -0.565685425 7.77817459"></polygon>
+                <polygon id="Line-Copy" points="4 8.10121933 8.10121933 4 7.53553391 3.43431458 3.43431458 7.53553391"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

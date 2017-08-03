@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="17px" viewBox="0 0 13 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / map-pin-blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-map-pin-blue" stroke="#C3E8F8" fill="#558194">
+            <path d="M2.11976988,2.25794528 C3.33892251,0.984893618 4.93781121,0.347950939 6.53586715,0.347950939 C8.13475585,0.347950939 9.73281179,0.984893618 10.9519644,2.25794528 C13.3911024,4.8048823 13.3911024,8.93500537 10.9519644,11.4819424 L6.53586715,16.0939409 L2.11893713,11.4819424 C-0.319368136,8.93500537 -0.32020089,4.80571599 2.11976988,2.25794528 Z" id="map-pin-blue"></path>
+        </g>
+    </g>
+</svg>

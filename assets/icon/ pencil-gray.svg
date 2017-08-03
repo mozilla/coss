@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / pencil-gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-/-pencil-gray" fill="#909090">
+            <path d="M14.8828125,6.8828125 L5.1171875,16.6875 L1.5625,13.1328125 L11.3671875,3.3671875 L14.8828125,6.8828125 Z M17.1875,2.9375 C17.4218762,3.17187617 17.5325521,3.45833164 17.5195312,3.796875 C17.5065104,4.13541836 17.369793,4.43489453 17.109375,4.6953125 L15.3515625,6.453125 L11.796875,2.8984375 L13.5546875,1.140625 C13.8151055,0.880207031 14.1145816,0.743489648 14.453125,0.73046875 C14.7916684,0.717447852 15.0781238,0.828123828 15.3125,1.0625 L17.1875,2.9375 Z M1.25,13.6796875 L4.5703125,17 L0,18.25 L1.25,13.6796875 Z" id="pencil-gray"></path>
+        </g>
+    </g>
+</svg>
