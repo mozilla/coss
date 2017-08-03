@@ -154,3 +154,5 @@ gunicorn==19.7.1 \
 whitenoise==3.3.0 \
     --hash=sha256:1d62a003a0ab747de96da45c831cbb512dcb7f69c1ef0bd20b1cd4ae45d8a0c4 \
     --hash=sha256:d098327276de6fd189398a7bcb95789d1bb2d41b3e011eeae4562f6b1a107dd4
+python-memcached==1.58 \
+    --hash=sha256:2775829cb54b9e4c5b3bbd8028680f0c0ab695db154b9c46f0f074ff97540eb6
