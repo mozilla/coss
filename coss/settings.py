@@ -124,6 +124,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 DEV = config('DEV', default=False, cast=bool)
 EMAIL_BACKEND = config('EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 SECRET_KEY = config('SECRET_KEY')
+SITE_URL = config('SITE_URL', default="http://localhost")
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 
 # Cache
 CACHES = {
