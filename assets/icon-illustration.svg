@@ -6,9 +6,9 @@
     <defs>
         <circle id="path-1" cx="30" cy="30" r="30"></circle>
     </defs>
-    <g id="Mozilla-Clubs" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Top-Level-Landing-(Parent)" transform="translate(-666.000000, -116.000000)">
-            <g id="hero-primary-/-site-one" transform="translate(0.000000, 70.000000)">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero-primary-/-blue" transform="translate(-666.000000, -46.000000)">
+            <g id="hero-primary-/-site-one">
                 <g id="icon-illustration" transform="translate(666.000000, -64.000000)">
                     <g id="rocket" transform="translate(353.686111, 291.208498) rotate(12.000000) translate(-353.686111, -291.208498) translate(109.686111, 45.708498)">
                         <path d="M130.369903,95.0260327 C213.812414,40.6161361 325.675916,63.9822235 380.222699,147.214171 C434.769482,230.446879 411.345044,342.027338 327.902533,396.436474 C244.460022,450.845611 132.59652,427.480283 78.049737,344.248336" id="Stroke-1" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="24.1415994644165" transform="translate(243.855515, 245.731086) rotate(42.000000) translate(-243.855515, -245.731086) "></path>

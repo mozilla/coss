@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="575px" height="144px" viewBox="0 0 575 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>event-list / listing</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="575" height="144"></rect>
+        <filter x="-0.6%" y="-2.4%" width="102.4%" height="109.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="7" dy="7" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="event-list-/-listing">
+            <g>
+                <g id="background">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F4F4F4" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <text id="event-name" font-family="OpenSans-SemiBold, Open Sans" font-size="18" font-weight="500" line-spacing="26" fill="#000000">
+                    <tspan x="121" y="39">Monthly Meeting</tspan>
+                </text>
+                <text id="time" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="26" letter-spacing="0.5" fill="#909090">
+                    <tspan x="121" y="117">4:00pm – 5:00pm</tspan>
+                </text>
+                <text id="location" font-family="OpenSans-Italic, Open Sans" font-size="14" font-style="italic" font-weight="normal" line-spacing="22" letter-spacing="0.699999988" fill="#5D5D5D">
+                    <tspan x="121" y="66">Stanley Hall</tspan>
+                </text>
+                <g id="date-/" transform="translate(5.000000, 5.000000)">
+                    <rect id="background" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="86" height="134"></rect>
+                    <g id="date-/-single-digit" transform="translate(13.000000, 37.000000)" stroke-width="1" fill-rule="evenodd">
+                        <g>
+                            <circle id="Oval" fill="#000000" cx="30" cy="30" r="30"></circle>
+                            <text id="7" font-family="OpenSans-Bold, Open Sans" font-size="28" font-weight="bold" line-spacing="36" fill="#FFFFFF">
+                                <tspan x="22" y="41">7</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <text id="month" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="26" letter-spacing="0.5" fill="#909090">
+                        <tspan x="31.1689453" y="20">JUL</tspan>
+                    </text>
+                    <text id="year" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="26" letter-spacing="0.5" fill="#909090">
+                        <tspan x="26" y="118">2017</tspan>
+                    </text>
+                </g>
+                <g id="buttons-/-card-fill-small" transform="translate(430.000000, 84.000000)">
+                    <g>
+                        <rect id="Rectangle" fill="#E8E8E8" transform="translate(62.500000, 20.000000) scale(1, -1) translate(-62.500000, -20.000000) " x="0" y="0" width="125" height="40"></rect>
+                        <text id="Find-An-Open-Source" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.5" fill="#000000">
+                            <tspan x="24.0712891" y="24">Attending?</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="button-/-text-arrow" transform="translate(345.000000, 18.000000)" fill="#000000">
+                    <g id="icon-/-right-arrow-black" transform="translate(196.000000, 7.000000)" fill-rule="evenodd">
+                        <polygon id="right-arrow-black" points="0 8.3203125 0 6.6796875 10.15625 6.6796875 5.5078125 1.9921875 6.6796875 0.8203125 13.359375 7.5 6.6796875 14.1796875 5.46875 13.0078125 10.15625 8.3203125"></polygon>
+                    </g>
+                    <text id="See-All-Of-Our-Group" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.5">
+                        <tspan x="135.913086" y="18">Details</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

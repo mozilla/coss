@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="278px" height="30px" viewBox="0 0 278 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>anchor-nav / inactive</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="anchor-nav-/-inactive" fill="#000000">
+            <g>
+                <text id="text" opacity="0.200520833" font-family="OpenSans-Bold, Open Sans" font-size="16" font-weight="bold" line-spacing="24" letter-spacing="0.5">
+                    <tspan x="0" y="17">Club Info</tspan>
+                </text>
+                <rect id="border-bottom" opacity="0.198709239" transform="translate(10.000000, 29.500000) scale(1, -1) translate(-10.000000, -29.500000) " x="0" y="29" width="20" height="1"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

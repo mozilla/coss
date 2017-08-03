@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="177px" height="40px" viewBox="0 0 177 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>button / outline-red</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-/-outline-red">
+            <g id="buttons-/-outline-red">
+                <rect id="Rectangle-3" stroke="#FB8E92" x="0.5" y="0.5" width="176" height="39"></rect>
+                <text id="Register-a-Club" font-family="OpenSans-Bold, Open Sans" font-size="14" font-weight="bold" line-spacing="22" letter-spacing="0.5" fill="#FB8E92">
+                    <tspan x="31.15625" y="24">Log In / Sign U</tspan>
+                    <tspan x="136.984375" y="24">p</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

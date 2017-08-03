@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="397px" height="41px" viewBox="0 0 397 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>newsletter / entry-email-black</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="newsletter-/-entry-email-black">
+            <rect id="rectangle" fill-opacity="0.1953125" fill="#000000" x="0" y="1" width="395.725191" height="39.9823243"></rect>
+            <text id="Email-address" font-family="OpenSans-Regular, Open Sans" font-size="14" font-weight="normal" line-spacing="22" letter-spacing="0.4375" fill="#FFFFFF">
+                <tspan x="15" y="25">Email address</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

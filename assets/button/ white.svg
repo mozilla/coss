@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180px" height="41px" viewBox="0 0 180 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>button / white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-/-white">
+            <g id="buttons-/-fill-white" transform="translate(0.218598, 0.983208)">
+                <rect id="Rectangle-3" fill="#FFFFFF" x="0" y="0" width="178.376128" height="39.9823243"></rect>
+                <text id="Join-Us" font-family="OpenSans-SemiBold, Open Sans" font-size="14" font-weight="500" line-spacing="22" letter-spacing="0.5" fill="#000000">
+                    <tspan x="64.2538083" y="24">Join U</tspan>
+                    <tspan x="106.806543" y="24">s</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

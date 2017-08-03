@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>date / double-digit</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="date-/-double-digit">
+            <g>
+                <circle id="Oval" fill="#000000" cx="30" cy="30" r="30"></circle>
+                <text id="23" font-family="OpenSans-Bold, Open Sans" font-size="28" font-weight="bold" line-spacing="36" fill="#FFFFFF">
+                    <tspan x="14" y="41">23</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

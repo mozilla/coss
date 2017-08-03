@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="110px" height="20px" viewBox="0 0 110 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>label / category</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="label-/-category">
+            <text id="category" font-family="OpenSans-Italic, Open Sans" font-size="14" font-style="italic" font-weight="normal" line-spacing="20" letter-spacing="0.800000012" fill="#808080">
+                <tspan x="22" y="15">Open Source</tspan>
+            </text>
+            <g id="icon-/-category-os" transform="translate(0.000000, 4.000000)" fill="#F8B83E">
+                <circle id="category-os" cx="6" cy="6" r="6"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

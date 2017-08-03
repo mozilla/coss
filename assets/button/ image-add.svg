@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>button / image-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-/-image-add">
+            <rect id="background" fill="#F4F4F4" x="0" y="0" width="120" height="120"></rect>
+            <g id="icon-/-plus-gray" transform="translate(50.000000, 50.000000)" fill="#909090">
+                <polygon id="plus-gray" points="20 8.33333333 20 11.6666667 11.6666667 11.6666667 11.6666667 20 8.33333333 20 8.33333333 11.6666667 0 11.6666667 0 8.33333333 8.33333333 8.33333333 8.33333333 0 11.6666667 0 11.6666667 8.33333333"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
