@@ -4,9 +4,13 @@ services:
   db:
     image: postgres:9.4
     container_name: coss_db
+    environment:
+      - POSTGRES_USER=coss_user
+      - POSTGRES_PASSWORD=coss_password
+      - POSTGRES_DB=coss_db
   memcached:
-    container_name: coss_memcache
     image: memcached
+    container_name: coss_memcache
   web:
     build:
       context: .
