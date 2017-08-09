@@ -16,7 +16,7 @@ node('master'){
         break
     }
     type = 'group'
-    slackSend color: 'good', message: "Starting build ${BUILD_NUMBER} for ${JOB_NAME} ${environment} | < ${BUILD_URL}changes | Changes >"
+    slackSend color: 'good', message: "Starting build ${BUILD_NUMBER} for ${JOB_NAME} ${environment} | <${BUILD_URL}changes | Changes>"
 }
 
 node('mesos') {
