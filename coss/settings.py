@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'coss.base',
     'coss.home',
     'coss.search',
+    'coss.opensource_clubs',
 
     'wagtail.wagtailforms',
     'wagtail.wagtailredirects',
