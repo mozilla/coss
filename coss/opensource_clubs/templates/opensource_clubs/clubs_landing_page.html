@@ -1,0 +1,13 @@
+{% extends "opensource_clubs/club_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  {{ page.title }}
+
+  {{ page.description|richtext }}
+
+  {% for club in page.get_children %}
+    <h3><a href="{% pageurl club %}">{{ club.title }}</a></h3>
+    {{ club.specific.intro|richtext }}
+  {% endfor %}
+{% endblock %}

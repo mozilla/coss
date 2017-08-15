@@ -1,0 +1,8 @@
+{% extends "opensource_clubs/club_base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+  {{ page.title }}
+
+  {{ page.description|richtext }}
+{% endblock %}
