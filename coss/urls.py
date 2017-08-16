@@ -11,9 +11,9 @@ from wagtail.wagtaildocs import urls as wagtaildocs_urls
 from coss.search import views as search_views
 
 urlpatterns = [
-    url(r'^django-admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^admin/', include(wagtailadmin_urls)),
+    url(r'^cms-admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
