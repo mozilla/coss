@@ -25,10 +25,11 @@
 
     {% compress css %}
       {# Global stylesheets #}
+      <link rel="stylesheet" type="text/css" href="{% static 'lib/mofo-bootstrap/dest/css/mofo-bootstrap.css' %}">
       <link rel="stylesheet" type="text/css" href="{% static 'css/coss.css' %}">
 
       {% block extra_css %}
-      {# Override this in templates to add extra stylesheets #}
+        {# Override this in templates to add extra stylesheets #}
       {% endblock %}
     {% endcompress %}
   </head>
@@ -36,14 +37,59 @@
   <body class="{% block body_class %}{% endblock %}">
     {% wagtailuserbar %}
 
+    <header>
+      <nav class="navbar navbar-light navbar-toggleable-md" role="navigation">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            {% block brand-logo %}
+              <img src="{% static 'img/mozilla.svg' %}" alt="mozilla">
+            {% endblock %}
+          </a>
+        </div>
+      </nav>
+
+      {% block jumbotron %}{% endblock %}
+    </header>
+
     {% block content %}{% endblock %}
+
+    <footer>
+      <div class="container text-center">
+        <div class="icon-container">
+          <div class="icon">
+            <img class="footer-icon" src="{% static 'img/footer/github.svg' %}">
+            <a href="https://github.com/mozilla/coss" target="_blank">Contribute</a>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon">
+            <img class="footer-icon" src="{% static 'img/footer/legal.svg' %}">
+            <a href="https://www.mozilla.org/about/legal/" target="_blank">Legal</a>
+          </div>
+        </div>
+        <div class="icon-container">
+          <div class="icon">
+            <img class="footer-icon" src="{% static 'img/footer/privacy.svg' %}">
+            <a href="https://www.mozilla.org/privacy/" target="_blank">Privacy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-content">
+        <a class="logo" href="https://mozilla.org" target="_blank"><img src="{% static 'img/mozilla.svg' %}"></a>
+        <p>
+          Mozilla is a global non-profit dedicated to putting you in control of your online experience and shaping the future of the web
+          for the public good. Visit us at <a href="//mozilla.org" target="_blank">mozilla.org</a>
+        </p>
+      </div>
+    </footer>
 
     {% compress js %}
       {# Global javascript #}
       <script type="text/javascript" src="{% static 'js/coss.js' %}"></script>
 
       {% block extra_js %}
-      {# Override this in templates to add extra javascript #}
+        {# Override this in templates to add extra javascript #}
       {% endblock %}
     {% endcompress %}
   </body>
