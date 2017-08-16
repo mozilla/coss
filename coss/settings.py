@@ -55,6 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # django-compressor
+    'compressor',
 ]
 
 MIDDLEWARE = [
@@ -106,8 +109,13 @@ DATABASES = {
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder'
 ]
 
+# Django compressor
+COMPRESS_ENABLED = config('COMPRESS_ENABLED', default=True, cast=bool)
+COMPRESS_OFFLINE = config('COMPRESS_OFFLINE', default=True, cast=bool)
+COMPRESS_CACHE_BACKEND = config('COMPRESS_CACHE_BACKEND', default='default')
 
 #######################
 # Environment Variables
