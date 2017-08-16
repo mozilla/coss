@@ -1,11 +1,95 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block body_class %}template-homepage{% endblock %}
 
+{% block jumbotron %}
+  <div class="container jumbotron">
+    <h3>
+      Groups and Gatherings
+    </h3>
+    <div class="lead col-sm-6">
+      Welcome to Mozilla's home for groups ans events.
+      Connect with others who are looking to learn, teach,
+      build and protect the web.
+    </div>
+    <div class="lead">
+      <a href="#" class="btn btn-outline-primary">Want to join our newsletter?</a>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
-  <h1>Welcome to your new Wagtail site!</h1>
+  <div class="container content">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Features Groups</h4>
+      </div>
+      <div class="col-md-6 text-right">
+        <a href="#" class="btn btn-outline-primary">Register a Group</a>
+      </div>
+    </div>
 
-  <p>You can access the admin interface <a href="{% url 'wagtailadmin_home' %}">here</a> (make sure you have run "./manage.py createsuperuser" in the console first).</p>
+    <div class="row group-types mt-2">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div href="#" class="card">
+          <h4 class="card-header">Open Source <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></h4>
+          <img class="img-fluid" src="{% static 'img/open-source.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+            <p class="card-text">
+              Students with a passion for technology working together to build the open web
+              of University and College campuses.
+            </p>
+            <a href="#" class="btn btn-primary">Find An Open Source</a>
+          </div>
+        </div>
+      </div>
 
-  <p>If you haven't already given the documentation a read, head over to <a href="http://docs.wagtail.io/">http://docs.wagtail.io</a> to start building on Wagtail</p>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <h4 class="card-header">Category Two <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></h4>
+          <img class="img-fluid" src="{% static 'img/category-two.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+            <p class="card-text">
+              Share Mozilla's mission to ensure the Internet is a global
+              public resource, open and accessible to all.
+            </p>
+            <a href="#" class="btn btn-primary">Find A Category Two Club</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card">
+          <h4 class="card-header">Category Three <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></h4>
+          <img class="img-fluid" src="{% static 'img/category-three.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+            <p class="card-text">
+              Share Mozilla's mission to ensure the Internet is a global
+              public resource, open and accessible to all.
+            </p>
+            <a href="#" class="btn btn-primary">Find A Category Three Club</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      See All Of Our Groups <img class="ml-2" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more">
+    </div>
+
+    <div class="row testimonial">
+      <div class="col-sm-2">
+        <img class="img-fluid" src="{% static 'img/asisipho.png' %}" alt="testimony">
+      </div>
+      <div class="col-sm-10">
+        <blockquote>
+          I want to empower more female students to code. Right now many know the basics,
+          but there’s a lot of interest in developing these skills further. Therefore I am working
+          with my school to use study time as an opportunity to hold club activities and events so
+          to have a learning space.
+        </blockquote>
+      </div>
+    </div>
+  </div>
 {% endblock %}
