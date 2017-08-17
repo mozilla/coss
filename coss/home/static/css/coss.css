@@ -154,6 +154,17 @@ body {
 h1, h2, h3, h4 {
   font-family: ZillaSlab; }
 
+.breadcrumbs {
+  font-size: .9em; }
+  .breadcrumbs a {
+    color: black; }
+    .breadcrumbs a:hover {
+      text-decoration: none; }
+
+.icon img {
+  width: 15px;
+  height: 15px; }
+
 header {
   background-color: #558194; }
   header .navbar-light {
@@ -164,9 +175,6 @@ header {
     header .navbar-light .navbar-nav a.nav-link {
       color: black;
       font-weight: bold; }
-    header .navbar-light .navbar-brand .category-logo {
-      padding-top: 20px;
-      width: 80px; }
     header .navbar-light .navbar-brand img {
       width: 120px; }
   header .jumbotron {

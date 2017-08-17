@@ -1,8 +1,12 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static compress %}
 
 {% compress css %}
   {% block extra_css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/clubs.css' %}">
   {% endblock %}
 {% endcompress %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/mozilla-clubs-black.svg' %}" alt="mozilla">
+{% endblock %}
