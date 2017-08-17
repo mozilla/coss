@@ -20,6 +20,12 @@ class CategoryLandingPage(Page):
 class EntityDetailPage(Page):
     description = RichTextField(blank=True)
 
+    def get_first_image(self):
+        item = self.gallery_images.first()
+        if item:
+            return item.image
+        return None
+
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
         InlinePanel('gallery_images', label='Gallery Images')
