@@ -37,21 +37,25 @@
   <body class="{% block body_class %}{% endblock %}">
     {% wagtailuserbar %}
 
-    <header>
-      <nav class="navbar navbar-light navbar-toggleable-md" role="navigation">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            {% block brand-logo %}
-              <img src="{% static 'img/mozilla.svg' %}" alt="mozilla">
-            {% endblock %}
-          </a>
-        </div>
-      </nav>
+    <div class="page-wrap">
 
-      {% block jumbotron %}{% endblock %}
-    </header>
+      <header>
+        <nav class="navbar navbar-light navbar-toggleable-md" role="navigation">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              {% block brand-logo %}
+                <img src="{% static 'img/mozilla.svg' %}" alt="mozilla">
+              {% endblock %}
+            </a>
+          </div>
+        </nav>
 
-    {% block content %}{% endblock %}
+        {% block jumbotron %}{% endblock %}
+      </header>
+
+      {% block content %}{% endblock %}
+
+    </div>
 
     <footer>
       <div class="container text-center">
