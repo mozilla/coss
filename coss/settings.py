@@ -18,14 +18,13 @@ from decouple import config, Csv
 from dj_database_url import parse as db_url
 from unipath import Path
 
+
 PROJECT_DIR = Path(__file__).parent.parent
 BASE_DIR = Path(__file__).parent.parent.parent
 ROOT_URLCONF = 'coss.urls'
 STATIC_ROOT = Path('static').resolve()
 STATIC_URL = config('STATIC_URL', default='/static/')
 MEDIA_ROOT = Path('media').resolve()
-MEDIA_URL = config('MEDIA_URL', default='/media/')
-
 
 # Application definition
 INSTALLED_APPS = [
@@ -58,6 +57,8 @@ INSTALLED_APPS = [
 
     # django-compressor
     'compressor',
+    # django-storages
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -145,6 +146,16 @@ CACHES = {
     }
 }
 
+# S3 storage
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default='')
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID', default='')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY', default='')
+AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN',
+                              default='{0}.s3.amazonaws.com'.format(AWS_STORAGE_BUCKET_NAME))
+# Media storage
+MEDIA_URL = config('MEDIA_URL', default='https://{0}/'.format(AWS_S3_CUSTOM_DOMAIN))
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 ##################
 # Wagtail Settings
 ##################
@@ -154,3 +165,6 @@ WAGTAIL_SITE_NAME = "coss"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = config('BASE_URL', default='http://127.0.0.1:8000')
+
+if DEV:
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
