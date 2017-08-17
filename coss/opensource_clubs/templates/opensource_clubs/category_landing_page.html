@@ -1,5 +1,5 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block jumbotron %}
   <div class="container jumbotron">
@@ -24,48 +24,36 @@
     </div>
 
     <div class="row group-types mt-2">
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div href="#" class="card">
-          <h4 class="card-header">Club One <a href="#"><img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></a></h4>
-          <img class="img-fluid" src="{% static 'img/open-source.jpg' %}" alt="Card image cap">
-          <div class="card-block">
-            <p class="card-text">
-              The Human-Computer Interaction Group studies interaction in future computing environments
-              including the office, home, mobile and medical. Emphasis on...
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <h4 class="card-header">Club Two <a href="#"><img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></a></h4>
-          <img class="img-fluid" src="{% static 'img/category-two.jpg' %}" alt="Card image cap">
-          <div class="card-block">
-            <p class="card-text">
-              Firefox Student Ambassadors are individuals who are passionate about
-              Mozilla and raise awareness about the many benefits of Firefox...
-            </p>
+      {% for club in page.get_children %}
+        {% with club=club.specific %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div href="#" class="card">
+              <h4 class="card-header">
+                <a href="{% pageurl club %}">
+                  <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}"
+                       alt="{{ club.title }}">
+                  <span>{{ club.title }}</span>
+                </a>
+              </h4>
+              {% if club.get_first_image %}
+                {% image club.get_first_image fill-290x190 %}
+              {% endif %}
+              <div class="card-block">
+                <p class="card-text">
+                  {{ club.description|richtext }}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        {% endwith %}
+      {% endfor %}
 
-      <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card">
-          <h4 class="card-header">Club Three <a href="#"><img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more"></a></h4>
-          <img class="img-fluid" src="{% static 'img/category-three.jpg' %}" alt="Card image cap">
-          <div class="card-block">
-            <p class="card-text">
-              Open.Michigan is a University of Michigan initiative, based in the Medical School's
-              Office of Enabling Technologies, that helps faculty, staff and students find...
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
 
     <div class="text-center mt-4">
-      See All Of Our Clubs <img class="ml-2" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more">
+      See All Of Our Clubs
+      <img class="ml-2" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more">
     </div>
 
     <div class="row testimonial">
