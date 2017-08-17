@@ -1,8 +1,77 @@
 {% extends "opensource_clubs/club_base.html" %}
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags %}
+
+{% block jumbotron %}
+  <div class="jumbotron club">
+    <div class="container">
+      <div class="breadcrumbs">
+        <img class="ml-2" src="{% static 'img/icons/left-arrow-small.svg' %}" alt="back">
+        <a href="/clubs/">
+          Open Source Clubs
+        </a>
+      </div>
+
+      <h3 class="highlight mt-4 club-title">{{ page.title }}</h3>
+    </div>
+  </div>
+{% endblock %}
 
 {% block content %}
-  {{ page.title }}
+  <div class="container content">
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <span class="align-middle"></span>
+      </div>
+      <div class="col-md-6 text-right">
+        <a class="btn btn-outline-primary">Edit Club Page</a>
+      </div>
+    </div>
 
-  {{ page.description|richtext }}
+    <div class="card mt-4">
+      <div class="card-block">
+        <div class="row mb-0">
+          <div class="col-md-4">
+            <div class="icon"><img src="{% static 'img/icons/world-black.svg' %}" alt="web"></div>
+            <div class="icon"><img src="{% static 'img/icons/facebook-black-large.svg' %}" alt="web"></div>
+            <div class="club-interests">
+              <span>VR</span>
+              <span>AR</span>
+              <span>AI</span>
+            </div>
+          </div>
+          <div class="col-md-8">
+            {{ page.intro|richtext }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+      <div class="col-md-6">
+        <h4>
+          <img src="{% static 'img/icons/docs-black.svg' %}" alt="resources">
+          Club Resources
+        </h4>
+        <div class="row info-box">
+          <div class="col-md-12">
+            Add some club resources to help your club members get started and stay involved!
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h4>
+          <img src="{% static 'img/icons/calendar-black.svg' %}" alt="calendar">
+          Upcoming Events
+        </h4>
+        <div class="row info-box">
+          <div class="col-lg-7">
+            Plan your first event, a monthly team meeting is a great place to start!
+          </div>
+          <div class="col-lg-5 mt-2 mt-lg-0">
+            <a href="#" class="btn btn-default">Manage Events</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

@@ -1,0 +1,49 @@
+header {
+  background-color: #faba00; }
+  header .lead .btn {
+    border: 1px solid #ffed00; }
+  header .navbar-light .navbar-brand {
+    padding-top: 40px; }
+    header .navbar-light .navbar-brand img {
+      width: 90px; }
+
+.content .testimonial {
+  border: 3px solid #ffed00; }
+
+.content .profile-listing {
+  width: 340px;
+  border-top: 3px solid #faba00; }
+  @media (max-width: 768px) {
+    .content .profile-listing {
+      margin-bottom: 10px;
+      width: 100%; } }
+  .content .profile-listing .avatar {
+    float: left;
+    height: 140px;
+    overflow: hidden; }
+    .content .profile-listing .avatar img {
+      max-width: 140px; }
+  .content .profile-listing .profile-details {
+    float: left;
+    line-height: 1.6; }
+    .content .profile-listing .profile-details .profile-title {
+      color: #faba00; }
+
+.content .info-box {
+  border: 1px dashed lightgray;
+  margin: 0 10px 0 0;
+  padding: 15px 0; }
+
+.content .club-interests {
+  position: absolute;
+  bottom: 0; }
+  @media (max-width: 768px) {
+    .content .club-interests {
+      position: relative;
+      margin: 10px 0; } }
+  .content .club-interests span {
+    display: inline-block;
+    background-color: #faba00;
+    padding: 3px 10px;
+    color: white;
+    font-weight: bold; }
