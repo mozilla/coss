@@ -3,7 +3,10 @@ header {
   header .lead .btn {
     border: 1px solid #ffed00; }
   header .navbar-light .navbar-brand {
-    padding-top: 40px; }
+    padding-top: 30px; }
+    @media (max-width: 992px) {
+      header .navbar-light .navbar-brand {
+        padding-top: inherit; } }
     header .navbar-light .navbar-brand img {
       width: 90px; }
 
@@ -12,7 +15,8 @@ header {
 
 .content .profile-listing {
   width: 340px;
-  border-top: 3px solid #faba00; }
+  border-top: 3px solid #faba00;
+  margin-bottom: 40px; }
   @media (max-width: 768px) {
     .content .profile-listing {
       margin-bottom: 10px;
@@ -20,14 +24,16 @@ header {
   .content .profile-listing .avatar {
     float: left;
     height: 140px;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: 0; }
     .content .profile-listing .avatar img {
       max-width: 140px; }
   .content .profile-listing .profile-details {
     float: left;
     line-height: 1.6; }
     .content .profile-listing .profile-details .profile-title {
-      color: #faba00; }
+      color: #faba00;
+      font-size: .9em; }
 
 .content .info-box {
   border: 1px dashed lightgray;
