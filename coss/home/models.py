@@ -5,5 +5,8 @@ from django.db import models
 from wagtail.wagtailcore.models import Page
 
 
-class HomePage(Page):
+class GroupsGatheringsLandingPage(Page):
     pass
+
+    class Meta:
+        verbose_name = 'Groups and Gatherings Landing Page'
