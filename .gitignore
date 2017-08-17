@@ -3,3 +3,4 @@
 .env
 /static/
 .sass-cache
+/media/
