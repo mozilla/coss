@@ -5,9 +5,9 @@
   <div class="jumbotron club">
     <div class="container">
       <div class="breadcrumbs">
-        <img class="ml-2" src="{% static 'img/icons/left-arrow-small.svg' %}" alt="back">
-        <a href="/clubs/">
-          Open Source Clubs
+        <a href="{{ page.get_parent.url }}">
+          <img class="ml-2" src="{% static 'img/icons/left-arrow-small.svg' %}" alt="back">
+          <span>Open Source Clubs</span>
         </a>
       </div>
 
