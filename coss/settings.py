@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # django-axes
+    'axes',
     # django-compressor
     'compressor',
     # django-storages
@@ -155,6 +157,9 @@ AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN',
 # Media storage
 MEDIA_URL = config('MEDIA_URL', default='https://{0}/'.format(AWS_S3_CUSTOM_DOMAIN))
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Security
+AXES_BEHIND_REVERSE_PROXY = True
 
 ##################
 # Wagtail Settings
