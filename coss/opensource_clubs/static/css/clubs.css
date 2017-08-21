@@ -2,13 +2,15 @@ header {
   background-color: #faba00; }
   header .lead .btn {
     border: 1px solid #ffed00; }
-  header .navbar-light .navbar-brand {
-    padding-top: 30px; }
-    @media (max-width: 992px) {
-      header .navbar-light .navbar-brand {
-        padding-top: inherit; } }
-    header .navbar-light .navbar-brand img {
-      width: 90px; }
+  header .navbar-light {
+    background-color: white; }
+    header .navbar-light .navbar-brand {
+      padding-top: 30px; }
+      @media (max-width: 992px) {
+        header .navbar-light .navbar-brand {
+          padding-top: inherit; } }
+      header .navbar-light .navbar-brand img {
+        width: 90px; }
 
 .content .testimonial {
   border: 3px solid #ffed00; }
