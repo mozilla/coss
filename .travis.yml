@@ -1,4 +1,8 @@
 language: python
+python:
+  - "3.6"
+sudo: false
+dist: trusty
 before_install:
   - pip install flake8
 script:
