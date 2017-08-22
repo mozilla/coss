@@ -1,5 +1,5 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags discourse %}
 
 {% block brand-logo %}
   {% image page.logo original %}
@@ -24,7 +24,7 @@
       {% if page.discourse %}
         <div class="row">
           <div class="col">
-            <h6>Discourse Category: {{ page.discourse.name }}</h6>
+            {% discourse_latest page.discourse %}
           </div>
         </div>
       {% endif %}

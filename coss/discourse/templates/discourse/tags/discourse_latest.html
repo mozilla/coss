@@ -1,0 +1,27 @@
+{% load discourse %}
+<div class="row">
+  <div class="col">
+    <h4>Latest Discussion Topics</h4>
+  </div>
+  <div class="col-1">
+    <h5>Replies</h5>
+  </div>
+  <div class="col-1">
+    <h5>Activity</h5>
+  </div>
+</div>
+{% for topic in topics %}
+  <div class="row">
+    <div class="col">
+      <a href="https://discourse.mozilla.org/t/{{topic.id}}">
+        {{ topic.title }}
+      </a>
+    </div>
+    <div class="col-1">
+      {{ topic.posts_count }}
+    </div>
+    <div class="col-1">
+      {{ topic.last_posted_at | activity }}
+    </div>
+  </div>
+{% endfor %}
