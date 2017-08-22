@@ -1,0 +1,8 @@
+.entity header {
+  background-color: #f9f9f9; }
+  .entity header .navbar-light {
+    background-color: #faba00; }
+  .entity header .jumbotron {
+    color: black; }
+    .entity header .jumbotron h2 {
+      color: black; }

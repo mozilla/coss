@@ -3,12 +3,16 @@
 
 {% block jumbotron %}
   <div class="container jumbotron">
-    <h3>
-      {{ page.title }}
-    </h3>
-    <div class="lead col-sm-6">
-      {{ page.description|richtext }}
-    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <h2>
+          {{ page.title }}
+        </h2>
+        {{ page.description|richtext }}
+      </div>
+      <div class="col-md-7 text-right">
+        <img class="img-fluid" src="{% static 'img/clubs-illustration.svg' %}" alt="Open Source Clubs">
+      </div>
   </div>
 {% endblock %}
 

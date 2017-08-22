@@ -141,9 +141,8 @@ footer {
         footer .footer-content img {
           border-right: none;
           border-bottom: 0.0625rem solid #666;
-          padding-bottom: 1.25rem;
           margin-right: 0;
-          padding: 0.8rem; } }
+          padding: 0.8rem 0.8rem 1.25rem 0.8rem; } }
     footer .footer-content p {
       text-align: left;
       width: calc(100% - 10.375rem);
@@ -211,25 +210,23 @@ header {
     background-color: transparent;
     padding: 60px 15px 50px 15px;
     margin-bottom: 0;
-    color: white; }
-    header .jumbotron h3 {
+    color: white;
+    min-height: 300px; }
+    header .jumbotron h2 {
       font-family: ZillaSlabHighLight;
       color: white;
       width: auto;
-      display: block;
+      display: inline-block;
       margin-bottom: 5px;
-      font-weight: bold;
-      line-height: 1.1; }
+      line-height: 1.1;
+      vertical-align: top; }
+    header .jumbotron .rich-text {
+      margin-top: 20px;
+      color: black; }
     header .jumbotron .row {
-      align-items: center; }
-  header .lead {
-    margin-top: 20px;
-    padding-left: 0; }
-    header .lead .btn {
-      border: 1px solid #88d1f1;
-      color: white; }
-      header .lead .btn:hover {
-        background-color: inherit; }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start; }
 
 .content {
   margin-top: 30px; }
