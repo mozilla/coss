@@ -7,13 +7,22 @@ from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
+from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
 
 class CategoryLandingPage(Page):
     description = RichTextField(blank=True)
+    discourse = models.ForeignKey(
+        'discourse.DiscourseCategory',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
+        SnippetChooserPanel('discourse')
     ]
 
 
