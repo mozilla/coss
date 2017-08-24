@@ -29,6 +29,8 @@ MEDIA_ROOT = Path('media').resolve()
 # Application definition
 INSTALLED_APPS = [
     'coss.base',
+    'coss.users',
+
     'coss.home',
     'coss.search',
     'coss.opensource_clubs',
@@ -103,6 +105,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'coss.wsgi.application'
 
+# User Model
+AUTH_USER_MODEL = 'users.User'
+
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -160,6 +165,8 @@ AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN',
 # Media storage
 MEDIA_URL = config('MEDIA_URL', default='https://{0}/'.format(AWS_S3_CUSTOM_DOMAIN))
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# Avatars path
+AVATARS_PATH = 'users/%Y/%m/%d'
 
 ##########
 # Security
