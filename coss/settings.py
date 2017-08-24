@@ -76,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'csp.middleware.CSPMiddleware',
 
     'wagtail.wagtailcore.middleware.SiteMiddleware',
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
@@ -173,6 +174,26 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = config('SECURE_HSTS_INCLUDE_SUBDOMAINS', defaul
 SECURE_HSTS_SECONDS = config('SECURE_HSTS_SECONDS', default=31536000, cast=int)
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Django-csp
+CSP_DEFAULT_SRC = (
+    "'self'",
+)
+CSP_FONT_SRC = (
+    "'self'",
+)
+CSP_IMG_SRC = (
+    "'self'",
+    'https://*.s3.amazonaws.com',
+)
+CSP_SCRIPT_SRC = (
+    "'self'",
+)
+CSP_STYLE_SRC = (
+    "'self'",
+)
+CSP_CHILD_SRC = (
+    "'self'",
+)
 ##################
 # Wagtail Settings
 ##################
