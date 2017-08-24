@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static compress wagtailcore_tags %}
+
+{% block body_class %}about{% endblock %}
+
+{% block jumbotron %}
+  <div class="jumbotron">
+    <div class="container">
+      {{ page.about.header_text|richtext }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+
+    <nav id="nav-about" class="nav justify-content-center">
+      {% if page.about.body_text %}
+        <a class="nav-link" href="#body">{{ page.about.body_title }}</a>
+      {% endif %}
+      {% if page.about.info_text %}
+        <a class="nav-link" href="#info">{{ page.about.info_title }}</a>
+      {% endif %}
+      {% block extra_about_nav %}
+      {% endblock %}
+    </nav>
+
+    {% if page.about.body_text %}
+      <div id="body" class="body">
+        <div class="well">
+          {{ page.about.body_text|richtext }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.about.info_text %}
+      <div id="info" class="info">
+        <h4>{{ page.about.info_title }}</h4>
+        {{ page.about.info_text|richtext }}
+      </div>
+    {% endif %}
+
+    {% block extra_about %}
+    {% endblock %}
+
+  </div>
+{% endblock %}
+
+{% compress js %}
+  {% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
+  {% endblock %}
+{% endcompress %}
