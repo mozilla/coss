@@ -1,0 +1,16 @@
+{% extends "activate/activate_base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block jumbotron %}
+  <div class="jumbotron">
+    <div class="container">
+      {{ page.description|richtext }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="container content">
+    {{ page.body|richtext }}
+  </div>
+{% endblock %}

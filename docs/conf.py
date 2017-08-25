@@ -151,6 +151,3 @@ texinfo_documents = [
      author, 'CoSS', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-

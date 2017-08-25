@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static compress %}
+
+{% block body_class %}activate{% endblock %}
+
+{% compress css %}
+  {% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/activate.css' %}">
+  {% endblock %}
+{% endcompress %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/activate-mozilla-black.svg' %}" alt="activate mozilla">
+{% endblock %}
