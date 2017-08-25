@@ -10,7 +10,7 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
 
-class CategoryLandingPage(Page):
+class HomePage(Page):
     description = RichTextField(blank=True)
     discourse = models.ForeignKey(
         'discourse.DiscourseCategory',
@@ -20,14 +20,32 @@ class CategoryLandingPage(Page):
         related_name='+'
     )
 
+    def get_featured(self):
+        items = EntityDetailPage.objects.filter(featured=True)
+        if items:
+            return items
+        return None
+
+    def get_category_page(self):
+        return CategoryLandingPage.objects.get()
+
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
         SnippetChooserPanel('discourse')
     ]
 
 
+class CategoryLandingPage(Page):
+    heading = models.CharField(max_length=150, default='')
+
+    content_panels = Page.content_panels + [
+        FieldPanel('heading'),
+    ]
+
+
 class EntityDetailPage(Page):
     description = RichTextField(blank=True)
+    featured = models.BooleanField(default=False)
 
     def get_first_image(self):
         item = self.gallery_images.first()
@@ -37,6 +55,7 @@ class EntityDetailPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
+        FieldPanel('featured'),
         InlinePanel('gallery_images', label='Gallery Images')
     ]
 
