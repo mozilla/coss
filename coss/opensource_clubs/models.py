@@ -41,6 +41,26 @@ class EntityDetailPage(Page):
     ]
 
 
+class AboutPage(Page):
+    about = models.ForeignKey(
+        'home.AboutSnippet',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    roles_captain = RichTextField(blank=True)
+    roles_coordinator = RichTextField(blank=True)
+    roles_member = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        SnippetChooserPanel('about'),
+        FieldPanel('roles_captain', classname='full'),
+        FieldPanel('roles_coordinator', classname='full'),
+        FieldPanel('roles_member', classname='full'),
+    ]
+
+
 class EntityImageGallery(Orderable):
 
     page = ParentalKey(EntityDetailPage, related_name='gallery_images')

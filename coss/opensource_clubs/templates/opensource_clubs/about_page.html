@@ -1,0 +1,54 @@
+{% extends "home/about_page.html" %}
+{% load static compress wagtailcore_tags %}
+
+{% compress css %}
+  {% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clubs.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+  {% endblock %}
+{% endcompress %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/mozilla-clubs-white.svg' %}" alt="mozilla">
+{% endblock %}
+
+{% block extra_about_nav %}
+  <a class="nav-link" href="#roles">Club Roles</a>
+{% endblock %}
+
+{% block extra_about %}
+  <div id="roles" class="roles">
+    <div class="container">
+      <h4>Club Roles</h4>
+
+      <div class="row">
+        <div class="col-md-3">
+          <nav id="nav-roles" class="nav flex-column">
+            <a class="nav-link active" href="#role-captain">Club Captain</a>
+            <a class="nav-link" href="#role-coordinator">Regional Coordinator</a>
+            <a class="nav-link" href="#role-member">Member</a>
+          </nav>
+        </div>
+        <div class="col-md-9">
+          <div class="nav-content active" id="role-captain">
+            {{ page.roles_captain|richtext }}
+          </div>
+
+          <div class="nav-content" id="role-coordinator">
+            {{ page.roles_coordinator|richtext }}
+          </div>
+
+          <div class="nav-content" id="role-member">
+            {{ page.roles_member|richtext }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% compress js %}
+  {% block extra_js %}
+    <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
+  {% endblock %}
+{% endcompress %}
