@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block brand-logo %}
-  <img src="{% static 'img/mozilla-clubs-white.svg' %}" alt="mozilla">
+  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
 {% endblock %}
 
 {% block extra_about_nav %}
@@ -50,5 +50,6 @@
 {% endblock %}
 
 {% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/clubs.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
 {% endblock %}

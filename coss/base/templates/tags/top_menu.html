@@ -1,0 +1,12 @@
+{% load static coss_tags wagtailcore_tags %}
+{% get_site_root as site_root %}
+
+<div class="collapse navbar-collapse" id="navbarContent">
+  <ul class="navbar-nav mr-auto">
+    {% for menuitem in menuitems %}
+      <li class="nav-item my-2 mx-4">
+        <a href="{% pageurl menuitem %}" class="{% if menuitem.active %} active{% endif %} nav-link">{{ menuitem.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
