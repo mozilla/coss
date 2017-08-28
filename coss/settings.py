@@ -108,6 +108,9 @@ WSGI_APPLICATION = 'coss.wsgi.application'
 # User Model
 AUTH_USER_MODEL = 'users.User'
 
+# Authentication Backend
+AUTHENTICATION_BACKENDS = ['coss.users.backends.CossBackend']
+
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -211,6 +214,15 @@ WAGTAIL_SITE_NAME = "coss"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = config('BASE_URL', default='http://127.0.0.1:8000')
+
+# users.User settings
+WAGTAIL_USER_EDIT_FORM = 'coss.users.forms.CossUserEditForm'
+WAGTAIL_USER_CREATION_FORM = 'coss.users.forms.CossUserCreationForm'
+WAGTAIL_USER_CUSTOM_FIELD = ['site']
+
+#####################
+# DEV, DEBUG Settings
+#####################
 
 if DEV:
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
