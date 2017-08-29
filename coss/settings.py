@@ -130,6 +130,10 @@ STATICFILES_FINDERS = [
 COMPRESS_ENABLED = config('COMPRESS_ENABLED', default=True, cast=bool)
 COMPRESS_OFFLINE = config('COMPRESS_OFFLINE', default=True, cast=bool)
 COMPRESS_CACHE_BACKEND = config('COMPRESS_CACHE_BACKEND', default='default')
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.rCSSMinFilter'
+]
 
 #######################
 # Environment Variables

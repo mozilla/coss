@@ -1,12 +1,10 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static compress wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
-{% compress css %}
-  {% block extra_css %}
-    {{ block.super }}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/entity.css' %}">
-  {% endblock %}
-{% endcompress %}
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/entity.css' %}">
+{% endblock %}
 
 {% block body_class %}entity{% endblock %}
 
