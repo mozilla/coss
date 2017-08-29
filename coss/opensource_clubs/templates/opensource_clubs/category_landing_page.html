@@ -1,84 +1,37 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static compress wagtailcore_tags wagtailimages_tags %}
+
+{% compress css %}
+  {% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entity.css' %}">
+  {% endblock %}
+{% endcompress %}
+
+{% block body_class %}entity{% endblock %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/mozilla-clubs-white.svg' %}" alt="mozilla">
+{% endblock %}
 
 {% block jumbotron %}
   <div class="container jumbotron">
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-12">
         <h2>
           {{ page.title }}
         </h2>
-        {{ page.description|richtext }}
       </div>
-      <div class="col-md-7 text-right">
-        <img class="img-fluid" src="{% static 'img/clubs-illustration.svg' %}" alt="Open Source Clubs">
-      </div>
+    </div>
   </div>
 {% endblock %}
 
 {% block content %}
   <div class="container content">
-    {% if page.discourse %}
-      <div class="row">
-        <div class="col">
-          <h6>Discourse Category: {{ page.discourse.name }}</h6>
-        </div>
-      </div>
-    {% endif %}
-
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Features Clubs</h4>
-      </div>
-      <div class="col-md-6 text-right">
-        <a href="#" class="btn btn-outline-primary">Register a Club</a>
-      </div>
-    </div>
-
-    <div class="row group-types mt-2">
-
+    <div class="card-deck">
       {% for club in page.get_children %}
-        {% with club=club.specific %}
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div href="#" class="card">
-              <h4 class="card-header">
-                <a href="{% pageurl club %}">
-                  <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}"
-                       alt="{{ club.title }}">
-                  <span>{{ club.title }}</span>
-                </a>
-              </h4>
-              {% if club.get_first_image %}
-                {% image club.get_first_image fill-290x190 %}
-              {% endif %}
-              <div class="card-block">
-                <p class="card-text">
-                  {{ club.description|richtext }}
-                </p>
-              </div>
-            </div>
-          </div>
-        {% endwith %}
+        {% include 'opensource_clubs/club_card.html' with club=club.specific %}
       {% endfor %}
-
-    </div>
-
-    <div class="text-center mt-4">
-      See All Of Our Clubs
-      <img class="ml-2" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more">
-    </div>
-
-    <div class="row testimonial">
-      <div class="col-sm-2">
-        <img class="img-fluid" src="{% static 'img/arkodyuti.png' %}" alt="testimony">
-      </div>
-      <div class="col-sm-10">
-        <blockquote>
-          The open web is my passion. The Internet is a catalyst to connectivity.
-          It has made connecting with other humans, places and things faster than
-          any man in the physical world could have ever dreamt of.
-        </blockquote>
-      </div>
     </div>
   </div>
 {% endblock %}
