@@ -19,6 +19,13 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    testimonial = models.ForeignKey(
+        'home.Testimonial',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     def get_featured(self):
         items = EntityDetailPage.objects.filter(featured=True)
@@ -34,15 +41,24 @@ class HomePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
-        SnippetChooserPanel('discourse')
+        SnippetChooserPanel('discourse'),
+        SnippetChooserPanel('testimonial'),
     ]
 
 
 class CategoryLandingPage(Page):
     heading = models.CharField(max_length=150, default='')
+    testimonial = models.ForeignKey(
+        'home.Testimonial',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
 
     content_panels = Page.content_panels + [
         FieldPanel('heading'),
+        SnippetChooserPanel('testimonial'),
     ]
 
 

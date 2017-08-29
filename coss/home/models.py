@@ -4,6 +4,7 @@ from django.db import models
 
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailsnippets.models import register_snippet
 
@@ -56,3 +57,25 @@ class AboutSnippet(models.Model):
 
     def __str__(self):
         return self.title
+
+
+@register_snippet
+class Testimonial(models.Model):
+    quote = RichTextField()
+    person = models.CharField(max_length=100)
+    photo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    panels = [
+        FieldPanel('quote'),
+        FieldPanel('person'),
+        ImageChooserPanel('photo'),
+    ]
+
+    def __str__(self):
+        return self.person

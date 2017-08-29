@@ -107,6 +107,30 @@
       padding: 20px 10px 0 20px;
       font-weight: normal; }
 
+.testimonial {
+  border: 3px solid black;
+  margin: 40px 60px;
+  padding: 20px; }
+  @media (max-width: 575px) {
+    .testimonial {
+      margin: 40px 20px;
+      padding: 10px; } }
+  .testimonial div {
+    padding-left: 0;
+    padding-right: 0; }
+  .testimonial blockquote {
+    padding: 20px 60px 0 40px;
+    line-height: 1.6; }
+    @media (max-width: 575px) {
+      .testimonial blockquote {
+        padding: 20px 10px 10px 10px;
+        line-height: 1.4; } }
+    .testimonial blockquote .rich-text {
+      margin-top: 10px;
+      font-style: italic; }
+    .testimonial blockquote p.quote-person {
+      font-weight: bold; }
+
 footer {
   background: black;
   color: white;
@@ -239,26 +263,7 @@ header {
 .content {
   margin: 30px auto 0 auto; }
   .content .testimonial {
-    border: 3px solid #88d1f1;
-    margin: 40px 60px;
-    padding: 20px; }
-    @media (max-width: 575px) {
-      .content .testimonial {
-        margin: 40px 20px;
-        padding: 10px; } }
-    .content .testimonial div {
-      padding-left: 0;
-      padding-right: 0; }
-    .content .testimonial blockquote {
-      padding: 20px 60px 0 40px;
-      line-height: 1.6; }
-      @media (max-width: 575px) {
-        .content .testimonial blockquote {
-          padding: 20px 10px 10px 10px;
-          line-height: 1.4; } }
-      .content .testimonial blockquote div {
-        margin-top: 10px;
-        font-weight: bold; }
+    border: 3px solid #88d1f1; }
   .content .nav-about a.nav-link {
     font-weight: normal;
     margin: 0 3em; }
