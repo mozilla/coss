@@ -185,6 +185,7 @@ CSP_FONT_SRC = (
 CSP_IMG_SRC = (
     "'self'",
     'https://*.s3.amazonaws.com',
+    '*.gravatar.com',
 )
 CSP_SCRIPT_SRC = (
     "'self'",
@@ -195,6 +196,10 @@ CSP_STYLE_SRC = (
 CSP_CHILD_SRC = (
     "'self'",
 )
+
+# Exclude CMS admin from CSP
+# https://github.com/wagtail/wagtail/issues/1288
+CSP_EXCLUDE_URL_PREFIXES = ('/cms-admin',)
 ##################
 # Wagtail Settings
 ##################
