@@ -51,7 +51,7 @@ class CossUserCreationForm(UserCreationForm):
         error_msg = ''
 
         # Do not allow non-admin accounts with an empty site entry
-        if (not cdata.get('is_superuser') or not cdata.get('is_staff')) and not cdata.get('site'):
+        if not cdata.get('is_superuser') and not cdata.get('site'):
             # raise ValidationError('You need to associate this account with a site.')
             error_msg = 'You need to associate this account with a site.'
 
