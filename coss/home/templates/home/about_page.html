@@ -14,7 +14,7 @@
 {% block content %}
   <div class="content">
 
-    <nav id="nav-about" class="nav justify-content-center">
+    <nav id="nav-about" class="nav nav-about justify-content-center">
       {% if page.about.body_text %}
         <a class="nav-link" href="#body">{{ page.about.body_title }}</a>
       {% endif %}
@@ -42,6 +42,25 @@
 
     {% block extra_about %}
     {% endblock %}
+
+    {% if page.about.bottom_cta_title %}
+      <div class="bottom-cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <a href="{{ page.about.bottom_cta1_link }}" class="btn btn-default align-middle">{{ page.about.bottom_cta1_text }}</a>
+            </div>
+            <div class="col-md-4">
+              <h4>{{ page.about.bottom_cta_title }}</h4>
+              <p>{{ page.about.bottom_cta_text }}</p>
+            </div>
+            <div class="col-md-4">
+              <a href="{{ page.about.bottom_cta2_link }}" class="btn btn-default">{{ page.about.bottom_cta2_text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
 
   </div>
 {% endblock %}
