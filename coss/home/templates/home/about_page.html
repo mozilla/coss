@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static compress wagtailcore_tags %}
+{% load static wagtailcore_tags %}
 
 {% block body_class %}about{% endblock %}
 
@@ -46,8 +46,6 @@
   </div>
 {% endblock %}
 
-{% compress js %}
-  {% block extra_js %}
-    <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
-  {% endblock %}
-{% endcompress %}
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
+{% endblock %}

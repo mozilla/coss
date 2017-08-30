@@ -1,12 +1,10 @@
 {% extends "home/about_page.html" %}
-{% load static compress wagtailcore_tags %}
+{% load static wagtailcore_tags %}
 
-{% compress css %}
-  {% block extra_css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/clubs.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
-  {% endblock %}
-{% endcompress %}
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/clubs.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block brand-logo %}
   <img src="{% static 'img/mozilla-clubs-white.svg' %}" alt="mozilla">
@@ -47,8 +45,6 @@
   </div>
 {% endblock %}
 
-{% compress js %}
-  {% block extra_js %}
-    <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
-  {% endblock %}
-{% endcompress %}
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
+{% endblock %}
