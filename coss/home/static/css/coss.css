@@ -237,7 +237,7 @@ header {
         background-color: inherit; }
 
 .content {
-  margin: 30px auto; }
+  margin: 30px auto 0 auto; }
   .content .testimonial {
     border: 3px solid #88d1f1;
     margin: 40px 60px;
@@ -259,3 +259,9 @@ header {
       .content .testimonial blockquote div {
         margin-top: 10px;
         font-weight: bold; }
+  .content .nav-about a.nav-link {
+    font-weight: normal;
+    margin: 0 3em; }
+    @media (max-width: 768px) {
+      .content .nav-about a.nav-link {
+        margin: 0 .3em; } }
