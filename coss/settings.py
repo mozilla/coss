@@ -91,8 +91,13 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(PROJECT_DIR, 'templates'),
         ],
-        'APP_DIRS': True,
         'OPTIONS': {
+            'loaders': [
+                ('django.template.loaders.cached.Loader', [
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                ]),
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -235,3 +240,8 @@ WAGTAIL_USER_CUSTOM_FIELD = ['site']
 
 if DEV:
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+
+    # Disable template caching
+    for backend in TEMPLATES:
+        del backend['OPTIONS']['loaders']
+        backend['APP_DIRS'] = True
