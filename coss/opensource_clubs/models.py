@@ -3,14 +3,18 @@ from __future__ import absolute_import, unicode_literals
 from django.db import models
 
 from modelcluster.fields import ParentalKey
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
+from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
+from coss.home.content_blocks import InputTextContentBlock
+
 
 class HomePage(Page):
+    """Landing HomePage for OpenSource clubs."""
+
     description = RichTextField(blank=True)
     discourse = models.ForeignKey(
         'discourse.DiscourseCategory',
@@ -47,6 +51,7 @@ class HomePage(Page):
 
 
 class CategoryLandingPage(Page):
+    """Category Landing page for Open Source Clubs."""
     heading = models.CharField(max_length=150, default='')
     testimonial = models.ForeignKey(
         'home.Testimonial',
@@ -63,6 +68,7 @@ class CategoryLandingPage(Page):
 
 
 class EntityDetailPage(Page):
+    """Actual page for the Open Source clubs."""
     description = RichTextField(blank=True)
     featured = models.BooleanField(default=False)
 
@@ -79,7 +85,22 @@ class EntityDetailPage(Page):
     ]
 
 
+class EntityImageGallery(Orderable):
+    """Image gallery for the Open Source Clubs."""
+
+    page = ParentalKey(EntityDetailPage, related_name='gallery_images')
+    image = models.ForeignKey('wagtailimages.Image', on_delete=models.CASCADE, related_name='+')
+    caption = models.CharField(blank=True, default='', max_length=512)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption')
+    ]
+
+
 class AboutPage(Page):
+    """About page for Open source clubs."""
+
     about = models.ForeignKey(
         'home.AboutSnippet',
         null=True,
@@ -99,13 +120,12 @@ class AboutPage(Page):
     ]
 
 
-class EntityImageGallery(Orderable):
+class FAQPage(Page):
+    """FAQ Page for Open Source Clubs."""
+    faq = StreamField([
+        ('question', InputTextContentBlock(required=True),),
+    ])
 
-    page = ParentalKey(EntityDetailPage, related_name='gallery_images')
-    image = models.ForeignKey('wagtailimages.Image', on_delete=models.CASCADE, related_name='+')
-    caption = models.CharField(blank=True, default='', max_length=512)
-
-    panels = [
-        ImageChooserPanel('image'),
-        FieldPanel('caption')
+    content_panels = Page.content_panels + [
+        StreamFieldPanel('faq'),
     ]

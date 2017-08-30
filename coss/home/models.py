@@ -5,7 +5,7 @@ from django.db import models
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore import fields
 from wagtail.wagtailsnippets.models import register_snippet
 
 
@@ -19,11 +19,11 @@ class GroupsGatheringsLandingPage(Page):
 @register_snippet
 class AboutSnippet(models.Model):
     title = models.CharField(default='', max_length=40)
-    header_text = RichTextField(blank=True)
+    header_text = fields.RichTextField(blank=True)
     body_title = models.CharField(blank=True, default='', max_length=40)
-    body_text = RichTextField(blank=True)
+    body_text = fields.RichTextField(blank=True)
     info_title = models.CharField(blank=True, default='', max_length=40)
-    info_text = RichTextField(blank=True)
+    info_text = fields.RichTextField(blank=True)
     bottom_cta_title = models.CharField('Title', blank=True, default='', max_length=40)
     bottom_cta_text = models.CharField('Text', blank=True, default='', max_length=40)
     bottom_cta1_text = models.CharField('Text', blank=True, default='', max_length=20)
@@ -61,7 +61,7 @@ class AboutSnippet(models.Model):
 
 @register_snippet
 class Testimonial(models.Model):
-    quote = RichTextField()
+    quote = fields.RichTextField()
     person = models.CharField(max_length=100)
     photo = models.ForeignKey(
         'wagtailimages.Image',
