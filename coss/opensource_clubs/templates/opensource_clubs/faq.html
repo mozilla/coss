@@ -1,0 +1,25 @@
+{% extends "home/about_page.html" %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/clubs.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/mozilla-clubs-white.svg' %}" alt="mozilla">
+{% endblock %}
+
+{% block extra_about %}
+  <div class="faq">
+    <div class="container">
+      <h4>FAQ</h4>
+
+      <div class="row">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
