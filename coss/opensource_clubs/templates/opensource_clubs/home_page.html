@@ -55,7 +55,7 @@
     {% if page.testimonial %}
       <div class="row testimonial">
         <div class="col-sm-2">
-          <img class="img-fluid" src="{{ page.testimonial.photo.url }}" alt="testimony">
+          {% image page.testimonial.photo width-400 class="img-fluid" %}
         </div>
         <div class="col-sm-10">
           <blockquote>
