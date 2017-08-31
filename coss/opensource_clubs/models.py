@@ -9,7 +9,7 @@ from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
-from coss.home.content_blocks import InputTextContentBlock
+from coss.home.content_blocks import InputTextContentBlock, CardContentBlock
 
 
 class HomePage(Page):
@@ -128,4 +128,17 @@ class FAQPage(Page):
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('faq'),
+    ]
+
+
+class ActivitiesPage(Page):
+    """Activities Page for Open Source Clubs."""
+    description = RichTextField(blank=True)
+    activity = StreamField([
+        ('info', CardContentBlock(required=True),)
+    ])
+
+    content_panels = Page.content_panels + [
+        FieldPanel('description'),
+        StreamFieldPanel('activity'),
     ]

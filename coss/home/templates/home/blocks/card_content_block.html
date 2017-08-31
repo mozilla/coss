@@ -1,0 +1,16 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="card card-mini">
+  {% if value.image %}
+    {% image value.image fill-180x180 class="rounded-circle card-img" %}
+  {% else %}
+    <img src="{% static 'img/clubs-illustration.svg'%}" class="rounded-circle card-img" alt="{{ value.title }}">
+  {% endif %}
+  <h4 class="card-header">{{ value.title }}</h4>
+  <div class="card-body">
+    {{ value.text }}
+  </div>
+  <div class="card-footer">
+    <a href="{{ value.link }}" target="_blank">{{ value.link_title }}</a>
+  </div>
+</div>

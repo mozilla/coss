@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 from django.forms.utils import ErrorList
 
 from wagtail.wagtailcore import blocks
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 
 
 class InputTextContentBlock(blocks.StructBlock):
@@ -51,3 +52,10 @@ class InputTextContentBlock(blocks.StructBlock):
             raise ValidationError('Validation error in StructBlock', params=errors)
 
         return cdata
+
+
+class CardContentBlock(InputTextContentBlock):
+    image = ImageChooserBlock(required=False)
+
+    class Meta:
+        template = 'home/blocks/card_content_block.html'
