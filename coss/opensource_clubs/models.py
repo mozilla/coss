@@ -1,6 +1,7 @@
 from __future__ import absolute_import, unicode_literals
 
 from django.db import models
+from django.contrib.auth import get_user_model
 
 from modelcluster.fields import ParentalKey
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
@@ -10,6 +11,9 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
 from coss.home.content_blocks import InputTextContentBlock, CardContentBlock
+
+
+UserModel = get_user_model()
 
 
 class HomePage(Page):
@@ -142,3 +146,9 @@ class ActivitiesPage(Page):
         FieldPanel('description'),
         StreamFieldPanel('activity'),
     ]
+
+
+class ClubProfile(models.Model):
+    """User profile relevant only to the Open Source Clubs."""
+    user = models.OneToOneField(UserModel)
+    is_captain = models.BooleanField(default=False)
