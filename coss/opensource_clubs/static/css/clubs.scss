@@ -1,0 +1,102 @@
+@import 'colors';
+
+a {
+    color: black;
+    font-weight: bold;
+
+    &:hover {
+        color: $clubs-primary;
+        text-decoration: none;
+    }
+}
+
+header {
+    background-color: $clubs-primary;
+
+    .lead {
+
+        .btn {
+            border: 1px solid $clubs-secondary;
+        }
+    }
+
+    .navbar-light {
+        background-color: white;
+        height: 60px;
+
+        .navbar-brand {
+            padding-top: 30px;
+
+            @media (max-width: 992px) {
+                padding-top: inherit;
+            }
+
+            img {
+                width: 90px;
+            }
+        }
+    }
+}
+
+.content {
+
+    .testimonial {
+        border: 3px solid $clubs-secondary;
+    }
+
+    .profile-listing {
+        width: 340px;
+        border-top: 3px solid $clubs-primary;
+        margin-bottom: 40px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .avatar {
+            float: left;
+            height: 140px;
+            overflow: hidden;
+            margin: 0;
+
+            img {
+                max-width: 140px;
+            }
+        }
+
+        .profile-details {
+            float: left;
+            line-height: 1.6;
+
+            .profile-title {
+                color: $clubs-primary;
+                font-size: .9em;
+            }
+        }
+    }
+
+    .info-box {
+        border: 1px dashed lightgray;
+        margin: 0 10px 0 0;
+        padding: 15px 0;
+    }
+
+    .club-interests {
+        position: absolute;
+        bottom: 0;
+
+        @media (max-width: 768px) {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        span {
+            display: inline-block;
+            background-color: $clubs-primary;
+            padding: 3px 10px;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
