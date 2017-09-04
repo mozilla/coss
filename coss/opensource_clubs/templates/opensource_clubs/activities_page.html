@@ -14,15 +14,18 @@
 {% endblock %}
 
 {% block extra_about %}
-  <div class="faq">
+  <div class="activities">
     <div class="container">
       <h3>{{ page.title }}</h3>
 
-      <div class="row">
-        <div class="col-md-12">
-          {% include_block page.faq %}
-        </div>
+      {{ page.description|richtext }}
+
+      <div class="card-deck">
+        {% for block in page.activity %}
+          {% include_block block %}
+        {% endfor %}
       </div>
+
     </div>
   </div>
 {% endblock %}

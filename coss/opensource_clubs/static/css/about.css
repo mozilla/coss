@@ -22,6 +22,9 @@
 
 .about .content {
   margin-top: 0; }
+  .about .content .activities,
+  .about .content .faq {
+    margin-top: 60px; }
   .about .content .nav {
     background-color: #eee; }
     .about .content .nav .nav-link {

@@ -6,7 +6,7 @@
     <img class="float-right" src="{% static 'img/icons/right-arrow-black.svg' %}"
          alt="{{ club.title }}">
   </h4>
-  <div class="body">
+  <div class="card-body">
     {% if club.get_first_image %}
       {% image club.get_first_image fill-370x200 %}
     {% endif %}
