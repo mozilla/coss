@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}about{% endblock %}
 
@@ -15,19 +15,27 @@
   <div class="content">
 
     <nav id="nav-about" class="nav nav-about justify-content-center">
-      {% if page.about.body_text %}
+      {% if page.about.body_title and page.about.body_text %}
         <a class="nav-link" href="#body">{{ page.about.body_title }}</a>
       {% endif %}
-      {% if page.about.info_text %}
+      {% if page.about.info_title and page.about.info_text %}
         <a class="nav-link" href="#info">{{ page.about.info_title }}</a>
       {% endif %}
-      {% block extra_about_nav %}
-      {% endblock %}
+      {% if page.about.details_title and page.about.details %}
+        <a class="nav-link" href="#details">{{ page.about.details_title }}</a>
+      {% endif %}
     </nav>
 
     {% if page.about.body_text %}
-      <div id="body" class="body">
+      {% if page.about.body_image %}
+        {% image page.about.body_image original as bg_photo %}
+      {% endif %}
+      <div id="body" class="body" data-bg-img="{{ bg_photo.url }}">
+        <div class="body-image"></div>
         <div class="well">
+          {% if page.about.body_title %}
+            <h4>{{ page.about.body_title }}</h4>
+          {% endif %}
           {{ page.about.body_text|richtext }}
         </div>
       </div>
@@ -35,8 +43,56 @@
 
     {% if page.about.info_text %}
       <div id="info" class="info">
-        <h4>{{ page.about.info_title }}</h4>
+        {% if page.about.info_title %}
+          <h4>{{ page.about.info_title }}</h4>
+        {% endif %}
         {{ page.about.info_text|richtext }}
+      </div>
+    {% endif %}
+
+    {% if page.about.details %}
+      <div id="details" class="details">
+        <div class="container">
+          {% if page.about.details_title %}
+            <h4>{{ page.about.details_title }}</h4>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-3">
+              <nav id="nav-details" class="nav nav-details flex-column">
+                {% for block in page.about.details %}
+                  <a class="nav-link {% if not forloop.counter0 %}active{% endif %}" href="#details-{{ forloop.counter0 }}">{{ block.value.title }}</a>
+                {% endfor %}
+              </nav>
+            </div>
+            <div class="col-md-8 ml-auto well">
+              {% for block in page.about.details %}
+                <div class="nav-content {% if not forloop.counter0 %}active{% endif %}" id="details-{{ forloop.counter0 }}">
+                  {{ block.value.text }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.about.collaborators_title %}
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h4>{{ page.about.collaborators_title }}</h4>
+
+            {{ page.about.collaborators_text|richtext }}
+          </div>
+          <div class="col-md-6 text-right">
+            <a href="{{ page.about.collaborators_cta_link }}" class="cta">{{ page.about.collaborators_cta_text }}</a>
+          </div>
+        </div>
+        <div class="card-deck mt-4">
+          {% for block in page.about.collaborators %}
+          {% include_block block %}
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
 
@@ -47,14 +103,14 @@
       <div class="bottom-cta">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <a href="{{ page.about.bottom_cta1_link }}" class="btn btn-default align-middle">{{ page.about.bottom_cta1_text }}</a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
               <h4>{{ page.about.bottom_cta_title }}</h4>
               <p>{{ page.about.bottom_cta_text }}</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <a href="{{ page.about.bottom_cta2_link }}" class="btn btn-default">{{ page.about.bottom_cta2_text }}</a>
             </div>
           </div>
@@ -66,5 +122,5 @@
 {% endblock %}
 
 {% block extra_js %}
-  <script type="text/javascript" src="{% static 'js/clubs_about.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/about.js' %}"></script>
 {% endblock %}
