@@ -1,0 +1,189 @@
+@import 'colors';
+
+.about {
+
+    header {
+        background-color: #f9f9f9;
+
+        .navbar-light {
+            background-color: $clubs-primary;
+
+            .navbar-collapse {
+
+                .nav-item {
+
+                    a.nav-link {
+                        color: white;
+
+                        &:hover,
+                        &:active,
+                        &:focus,
+                        &.active {
+                            color: white;
+                            border-bottom: 1px solid white;
+                        }
+                    }
+                }
+            }
+        }
+
+        .jumbotron {
+            background-color: white;
+            color: black;
+
+            .rich-text {
+                font-size: 1.8em;
+                margin: 0 auto;
+                max-width: 700px;
+                padding: 2rem;
+                text-align: center;
+
+                @media (max-width: 768px) {
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    .content {
+        margin-top: 0;
+
+        .activities,
+        .faq {
+            margin-top: 60px;
+        }
+
+        .nav {
+            background-color: #eee;
+
+            .nav-link {
+                color: black;
+
+                &:active {
+                    color: $clubs-primary;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .body {
+            background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+                        url('/static/img/alex-wong.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            font-size: 1.2em;
+
+            .well {
+                background-color: white;
+                margin: 40px auto;
+                max-width: 770px;
+                padding: 2rem;
+
+                @media (max-width: 768px) {
+                    max-width: 90%;
+                    font-size: .9em;
+                }
+            }
+        }
+
+        .info {
+            margin: 40px auto;
+            max-width: 810px;
+            padding: 2rem;
+
+            h4 {
+
+                @media (min-width: 575px) {
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    &:after {
+                        content: " / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / ";
+                        color: $clubs-primary;
+                    }
+                }
+            }
+        }
+
+        .roles {
+            background: $clubs-primary;
+            background: linear-gradient($clubs-primary, $clubs-gradient);
+            padding: 2rem;
+
+            h4 {
+                padding-left: 16px;
+                color: white;
+            }
+
+            nav {
+                background-color: inherit;
+                margin-bottom: 20px;
+
+                .nav-link {
+                    color: black;
+                    opacity: 0.4;
+                    font-weight: bold;
+
+                    &.active {
+                        opacity: 1;
+                        color: white;
+                        border-bottom: 1px solid white;
+                    }
+                }
+            }
+
+            .well {
+                background-color: white;
+                padding: 2em;
+
+                .nav-content {
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .activities {
+            min-height: 200px;
+        }
+
+        .bottom-cta {
+            padding: 2em;
+            background: $clubs-primary;
+            background: linear-gradient(to left, $clubs-primary, $clubs-gradient);
+            text-align: center;
+
+            .col-md-4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width: 768px) {
+
+                    &:first-child {
+
+                        .btn {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+
+            p {
+                color: white;
+            }
+
+            .btn {
+                background-color: white;
+                border: none;
+                color: black;
+                text-transform: uppercase;
+                width: 250px;
+            }
+        }
+    }
+}

@@ -1,0 +1,163 @@
+@import 'variables';
+@import 'colors';
+@import 'fonts';
+@import 'components';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: OpenSans, sans-serif;
+}
+
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: calc(var(--footer-height) * -1);
+
+    &:after {
+        content: '';
+        display: block;
+        height: var(--footer-height);
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: ZillaSlab;
+}
+
+.container {
+
+    @media (max-width: 575px) {
+        width: 100%;
+    }
+}
+
+.breadcrumbs {
+    font-size: .9em;
+
+    a {
+        color: black;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.icon {
+
+    img {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+header {
+    background-color: $groups-primary;
+
+    .navbar-light {
+        background-color: white;
+        height: 60px;
+
+        &.height-fix {
+            height: auto;
+        }
+
+        .navbar-toggler-icon {
+        	background-image: url('/static/img/hamburger.svg');
+            opacity : 0.5;
+        }
+
+        .navbar-collapse {
+
+            .nav-item {
+                padding: 8px;
+
+                a.nav-link {
+                    padding: 4px 0 0 0;
+                    color: black;
+                    font-weight: bold;
+                    display: inline-block;
+                    height: 30px;
+
+                    &:hover,
+                    &:active,
+                    &:focus,
+                    &.active {
+                        color: black;
+                        border-bottom: 1px solid black;
+                    }
+                }
+            }
+        }
+
+        .navbar-brand {
+
+            img {
+                width: 120px;
+            }
+        }
+    }
+
+    .jumbotron {
+        background-color: transparent;
+        padding: 60px 15px 50px 15px;
+        margin-bottom: 0;
+        color: white;
+
+        h3 {
+            font-family: ZillaSlabHighLight;
+            color: white;
+            width: auto;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .row {
+            align-items: center;
+        }
+    }
+
+    .lead {
+        margin-top: 20px;
+        padding-left: 0;
+
+        .btn {
+            border: 1px solid $groups-secondary;
+            color: white;
+
+            &:hover {
+                background-color: inherit;
+            }
+        }
+    }
+}
+
+.content {
+    margin: 30px auto 0 auto;
+
+    .testimonial {
+        border: 3px solid $groups-secondary;
+    }
+
+    .nav-about {
+
+        a.nav-link {
+            font-weight: normal;
+            margin: 0 3em;
+
+            @media (max-width: 768px) {
+                margin: 0 .3em;
+            }
+        }
+    }
+}

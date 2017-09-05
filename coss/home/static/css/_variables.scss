@@ -1,0 +1,7 @@
+:root {
+    --footer-height: 170px;
+
+    @media (max-width: 575px) {
+        --footer-height: 300px;
+    }
+}
