@@ -1,13 +1,17 @@
+@Library('partinfra-libs') _
+
 node('master'){
     def params
     switch(env.BRANCH_NAME) {
         case "master":
             environment = "staging"
             app_id_group = "/staging/"
+            fqdn = "coss-staging.mozilla.community"
         break
         case "production":
             environment = "production"
             app_id_group = ""
+            fqdn = "coss.mozilla.community"
         break
         default:
             print "Invalid branch"
@@ -61,5 +65,9 @@ node('mesos') {
 node('master') {
     stage('Deploy') {
         build job: 'deploy-test', parameters: params
+    }
+
+    stage('Test') {
+        observatoryTest(fqdn)
     }
 }
