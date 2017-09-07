@@ -18,9 +18,13 @@
     <div class="container">
       <h3>{{ page.title }}</h3>
 
-      {{ page.description|richtext }}
+      <div class="row">
+        <div class="col-md-8">
+          {{ page.description|richtext }}
+        </div>
+      </div>
 
-      <div class="card-deck">
+      <div class="card-deck mt-4">
         {% for block in page.activity %}
           {% include_block block %}
         {% endfor %}
