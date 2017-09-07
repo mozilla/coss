@@ -1,25 +1,24 @@
 @import 'variables';
-@import 'colors';
 @import 'fonts';
 @import 'components';
 
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
 body {
     background-color: white;
     color: black;
+    font-family: OpenSans, sans-serif;
     font-size: 16px;
     line-height: 1.4;
-    font-family: OpenSans, sans-serif;
 }
 
 .page-wrap {
-    min-height: 100%;
     margin-bottom: calc(var(--footer-height) * -1);
+    min-height: 100%;
 
     &:after {
         content: '';
@@ -54,13 +53,13 @@ h1, h2, h3, h4 {
 .icon {
 
     img {
-        width: 15px;
         height: 15px;
+        width: 15px;
     }
 }
 
 header {
-    background-color: $groups-primary;
+    background-color: var(--primary-color);
 
     .navbar-light {
         background-color: white;
@@ -70,8 +69,8 @@ header {
             margin: 20px 0;
 
             .navbar-toggler-icon {
-            	background-image: url('/static/img/hamburger.svg');
-                opacity : 0.5;
+                background-image: url('/static/img/hamburger.svg');
+                opacity: 0.5;
             }
         }
 
@@ -81,18 +80,18 @@ header {
                 padding: 8px;
 
                 a.nav-link {
-                    padding: 4px 0 0 0;
                     color: black;
-                    font-weight: bold;
                     display: inline-block;
+                    font-weight: bold;
                     height: 30px;
+                    padding: 4px 0 0 0;
 
                     &:hover,
                     &:active,
                     &:focus,
                     &.active {
-                        color: black;
                         border-bottom: 1px solid black;
+                        color: black;
                     }
                 }
             }
@@ -109,9 +108,9 @@ header {
 
     .jumbotron {
         background-color: transparent;
-        padding: 60px 15px 50px 15px;
-        margin-bottom: 0;
         color: white;
+        margin-bottom: 0;
+        padding: 60px 15px 50px 15px;
 
         h3 {
             font-family: ZillaSlabHighLight;
@@ -133,7 +132,7 @@ header {
         padding-left: 0;
 
         .btn {
-            border: 1px solid $groups-secondary;
+            border: 1px solid var(--border-color);
             color: white;
 
             &:hover {
@@ -145,10 +144,6 @@ header {
 
 .content {
     margin: 30px auto;
-
-    .testimonial {
-        border: 3px solid $groups-secondary;
-    }
 
     .nav-about {
 

@@ -1,4 +1,9 @@
-@import 'colors';
+:root {
+    --border-color: #ffed00;
+    --gradient-color: #fad680;
+    --input-bg-color: #c99723;
+    --primary-color: #f8b83e;
+}
 
 a {
     color: black;
@@ -9,7 +14,7 @@ a {
     }
 
     &:hover {
-        color: $clubs-primary;
+        color: var(--primary-color);
         text-decoration: none;
 
         &.cta {
@@ -19,26 +24,23 @@ a {
 }
 
 header {
-    background-color: $clubs-primary;
+    background: var(--primary-color);
+    background: linear-gradient(to top right, var(--primary-color), var(--gradient-color));
 
     .lead {
 
         .btn {
-            border: 1px solid $clubs-secondary;
+            border: 1px solid var(--border-color);
         }
     }
 }
 
 .content {
 
-    .testimonial {
-        border: 3px solid $clubs-secondary;
-    }
-
     .profile-listing {
-        width: 340px;
-        border-top: 3px solid $clubs-primary;
+        border-top: 3px solid var(--primary-color);
         margin-bottom: 40px;
+        width: 340px;
 
         @media (max-width: 768px) {
             margin-bottom: 10px;
@@ -48,8 +50,8 @@ header {
         .avatar {
             float: left;
             height: 140px;
-            overflow: hidden;
             margin: 0;
+            overflow: hidden;
 
             img {
                 max-width: 140px;
@@ -61,7 +63,7 @@ header {
             line-height: 1.6;
 
             .profile-title {
-                color: $clubs-primary;
+                color: var(--primary-color);
                 font-size: .9em;
             }
         }
@@ -74,20 +76,20 @@ header {
     }
 
     .club-interests {
-        position: absolute;
         bottom: 0;
+        position: absolute;
 
         @media (max-width: 768px) {
-            position: relative;
             margin: 10px 0;
+            position: relative;
         }
 
         span {
-            display: inline-block;
-            background-color: $clubs-primary;
-            padding: 3px 10px;
+            background-color: var(--primary-color);
             color: white;
+            display: inline-block;
             font-weight: bold;
+            padding: 3px 10px;
         }
     }
 }
