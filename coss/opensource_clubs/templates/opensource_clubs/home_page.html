@@ -1,6 +1,10 @@
 {% extends "opensource_clubs/category_base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
+{% block brand-logo %}
+  <img src="{% static 'img/clubs-black.svg' %}" alt="mozilla">
+{% endblock %}
+
 {% block jumbotron %}
   <div class="container jumbotron">
     <div class="row">

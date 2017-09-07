@@ -1,5 +1,5 @@
 {% load static wagtailuserbar %}
-{% load compress %}
+{% load compress wagtailcore_tags coss_tags %}
 
 <!DOCTYPE html>
 <html>
@@ -40,13 +40,20 @@
     <div class="page-wrap">
 
       <header>
-        <nav class="navbar navbar-light navbar-toggleable-md" role="navigation">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              {% block brand-logo %}
-                <img src="{% static 'img/mozilla.svg' %}" alt="mozilla">
-              {% endblock %}
-            </a>
+        <nav id="nav-top" class="navbar navbar-light navbar-toggleable-md" role="navigation">
+          {% get_site_root as site_root %}
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% pageurl site_root %}">
+            {% block brand-logo %}
+              <img src="{% static 'img/mozilla.svg' %}" alt="mozilla">
+            {% endblock %}
+          </a>
+
+          <div class="container-fluid">
+            {% top_menu parent=site_root calling_page=self %}
           </div>
         </nav>
 

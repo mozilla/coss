@@ -19,23 +19,6 @@ header {
             border: 1px solid $clubs-secondary;
         }
     }
-
-    .navbar-light {
-        background-color: white;
-        height: 60px;
-
-        .navbar-brand {
-            padding-top: 30px;
-
-            @media (max-width: 992px) {
-                padding-top: inherit;
-            }
-
-            img {
-                width: 90px;
-            }
-        }
-    }
 }
 
 .content {

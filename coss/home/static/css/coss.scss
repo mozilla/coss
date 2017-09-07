@@ -64,15 +64,15 @@ header {
 
     .navbar-light {
         background-color: white;
-        height: 60px;
+        padding: 1rem;
 
-        &.height-fix {
-            height: auto;
-        }
+        .navbar-toggler {
+            margin: 20px 0;
 
-        .navbar-toggler-icon {
-        	background-image: url('/static/img/hamburger.svg');
-            opacity : 0.5;
+            .navbar-toggler-icon {
+            	background-image: url('/static/img/hamburger.svg');
+                opacity : 0.5;
+            }
         }
 
         .navbar-collapse {
@@ -99,9 +99,10 @@ header {
         }
 
         .navbar-brand {
+            width: 0;
 
             img {
-                width: 120px;
+                width: 140px;
             }
         }
     }
