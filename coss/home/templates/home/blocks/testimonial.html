@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="row testimonial">
+  <div class="col-lg-2 col-md-4">
+    {% image testimonial.photo width-400 class="img-fluid mx-auto d-block" %}
+  </div>
+  <div class="col-lg-10 col-md-8">
+    <blockquote>
+      {{ testimonial.quote|richtext }}
+      <p class="quote-person">{{ testimonial.person }}</p>
+    </blockquote>
+  </div>
+</div>

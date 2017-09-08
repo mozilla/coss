@@ -1,10 +1,14 @@
 .highlight {
-    color: black;
+    color: white;
     display: block;
     font-family: ZillaSlabHighLight;
     line-height: 1.1;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     width: auto;
+
+    @media (min-width: 992px) {
+        max-width: 70%;
+    }
 }
 
 .breadcrumbs {
@@ -16,6 +20,19 @@
         &:hover {
             text-decoration: none;
         }
+    }
+}
+
+.btn-outline-primary {
+    border-color: var(--border-color);
+    color: white;
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active {
+        background-color: var(--primary-color);
+        border-color: var(--border-color);
+        color: white;
     }
 }
 
@@ -126,7 +143,6 @@
                     text-decoration: underline;
                 }
             }
-
         }
     }
 }
@@ -155,14 +171,66 @@
             padding: 20px 10px 10px 10px;
         }
 
+        &:before {
+            color: var(--primary-color);
+            content: '"';
+            font-size: 12em;
+            font-style: italic;
+            font-weight: bold;
+            left: -50px;
+            line-height: 1;
+            position: absolute;
+            top: -20px;
+
+            @media (max-width: 575px) {
+                left: -60px;
+                top: -50px;
+            }
+        }
+
         .rich-text {
             font-style: italic;
             margin-top: 10px;
         }
 
         p.quote-person {
+            color: var(--primary-color);
             font-weight: bold;
         }
+    }
+}
+
+.bottom-banner {
+    background: var(--primary-color);
+    background: linear-gradient(to left, var(--primary-color), var(--gradient-color));
+    margin-top: 30px;
+    padding: 2em;
+    text-align: center;
+
+    .row div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+
+            .btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    p {
+        color: white;
+    }
+
+    .btn {
+        background-color: white;
+        border: none;
+        color: black;
+        text-transform: uppercase;
+        width: 250px;
     }
 }
 

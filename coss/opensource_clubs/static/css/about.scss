@@ -172,42 +172,5 @@
         .collaborators {
             min-height: 200px;
         }
-
-        .bottom-cta {
-            padding: 2em;
-            margin-bottom: -30px;
-            background: $clubs-primary;
-            background: linear-gradient(to left, $clubs-primary, $clubs-gradient);
-            text-align: center;
-
-            .row div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                @media (max-width: 768px) {
-
-                    &:first-child {
-
-                        .btn {
-                            margin-bottom: 20px;
-                        }
-                    }
-                }
-            }
-
-            p {
-                color: white;
-            }
-
-            .btn {
-                background-color: white;
-                border: none;
-                color: black;
-                text-transform: uppercase;
-                width: 250px;
-            }
-        }
     }
 }

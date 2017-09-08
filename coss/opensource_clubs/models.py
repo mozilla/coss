@@ -4,8 +4,9 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 from modelcluster.fields import ParentalKey
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
-from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel,
+                                                StreamFieldPanel, MultiFieldPanel)
+from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
@@ -19,7 +20,10 @@ UserModel = get_user_model()
 class HomePage(Page):
     """Landing HomePage for OpenSource clubs."""
 
-    description = RichTextField(blank=True)
+    heading_text = fields.RichTextField(verbose_name='Text', blank=True, default='',)
+    heading_cta_text = models.CharField(verbose_name='CTA Text', blank=True, default='',
+                                        max_length=50)
+    heading_cta_link = models.URLField(verbose_name='CTA Link', blank=True, default='')
     discourse = models.ForeignKey(
         'discourse.DiscourseCategory',
         null=True,
@@ -34,6 +38,16 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    bottom_cta_title = models.CharField(verbose_name='Title', blank=True, default='',
+                                        max_length=50)
+    bottom_cta_text = models.CharField(verbose_name='Text', blank=True, default='',
+                                       max_length=100)
+    bottom_cta1_text = models.CharField(verbose_name='Text', blank=True, default='',
+                                        max_length=20)
+    bottom_cta1_link = models.URLField(verbose_name='Link', blank=True, default='')
+    bottom_cta2_text = models.CharField(verbose_name='Text', blank=True, default='',
+                                        max_length=20)
+    bottom_cta2_link = models.URLField(verbose_name='Link', blank=True, default='')
 
     def get_featured(self):
         items = EntityDetailPage.objects.filter(featured=True)
@@ -48,9 +62,25 @@ class HomePage(Page):
             return None
 
     content_panels = Page.content_panels + [
-        FieldPanel('description', classname='full'),
+        MultiFieldPanel([
+            FieldPanel('heading_text'),
+            FieldPanel('heading_cta_text'),
+            FieldPanel('heading_cta_link'),
+        ], heading='Heading'),
         SnippetChooserPanel('discourse'),
         SnippetChooserPanel('testimonial'),
+        MultiFieldPanel([
+            FieldPanel('bottom_cta_title'),
+            FieldPanel('bottom_cta_text'),
+        ], heading='Bottom CTA'),
+        MultiFieldPanel([
+            FieldPanel('bottom_cta1_text'),
+            FieldPanel('bottom_cta1_link'),
+        ], heading='Bottom CTA Left button'),
+        MultiFieldPanel([
+            FieldPanel('bottom_cta2_text'),
+            FieldPanel('bottom_cta2_link'),
+        ], heading='Bottom CTA Right Button')
     ]
 
 
@@ -73,7 +103,7 @@ class CategoryLandingPage(Page):
 
 class EntityDetailPage(Page):
     """Actual page for the Open Source clubs."""
-    description = RichTextField(blank=True)
+    description = fields.RichTextField(blank=True)
     featured = models.BooleanField(default=False)
 
     def get_first_image(self):
@@ -120,7 +150,7 @@ class AboutPage(Page):
 
 class FAQPage(Page):
     """FAQ Page for Open Source Clubs."""
-    faq = StreamField([
+    faq = fields.StreamField([
         ('question', InputTextContentBlock(required=True),),
     ])
 
@@ -131,8 +161,8 @@ class FAQPage(Page):
 
 class ActivitiesPage(Page):
     """Activities Page for Open Source Clubs."""
-    description = RichTextField(blank=True)
-    activity = StreamField([
+    description = fields.RichTextField(blank=True)
+    activity = fields.StreamField([
         ('info', CardContentBlock(required=True),)
     ])
 

@@ -1,0 +1,7 @@
+{% load wagtailcore_tags %}
+
+<h3 class="highlight">{{ page.title }}</h3>
+{{ page.heading_text|richtext }}
+{% if page.heading_cta_text %}
+  <a href="{{ page.heading_cta_link }}" class="btn btn-outline-primary">{{ page.heading_cta_text }}</a>
+{% endif %}

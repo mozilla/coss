@@ -3,6 +3,10 @@
     --gradient-color: #fad680;
     --input-bg-color: #c99723;
     --primary-color: #f8b83e;
+
+    .inverted {
+        --body-bg-color: #f9f9f9;
+    }
 }
 
 a {
@@ -35,7 +39,33 @@ header {
     }
 }
 
-.content {
+.inverted {
+
+    .card {
+        background-color: white;
+        box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 0.1);
+
+        .card-header {
+            background-color: white;
+            color: var(--primary-color);
+
+            a {
+                color: var(--primary-color);
+
+                &:hover {
+                    color: dimgray;
+
+                    svg > g {
+                        fill: dimgray;
+                    }
+                }
+            }
+
+            svg > g {
+                fill: var(--primary-color);
+            }
+        }
+    }
 
     .profile-listing {
         border-top: 3px solid var(--primary-color);

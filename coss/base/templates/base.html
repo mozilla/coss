@@ -39,7 +39,7 @@
 
     <div class="page-wrap">
 
-      <header>
+      <header class="{% block header_class %}{% endblock %}">
         <nav id="nav-top" class="navbar navbar-light navbar-toggleable-md" role="navigation">
           {% get_site_root as site_root %}
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -63,6 +63,8 @@
       {% block content %}{% endblock %}
 
     </div>
+
+    {% block bottom_content %}{% endblock %}
 
     <footer>
       <div class="container text-center">

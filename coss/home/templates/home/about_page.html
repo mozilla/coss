@@ -90,7 +90,7 @@
         </div>
         <div class="card-deck mt-4">
           {% for block in page.about.collaborators %}
-          {% include_block block %}
+            {% include_block block %}
           {% endfor %}
         </div>
       </div>
@@ -99,26 +99,13 @@
     {% block extra_about %}
     {% endblock %}
 
-    {% if page.about.bottom_cta_title %}
-      <div class="bottom-cta">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
-              <a href="{{ page.about.bottom_cta1_link }}" class="btn btn-default align-middle">{{ page.about.bottom_cta1_text }}</a>
-            </div>
-            <div class="col-md-6">
-              <h4>{{ page.about.bottom_cta_title }}</h4>
-              <p>{{ page.about.bottom_cta_text }}</p>
-            </div>
-            <div class="col-md-3">
-              <a href="{{ page.about.bottom_cta2_link }}" class="btn btn-default">{{ page.about.bottom_cta2_text }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
   </div>
+{% endblock %}
+
+{% block bottom_content %}
+  {% if page.about.bottom_cta_title %}
+    {% include 'home/blocks/bottom_banner.html' with page=page.about %}
+  {% endif %}
 {% endblock %}
 
 {% block extra_js %}
