@@ -7,10 +7,10 @@
 
 a {
     color: black;
-    font-weight: bold;
 
     &.cta {
         text-decoration: underline;
+        font-weight: bold;
     }
 
     &:hover {
