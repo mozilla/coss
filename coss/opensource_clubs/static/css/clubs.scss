@@ -31,6 +31,26 @@ header {
     background: var(--primary-color);
     background: linear-gradient(to top right, var(--primary-color), var(--gradient-color));
 
+    &.white-header {
+        background: white;
+
+        .navbar-light {
+            background-color: var(--primary-color);
+        }
+
+        .jumbotron {
+            color: black;
+
+            .row {
+                align-items: flex-start;
+            }
+
+            h3 {
+                color: black;
+            }
+        }
+    }
+
     .lead {
 
         .btn {

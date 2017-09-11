@@ -1,12 +1,7 @@
 {% extends "opensource_clubs/category_base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-{% block extra_css %}
-  {{ block.super }}
-  <link rel="stylesheet" type="text/scss" href="{% static 'css/entity.scss' %}">
-{% endblock %}
-
-{% block body_class %}entity{% endblock %}
+{% block header_class %}white-header{% endblock %}
 
 {% block jumbotron %}
   <div class="container jumbotron club">

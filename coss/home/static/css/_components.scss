@@ -36,6 +36,19 @@
     }
 }
 
+.btn-outline-default {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active {
+        background-color: var(--primary-color);
+        border-color: var(--border-color);
+        color: white;
+    }
+}
+
 .card-deck {
 
     .card {
@@ -55,32 +68,38 @@
             margin-left: 0;
         }
 
-
-        &:hover {
-            text-decoration: none;
-        }
-
-        &.active {
-            display: inherit;
-        }
-
         .card-header {
             background-color: var(--card-bg-color);
+            border-bottom: none;
             min-height: 100px;
 
-            img {
+            a {
+                color: black;
+                font-weight: normal;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            svg {
                 margin-top: 12px;
             }
         }
 
         .card-body {
+            margin: 0 15px 15px 15px;
             overflow-x: hidden;
 
             .rich-text {
                 color: dimgray;
-                min-height: 100px;
-                padding: 20px 10px 0 20px;
                 font-weight: normal;
+                line-height: 22px;
+                max-height: calc(22px * 4);
+                overflow: hidden;
+                padding-top: 20px;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
             }
         }
 

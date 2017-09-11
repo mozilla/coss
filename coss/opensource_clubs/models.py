@@ -86,18 +86,17 @@ class HomePage(Page):
 
 class CategoryLandingPage(Page):
     """Category Landing page for Open Source Clubs."""
-    heading = models.CharField(max_length=150, default='')
-    testimonial = models.ForeignKey(
-        'home.Testimonial',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
+    heading_text = fields.RichTextField(verbose_name='Text', blank=True, default='',)
+    heading_cta_text = models.CharField(verbose_name='CTA Text', blank=True, default='',
+                                        max_length=50)
+    heading_cta_link = models.URLField(verbose_name='CTA Link', blank=True, default='')
 
     content_panels = Page.content_panels + [
-        FieldPanel('heading'),
-        SnippetChooserPanel('testimonial'),
+        MultiFieldPanel([
+            FieldPanel('heading_text'),
+            FieldPanel('heading_cta_text'),
+            FieldPanel('heading_cta_link'),
+        ], heading='Heading'),
     ]
 
 
