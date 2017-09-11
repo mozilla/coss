@@ -26,7 +26,8 @@ class CossUserEditForm(UserEditForm):
             error_msg = 'You need to associate this account with a site.'
 
         if ((self.instance.is_superuser or self.instance.is_staff) and
-            cdata.get('username') != self.instance.username and
+            cdata.get('username') != self.instance.username and not
+            cdata.get('password2') and
                 UserModel.objects.filter(username=cdata.get('username'),
                                          site__isnull=True).exists()):
             error_msg = 'There is already a global account for this username.'
