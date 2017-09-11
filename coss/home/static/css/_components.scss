@@ -219,6 +219,34 @@
     }
 }
 
+.carousel {
+
+    .carousel-item {
+
+        img {
+            object-fit: cover;
+            width: 575px;
+            height: 411px;
+
+            @media (max-width: 767px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .carousel-indicators {
+        margin-left: 10px;
+        justify-content: flex-start;
+        margin-bottom: 0;
+
+        li {
+            max-width: 10px;
+            height: 10px;
+        }
+    }
+}
+
 .bottom-banner {
     background: var(--primary-color);
     background: linear-gradient(to left, var(--primary-color), var(--gradient-color));

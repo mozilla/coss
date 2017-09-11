@@ -31,13 +31,6 @@ h1, h2, h3, h4 {
     font-family: ZillaSlab;
 }
 
-.container {
-
-    @media (max-width: 575px) {
-        width: 100%;
-    }
-}
-
 .breadcrumbs {
     font-size: .9em;
 
@@ -137,8 +130,7 @@ header {
 }
 
 .content {
-    margin: auto;
-    padding: 30px 0;
+    padding-top: 30px;
 
     .nav-about {
 
