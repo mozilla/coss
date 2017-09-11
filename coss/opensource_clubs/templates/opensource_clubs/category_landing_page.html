@@ -1,33 +1,36 @@
 {% extends "opensource_clubs/category_base.html" %}
 {% load static compress wagtailcore_tags wagtailimages_tags %}
 
-{% compress css %}
-  {% block extra_css %}
-    {{ block.super }}
-    <link rel="stylesheet" type="text/scss" href="{% static 'css/entity.scss' %}">
-  {% endblock %}
-{% endcompress %}
+{% block body_class %}inverted{% endblock %}
 
-{% block body_class %}entity{% endblock %}
+{% block header_class %}white-header{% endblock %}
 
 {% block jumbotron %}
   <div class="container jumbotron">
     <div class="row">
-      <div class="col-md-12">
-        <h2>
-          {{ page.title }}
-        </h2>
-      </div>
+      {% include 'home/blocks/category_heading.html' with heading=page.heading %}
     </div>
   </div>
 {% endblock %}
 
 {% block content %}
-  <div class="container content">
-    <div class="card-deck">
-      {% for club in page.get_children %}
-        {% include 'opensource_clubs/club_card.html' with club=club.specific %}
-      {% endfor %}
+  {% if page.get_children %}
+    <div class="content inverted">
+      <div class="container">
+        <div class="card-deck">
+          {% for club in page.get_children %}
+            {% include 'opensource_clubs/club_card.html' with club=club.specific %}
+          {% endfor %}
+        </div>
+      </div>
     </div>
-  </div>
+  {% else %}
+    <div class="content inverted">
+      <div class="container">
+        <div class="alert alert-warning text-center" role="alert">
+          Nothing to to show yet! You need to add some Entity pages.
+        </div>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

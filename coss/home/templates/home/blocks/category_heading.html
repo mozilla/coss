@@ -1,0 +1,11 @@
+{% load wagtailcore_tags %}
+
+<div class="col-md-8">
+  <h3>{{ page.title }}</h3>
+  {{ page.heading_text|richtext }}
+</div>
+<div class="col-md-4 text-right">
+  {% if page.heading_cta_text %}
+    <a href="{{ page.heading_cta_link }}" class="btn btn-outline-default">{{ page.heading_cta_text }}</a>
+  {% endif %}
+</div>

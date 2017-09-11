@@ -1,15 +1,24 @@
-@import 'colors';
+:root {
+    --border-color: #ffed00;
+    --gradient-color: #fad680;
+    --input-bg-color: #c99723;
+    --primary-color: #f8b83e;
+
+    .inverted {
+        --body-bg-color: #f9f9f9;
+    }
+}
 
 a {
     color: black;
-    font-weight: bold;
 
     &.cta {
         text-decoration: underline;
+        font-weight: bold;
     }
 
     &:hover {
-        color: $clubs-primary;
+        color: var(--primary-color);
         text-decoration: none;
 
         &.cta {
@@ -19,26 +28,69 @@ a {
 }
 
 header {
-    background-color: $clubs-primary;
+    background: var(--primary-color);
+    background: linear-gradient(to top right, var(--primary-color), var(--gradient-color));
+
+    &.white-header {
+        background: white;
+
+        .navbar-light {
+            background-color: var(--primary-color);
+        }
+
+        .jumbotron {
+            color: black;
+
+            .row {
+                align-items: flex-start;
+            }
+
+            h3 {
+                color: black;
+            }
+        }
+    }
 
     .lead {
 
         .btn {
-            border: 1px solid $clubs-secondary;
+            border: 1px solid var(--border-color);
         }
     }
 }
 
-.content {
+.inverted {
 
-    .testimonial {
-        border: 3px solid $clubs-secondary;
+    .card {
+        background-color: white;
+        box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 0.1);
+
+        .card-header {
+            background-color: white;
+            color: var(--primary-color);
+
+            a {
+                color: var(--primary-color);
+
+                &:hover {
+                    color: dimgray;
+
+                    svg > g {
+                        fill: dimgray;
+                    }
+                }
+            }
+
+            svg > g {
+                fill: var(--primary-color);
+            }
+        }
     }
 
     .profile-listing {
-        width: 340px;
-        border-top: 3px solid $clubs-primary;
+        border-top: 3px solid var(--primary-color);
         margin-bottom: 40px;
+        width: 340px;
 
         @media (max-width: 768px) {
             margin-bottom: 10px;
@@ -48,8 +100,8 @@ header {
         .avatar {
             float: left;
             height: 140px;
-            overflow: hidden;
             margin: 0;
+            overflow: hidden;
 
             img {
                 max-width: 140px;
@@ -61,7 +113,7 @@ header {
             line-height: 1.6;
 
             .profile-title {
-                color: $clubs-primary;
+                color: var(--primary-color);
                 font-size: .9em;
             }
         }
@@ -74,20 +126,20 @@ header {
     }
 
     .club-interests {
-        position: absolute;
         bottom: 0;
+        position: absolute;
 
         @media (max-width: 768px) {
-            position: relative;
             margin: 10px 0;
+            position: relative;
         }
 
         span {
-            display: inline-block;
-            background-color: $clubs-primary;
-            padding: 3px 10px;
+            background-color: var(--primary-color);
             color: white;
+            display: inline-block;
             font-weight: bold;
+            padding: 3px 10px;
         }
     }
 }

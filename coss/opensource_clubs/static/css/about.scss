@@ -1,12 +1,10 @@
-@import 'colors';
-
 .about {
 
     header {
         background-color: #f9f9f9;
 
         .navbar-light {
-            background-color: $clubs-primary;
+            background-color: var(--primary-color);
 
             .navbar-collapse {
 
@@ -19,8 +17,8 @@
                         &:active,
                         &:focus,
                         &.active {
-                            color: white;
                             border-bottom: 1px solid white;
+                            color: white;
                         }
                     }
                 }
@@ -61,7 +59,7 @@
 
                 &:active,
                 &:hover {
-                    color: $clubs-primary;
+                    color: var(--primary-color);
                     text-decoration: underline;
                 }
             }
@@ -84,30 +82,29 @@
             position: relative;
 
             .body-image {
+                background-attachment: fixed;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 display: block;
+                height: 100%;
+                left: 0;
+                opacity: 0.7;
                 position: absolute;
                 top: 0;
-                left: 0;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-attachment: fixed;
-                background-size: cover;
                 width: 100%;
-                height: 100%;
-                opacity : 0.7;
                 z-index: -1;
             }
 
             .well {
                 background-color: white;
                 margin: 40px auto;
-                width: 770px;
                 padding: 2rem;
-
+                width: 770px;
 
                 @media (max-width: 768px) {
-                    max-width: 90%;
                     font-size: .9em;
+                    max-width: 90%;
                 }
             }
         }
@@ -124,21 +121,21 @@
                     white-space: nowrap;
 
                     &:after {
-                        content: " / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / ";
-                        color: $clubs-primary;
+                        color: var(--primary-color);
+                        content: ' / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / ';
                     }
                 }
             }
         }
 
         .details {
-            background: $clubs-primary;
-            background: linear-gradient($clubs-primary, $clubs-gradient);
+            background: var(--primary-color);
+            background: linear-gradient(var(--primary-color), var(--gradient-color));
             padding: 2rem;
 
             h4 {
-                padding-left: 16px;
                 color: white;
+                padding-left: 16px;
             }
 
             nav {
@@ -147,13 +144,13 @@
 
                 .nav-link {
                     color: black;
-                    opacity: 0.4;
                     font-weight: bold;
+                    opacity: 0.4;
 
                     &.active {
-                        opacity: 1;
-                        color: white;
                         border-bottom: 1px solid white;
+                        color: white;
+                        opacity: 1;
                     }
                 }
             }
@@ -174,43 +171,6 @@
 
         .collaborators {
             min-height: 200px;
-        }
-
-        .bottom-cta {
-            padding: 2em;
-            margin-bottom: -30px;
-            background: $clubs-primary;
-            background: linear-gradient(to left, $clubs-primary, $clubs-gradient);
-            text-align: center;
-
-            .row div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                @media (max-width: 768px) {
-
-                    &:first-child {
-
-                        .btn {
-                            margin-bottom: 20px;
-                        }
-                    }
-                }
-            }
-
-            p {
-                color: white;
-            }
-
-            .btn {
-                background-color: white;
-                border: none;
-                color: black;
-                text-transform: uppercase;
-                width: 250px;
-            }
         }
     }
 }

@@ -1,6 +1,18 @@
 :root {
     --footer-height: 170px;
 
+    --body-bg-color: white;
+
+    --card-bg-color: #f4f4f4;
+    --card-shadow-color: #e5e5e5;
+    --card-button-bg-color: #e8e8e8;
+    --card-text-color: #5d5d5d;
+
+    --primary-color: #558194;
+    --border-color: #88d1f1;
+    --gradient-color: #88d1f1;
+    --input-bg-color: #446776;
+
     @media (max-width: 575px) {
         --footer-height: 300px;
     }

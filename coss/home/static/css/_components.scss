@@ -1,10 +1,14 @@
 .highlight {
-    color: black;
+    color: white;
     display: block;
     font-family: ZillaSlabHighLight;
     line-height: 1.1;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     width: auto;
+
+    @media (min-width: 992px) {
+        max-width: 70%;
+    }
 }
 
 .breadcrumbs {
@@ -19,51 +23,83 @@
     }
 }
 
+.btn-outline-primary {
+    border-color: var(--border-color);
+    color: white;
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active {
+        background-color: var(--primary-color);
+        border-color: var(--border-color);
+        color: white;
+    }
+}
+
+.btn-outline-default {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active {
+        background-color: var(--primary-color);
+        border-color: var(--border-color);
+        color: white;
+    }
+}
+
 .card-deck {
 
     .card {
         align-self: flex-start;
-        background-color: $card-bg;
+        background-color: var(--card-bg-color);
         border: none;
-        box-shadow: 7px 7px 0 0 $card-shadow;
+        box-shadow: 7px 7px 0 0 var(--card-shadow-color);
         display: block;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 1;
         margin-bottom: 20px;
         max-width: 350px;
         text-decoration: none;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
 
         &:not(:first-child) {
             margin-left: 0;
         }
 
-
-        &:hover {
-            text-decoration: none;
-        }
-
-        &.active {
-            display: inherit;
-        }
-
         .card-header {
-            background-color: $card-bg;
+            background-color: var(--card-bg-color);
+            border-bottom: none;
             min-height: 100px;
 
-            img {
+            a {
+                color: black;
+                font-weight: normal;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            svg {
                 margin-top: 12px;
             }
         }
 
         .card-body {
+            margin: 0 15px 15px 15px;
             overflow-x: hidden;
 
             .rich-text {
                 color: dimgray;
-                min-height: 100px;
-                padding: 20px 10px 0 20px;
                 font-weight: normal;
+                line-height: 22px;
+                max-height: calc(22px * 4);
+                overflow: hidden;
+                padding-top: 20px;
+                text-overflow: ellipsis;
+                word-wrap: break-word;
             }
         }
 
@@ -72,27 +108,27 @@
             min-width: 47%;
 
             @media all and (max-width: 992px) {
-                min-width: auto;
                 max-width: 98%;
+                min-width: auto;
                 width: 100%;
             }
 
             .card-img {
-                max-width: 180px;
-                max-height: 180px;
-                margin: 1rem 3rem 1rem 1rem;
                 float: left;
+                margin: 1rem 3rem 1rem 1rem;
+                max-height: 180px;
+                max-width: 180px;
 
                 @media all and (max-width: 768px) and (min-width: 575px) {
+                    display: block;
                     float: none;
                     margin: 1rem auto 0 auto;
-                    display: block;
                 }
 
                 @media all and (max-width: 575px) {
-                    max-width: 110px;
-                    max-height: 110px;
                     margin: 1rem 2rem 0 1rem;
+                    max-height: 110px;
+                    max-width: 110px;
                 }
             }
 
@@ -119,20 +155,19 @@
             }
 
             .card-footer {
+                background-color: var(--card-bg-color);
                 border-top: none;
-                background-color: $card-bg;
 
                 a {
                     text-decoration: underline;
                 }
             }
-
         }
     }
 }
 
 .testimonial {
-    border: 3px solid black;
+    border: 3px solid var(--border-color);
     margin: 40px 60px;
     padding: 20px;
 
@@ -147,22 +182,74 @@
     }
 
     blockquote {
-        padding: 20px 60px 0 40px;
         line-height: 1.6;
+        padding: 20px 60px 0 40px;
 
         @media (max-width: 575px) {
-            padding: 20px 10px 10px 10px;
             line-height: 1.4;
+            padding: 20px 10px 10px 10px;
+        }
+
+        &:before {
+            color: var(--primary-color);
+            content: '"';
+            font-size: 12em;
+            font-style: italic;
+            font-weight: bold;
+            left: -50px;
+            line-height: 1;
+            position: absolute;
+            top: -20px;
+
+            @media (max-width: 575px) {
+                left: -60px;
+                top: -50px;
+            }
         }
 
         .rich-text {
-            margin-top: 10px;
             font-style: italic;
+            margin-top: 10px;
         }
 
         p.quote-person {
+            color: var(--primary-color);
             font-weight: bold;
         }
+    }
+}
+
+.bottom-banner {
+    background: var(--primary-color);
+    background: linear-gradient(to left, var(--primary-color), var(--gradient-color));
+    margin-top: 30px;
+    padding: 2em;
+    text-align: center;
+
+    .row div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+
+            .btn {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    p {
+        color: white;
+    }
+
+    .btn {
+        background-color: white;
+        border: none;
+        color: black;
+        text-transform: uppercase;
+        width: 250px;
     }
 }
 
