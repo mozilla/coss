@@ -158,6 +158,46 @@ class FAQPage(Page):
     ]
 
 
+class ResourcesPage(Page):
+    """Resources Page for Open Source Clubs."""
+    heading_text = fields.RichTextField(verbose_name='Text', blank=True)
+    heading_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Image'
+    )
+    mentors_description = fields.StreamField([
+        ('info', InputTextContentBlock(required=True),),
+    ])
+    resources_title = models.CharField(verbose_name='Title', blank=True, default='',
+                                       max_length=50)
+    resources_cta_text = models.CharField(verbose_name='CTA Text', blank=True, default='',
+                                          max_length=50)
+    resources_cta_link = models.URLField(verbose_name='Link', blank=True, default='')
+    guides = fields.RichTextField(verbose_name='Guides', blank=True)
+
+    def get_mentors(self):
+        # TODO: Add filter for mentors that belong to each club
+        return ClubProfile.objects.filter(is_mentor=True)
+
+    content_panels = Page.content_panels + [
+        MultiFieldPanel([
+            FieldPanel('heading_text'),
+            FieldPanel('heading_image'),
+        ], heading='Heading'),
+        StreamFieldPanel('mentors_description'),
+        MultiFieldPanel([
+            FieldPanel('resources_title'),
+            FieldPanel('resources_cta_text'),
+            FieldPanel('resources_cta_link'),
+            FieldPanel('guides'),
+        ], heading='Resources'),
+    ]
+
+
 class ActivitiesPage(Page):
     """Activities Page for Open Source Clubs."""
     description = fields.RichTextField(blank=True)
@@ -175,3 +215,4 @@ class ClubProfile(models.Model):
     """User profile relevant only to the Open Source Clubs."""
     user = models.OneToOneField(UserModel)
     is_captain = models.BooleanField(default=False)
+    is_mentor = models.BooleanField(default=False)

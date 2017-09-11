@@ -59,6 +59,38 @@ header {
     }
 }
 
+.profile-listing {
+    border-top: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    width: 370px;
+
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+
+    .avatar {
+        float: left;
+        height: 140px;
+        margin: 0;
+        overflow: hidden;
+
+        img {
+            max-width: 140px;
+        }
+    }
+
+    .profile-details {
+        float: left;
+        line-height: 1.6;
+        font-family: OpenSans;
+
+        .profile-title {
+            color: var(--primary-color);
+            font-size: .9em;
+        }
+    }
+}
+
 .inverted {
 
     .card {
@@ -83,38 +115,6 @@ header {
 
             svg > g {
                 fill: var(--primary-color);
-            }
-        }
-    }
-
-    .profile-listing {
-        border-top: 3px solid var(--primary-color);
-        margin-bottom: 40px;
-        width: 340px;
-
-        @media (max-width: 768px) {
-            margin-bottom: 10px;
-            width: 100%;
-        }
-
-        .avatar {
-            float: left;
-            height: 140px;
-            margin: 0;
-            overflow: hidden;
-
-            img {
-                max-width: 140px;
-            }
-        }
-
-        .profile-details {
-            float: left;
-            line-height: 1.6;
-
-            .profile-title {
-                color: var(--primary-color);
-                font-size: .9em;
             }
         }
     }
