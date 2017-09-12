@@ -81,7 +81,7 @@ header {
                 padding: 8px;
 
                 a.nav-link {
-                    color: black;
+                    color: var(--nav-link-color);
                     display: inline-block;
                     height: 30px;
                     padding: 4px 0 0 0;
@@ -90,8 +90,8 @@ header {
                     &:active,
                     &:focus,
                     &.active {
-                        border-bottom: 1px solid black;
-                        color: black;
+                        border-bottom: 1px solid var(--nav-link-color);
+                        color: var(--nav-link-color);
                     }
                 }
             }

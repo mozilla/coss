@@ -1,6 +1,4 @@
 :root {
-    --footer-height: 170px;
-
     --body-bg-color: white;
 
     --card-bg-color: #f4f4f4;
@@ -12,6 +10,10 @@
     --border-color: #88d1f1;
     --gradient-color: #88d1f1;
     --input-bg-color: #446776;
+
+    --nav-link-color: black;
+
+    --footer-height: 170px;
 
     @media (max-width: 575px) {
         --footer-height: 300px;
