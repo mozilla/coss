@@ -244,6 +244,7 @@ WAGTAIL_USER_CUSTOM_FIELD = ['site']
 
 if DEV:
     DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+    MEDIA_URL = '/media/'
 
     # Disable template caching
     for backend in TEMPLATES:
