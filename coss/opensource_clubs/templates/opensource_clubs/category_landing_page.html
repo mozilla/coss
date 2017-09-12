@@ -19,7 +19,7 @@
       <div class="container">
         <div class="card-deck">
           {% for club in page.get_children %}
-            {% include 'opensource_clubs/club_card.html' with club=club.specific %}
+            {% include 'opensource_clubs/club_card.html' with club=club.specific card_size='cl-4' %}
           {% endfor %}
         </div>
       </div>
