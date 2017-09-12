@@ -4,6 +4,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 from modelcluster.fields import ParentalKey
+from modelcluster.contrib.taggit import ClusterTaggableManager
+from taggit.models import TaggedItemBase
 from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel,
                                                 StreamFieldPanel, MultiFieldPanel)
 from wagtail.wagtailcore import fields
@@ -100,10 +102,27 @@ class CategoryLandingPage(Page):
     ]
 
 
+class EntityTagIndexPage(Page):
+    """Returns all the entities with the same tag."""
+
+    def get_context(self, request):
+        tag = request.GET.get('tag')
+        entities = EntityDetailPage.objects.filter(tags__name=tag)
+
+        context = super(EntityTagIndexPage, self).get_context(request)
+        context['entities'] = entities
+        return context
+
+
+class EntityPageTag(TaggedItemBase):
+    content_object = ParentalKey('EntityDetailPage', related_name='tagged_items')
+
+
 class EntityDetailPage(Page):
     """Actual page for the Open Source clubs."""
     description = fields.RichTextField(blank=True)
     featured = models.BooleanField(default=False)
+    tags = ClusterTaggableManager(through=EntityPageTag, blank=True)
 
     def get_first_image(self):
         item = self.gallery_images.first()
@@ -114,6 +133,7 @@ class EntityDetailPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
         FieldPanel('featured'),
+        FieldPanel('tags'),
         InlinePanel('gallery_images', label='Gallery Images')
     ]
 
