@@ -14,3 +14,6 @@ CACHE_URL = 'coss_memcache:11211'
 COMPRESS_ENABLED=False
 COMPRESS_OFFLINE=False
 AXES_BEHIND_REVERSE_PROXY=False
+# mozillians.org API
+MOZILLIANS_API_URL=https://mozillians.org/api/v2/
+MOZILLIANS_API_KEY='super-secret'

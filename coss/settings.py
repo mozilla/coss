@@ -223,6 +223,10 @@ CSP_CHILD_SRC = (
 # Exclude CMS admin from CSP
 # https://github.com/wagtail/wagtail/issues/1288
 CSP_EXCLUDE_URL_PREFIXES = ('/cms-admin',)
+
+# mozillians.org API
+MOZILLIANS_API_URL = config('MOZILLIANS_API_URL', default='https://mozillians.org/api/v2/')
+MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default='')
 ##################
 # Wagtail Settings
 ##################
