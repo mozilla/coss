@@ -3,7 +3,7 @@ SECRET_KEY = 'secret_key'
 SITE_URL = http://127.0.0.1:8000
 ALLOWED_HOSTS = 127.0.0.1,.localhost
 # Assuming user coss with password coss and db name db_1
-DATABASE_URL = 'postgres://coss_user:coss_password@coss_db/coss_db'
+DATABASE_URL = 'postgres://postgres:postgres@coss_db:5432/postgres'
 # Debug flag
 DEBUG = True
 DEV = True
