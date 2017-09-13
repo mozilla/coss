@@ -64,7 +64,7 @@ header {
 .profile-listing {
     border-top: 4px solid var(--primary-color);
     margin-bottom: 20px;
-    width: 370px;
+    width: 350px;
 
     @media (max-width: 768px) {
         max-width: 100%;
@@ -118,30 +118,6 @@ header {
             svg > g {
                 fill: var(--primary-color);
             }
-        }
-    }
-
-    .info-box {
-        border: 1px dashed lightgray;
-        margin: 0 10px 0 0;
-        padding: 15px 0;
-    }
-
-    .club-interests {
-        bottom: 0;
-        position: absolute;
-
-        @media (max-width: 768px) {
-            margin: 10px 0;
-            position: relative;
-        }
-
-        span {
-            background-color: var(--primary-color);
-            color: white;
-            display: inline-block;
-            font-weight: bold;
-            padding: 3px 10px;
         }
     }
 }

@@ -29,7 +29,22 @@
     padding: 0.5rem 3rem;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
+        background-color: var(--primary-color);
+        border-color: var(--border-color);
+        color: white;
+    }
+}
+
+.btn-outline-secondary {
+    border-color: black;
+    color: black;
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active,
+    &:focus {
         background-color: var(--primary-color);
         border-color: var(--border-color);
         color: white;
@@ -42,10 +57,33 @@
     padding: 0.5rem 3rem;
 
     &:hover,
-    &:active {
+    &:active,
+    &:focus {
         background-color: var(--primary-color);
         border-color: var(--border-color);
         color: white;
+    }
+}
+
+.badge-primary {
+    background-color: var(--primary-color);
+    border-radius: 0;
+    font-size: 1em;
+    padding: 0.5em;
+
+    &[href]:hover,
+    &[href]:focus,
+    &[href]:active {
+        background-color: var(--primary-color);
+        color: black;
+    }
+}
+
+.icon {
+
+    img {
+        height: 15px;
+        width: 15px;
     }
 }
 
@@ -147,8 +185,8 @@
 
             .card-img {
                 float: left;
-                margin: 1rem;
                 height: auto;
+                margin: 1rem;
                 max-width: 40%;
 
                 @media all and (max-width: 768px) and (min-width: 575px) {
@@ -250,25 +288,25 @@
     .carousel-item {
 
         img {
+            height: 411px;
             object-fit: cover;
             width: 575px;
-            height: 411px;
 
             @media (max-width: 767px) {
-                width: 100%;
                 height: auto;
+                width: 100%;
             }
         }
     }
 
     .carousel-indicators {
-        margin-left: 10px;
         justify-content: flex-start;
         margin-bottom: 0;
+        margin-left: 10px;
 
         li {
-            max-width: 10px;
             height: 10px;
+            max-width: 10px;
         }
     }
 }
