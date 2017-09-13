@@ -1,109 +1,128 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags gravatar %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/about.scss' %}">
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/entity.scss' %}">
+{% endblock %}
 
 {% block header_class %}white-header{% endblock %}
 
 {% block jumbotron %}
-  <div class="container jumbotron club">
-    <div class="breadcrumbs">
-      <a href="{{ page.get_parent.url }}">
-        <img class="ml-2" src="{% static 'img/icons/left-arrow-small.svg' %}" alt="back">
-        <span>Open Source Clubs</span>
-      </a>
+  {% if page.get_first_image %}
+    {% image page.get_first_image original as bg_photo %}
+  {% endif %}
+  <div class="jumbotron" data-bg-img="{{ bg_photo.url }}">
+    <div class="container">
+      <h3 class="highlight mt-4">{{ page.title }}</h3>
     </div>
-
-    <h2 class="highlight mt-4 club-title">{{ page.title }}</h2>
   </div>
 {% endblock %}
 
 {% block content %}
   <div class="container content">
     <div class="row mt-4">
-      <div class="col-md-6">
-        <span class="align-middle"></span>
+      <div class="col-md-6 ">
+        {% if page.location %}
+          <div class="d-inline-block mr-4">
+            <img src="{% static 'img/icons/location-pin-black.svg' %}" alt="location" class="pr-2"> {{ page.location }}
+          </div>
+        {% endif %}
+        {% if page.club_name %}
+          <div class="d-inline-block mr-4">
+            <img src="{% static 'img/icons/location-pin-black.svg' %}" alt="location" class="pr-2"> {{ page.club_name }}
+          </div>
+        {% endif %}
       </div>
       <div class="col-md-6 text-right">
-        <a class="btn btn-outline-primary">Edit Club Page</a>
+        {% if page.contact_cta %}
+          <a href="{{ page.contact_cta }}" class="btn btn-outline-secondary mt-3 mt-md-0">Contact</a>
+        {% endif %}
       </div>
     </div>
 
-    <div class="card mt-4">
-      <div class="card-block">
-        <div class="row mb-0">
-          <div class="col-md-4">
-            <div class="icon"><img src="{% static 'img/icons/world-black.svg' %}" alt="web"></div>
-            <div class="icon"><img src="{% static 'img/icons/facebook-black-large.svg' %}" alt="web"></div>
-            {% with tags=page.tags.all %}
-              {% if tags.count %}
-                <div class="club-interests">
+    <div class="details mt-4">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="mb-4">
+            {% if page.description_link %}
+              <div class="mb-1 text-truncate">
+                <div class="icon d-inline-block mr-2">
+                  <img src="{% static 'img/icons/world-black.svg' %}" alt="web" class="img-fluid">
+                </div>
+                <img src="{% static 'img/icons/right-arrow-black.svg' %}" alt="web" class="pr-2">
+                <a href="{{ page.description_link }}" target="_blank">{{ page.description_link }}</a>
+              </div>
+            {% endif %}
+            {% if page.facebook_link %}
+              <div class="mb-1 text-truncate">
+                <div class="icon d-inline-block mr-2">
+                  <img src="{% static 'img/icons/facebook-black-large.svg' %}" alt="web" class="img-fluid">
+                </div>
+                <img src="{% static 'img/icons/right-arrow-black.svg' %}" alt="web" class="pr-2">
+                <a href="{{ page.facebook_link }}" target="_blank">{{ page.facebook_link }}</a>
+              </div>
+            {% endif %}
+          </div>
+
+          {% with tags=page.tags.all %}
+            {% if tags.count %}
+              <div class="tags">
+                <div>
                   {% for tag in tags %}
-                    <a href="{% slugurl 'tags' %}?tag={{ tag }}">
-                      <button type="button">{{ tag }}</button>
+                    <a href="{% slugurl 'tags' %}?tag={{ tag }}" class="badge badge-primary">
+                      {{ tag }}
                     </a>
                   {% endfor %}
                 </div>
-              {% endif %}
-            {% endwith %}
-          </div>
-          <div class="col-md-8">
-            {{ page.description|richtext }}
-          </div>
+              </div>
+            {% endif %}
+          {% endwith %}
         </div>
-      </div>
-    </div>
-
-    <div class="row mt-5">
-      <div class="col-md-6">
-        <div class="profile-listing clearfix">
-          <div class="avatar">
-            <img src="{% static 'img/harvey-milk.png' %}" alt="fullname">
-          </div>
-          <div class="profile-details ml-3 mt-3">
-            Harvey Milk
-            <div class="profile-title">Club Captain</div>
-          </div>
+        <div class="col-md-8 mt-3 mt-md-0">
+          {{ page.description|richtext }}
         </div>
-        <div class="profile-listing clearfix">
-          <div class="avatar">
-            <img src="{% static 'img/ansel-adams.jpg' %}" alt="fullname">
-          </div>
-          <div class="profile-details ml-3 mt-3">
-            Ansel Adams
-            <div class="profile-title">Regional Coordinator</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mt-3 mt-md-0">
-        {% include 'home/blocks/image_gallery.html' with gallery=page.gallery_images %}
       </div>
     </div>
 
     <div class="row mt-5 mb-5">
       <div class="col-md-6">
-        <h4>
-          <img src="{% static 'img/icons/docs-black.svg' %}" alt="resources">
-          Club Resources
-        </h4>
-        <div class="row info-box">
-          <div class="col-md-12">
-            Add some club resources to help your club members get started and stay involved!
+        {% with members=page.members.all %}
+          {% if members.count %}
+            {% for member in members %}
+              <div class="profile-listing clearfix">
+                <div class="avatar">
+                  {% if member.user.avatar_url %}
+                    <img src="{{ member.user.avatar_url }}" alt="{{ member }}">
+                  {% else %}
+                    <img src="{% gravatar_url member.user.email 160 %}" alt="{{ member }}">
+                  {% endif %}
+                </div>
+                <div class="profile-details ml-3 mt-3">
+                  {{ member }}
+                  {% if member.is_captain %}
+                    <div class="profile-title">Club Captain</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        {% if page.description_link %}
+          <div class="mt-5">
+            <a href="{{ page.description_link }}" class="btn btn-black discourse-link" target="_blank">Discourse Category</a>
           </div>
-        </div>
+        {% endif %}
       </div>
-      <div class="col-md-6">
-        <h4>
-          <img src="{% static 'img/icons/calendar-black.svg' %}" alt="calendar">
-          Upcoming Events
-        </h4>
-        <div class="row info-box">
-          <div class="col-lg-7">
-            Plan your first event, a monthly team meeting is a great place to start!
-          </div>
-          <div class="col-lg-5 mt-2 mt-lg-0">
-            <a href="#" class="btn btn-default">Manage Events</a>
-          </div>
-        </div>
+      <div class="col-md-6 mt-3 mt-md-0">
+        {% include 'home/blocks/image_gallery.html' with gallery=page.gallery_images %}
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/entity.js' %}"></script>
 {% endblock %}

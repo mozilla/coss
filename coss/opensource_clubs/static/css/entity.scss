@@ -1,0 +1,55 @@
+header.white-header {
+
+    .jumbotron {
+        background-attachment: fixed;
+        background-color: var(--card-text-color);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 95px 135px;
+
+        @media (max-width: 768px) {
+            padding: 40px;
+        }
+
+        h3 {
+            color: white;
+        }
+    }
+}
+
+.content {
+
+    .details {
+        background-color: var(--card-bg-color);
+        box-shadow: 7px 7px 0 0 var(--card-shadow-color);
+        padding: 30px;
+
+        .tags {
+            margin-top: 3rem;
+
+            div {
+                position: absolute;
+                bottom: 0;
+                left: 15px;
+            }
+        }
+
+        .rich-text {
+            color: dimgray;
+        }
+    }
+
+    .discourse-link {
+        background-color: black;
+        color: white;
+        width: 350px;
+        position: absolute;
+        bottom: 0;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+            position: relative;
+        }
+    }
+}
