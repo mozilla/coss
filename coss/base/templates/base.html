@@ -100,6 +100,8 @@
     {% compress js %}
       {# Global javascript #}
       <script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'lib/popper.js/dist/umd/popper.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/coss.js' %}"></script>
 
       {% block extra_js %}

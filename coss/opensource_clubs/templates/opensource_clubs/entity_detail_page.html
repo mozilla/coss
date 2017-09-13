@@ -74,7 +74,7 @@
         </div>
       </div>
       <div class="col-md-6 mt-3 mt-md-0">
-        <img src="{% static 'img/campus.jpg' %}" alt="{{ page.title }}" class="img-fluid">
+        {% include 'home/blocks/image_gallery.html' with gallery=page.gallery_images %}
       </div>
     </div>
 

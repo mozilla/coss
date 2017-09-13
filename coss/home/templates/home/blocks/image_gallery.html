@@ -1,0 +1,16 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div id="images-carousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    {% for item in gallery.all %}
+      <li data-target="#images-carousel" data-slide-to="{{ forloop.counter0 }}" {% if not forloop.counter0 %}class="active"{% endif %}></li>
+    {% endfor %}
+  </ol>
+  <div class="carousel-inner">
+    {% for item in gallery.all %}
+      <div class="carousel-item {% if not forloop.counter0 %}active{% endif %}">
+        {% image item.image fill-400x400 class="d-block" %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
