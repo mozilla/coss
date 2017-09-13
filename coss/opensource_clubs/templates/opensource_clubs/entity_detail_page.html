@@ -33,11 +33,17 @@
           <div class="col-md-4">
             <div class="icon"><img src="{% static 'img/icons/world-black.svg' %}" alt="web"></div>
             <div class="icon"><img src="{% static 'img/icons/facebook-black-large.svg' %}" alt="web"></div>
-            <div class="club-interests">
-              <span>VR</span>
-              <span>AR</span>
-              <span>AI</span>
-            </div>
+            {% with tags=page.tags.all %}
+              {% if tags.count %}
+                <div class="club-interests">
+                  {% for tag in tags %}
+                    <a href="{% slugurl 'tags' %}?tag={{ tag }}">
+                      <button type="button">{{ tag }}</button>
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
           </div>
           <div class="col-md-8">
             {{ page.description|richtext }}

@@ -1,0 +1,28 @@
+{% extends "home/about_page.html" %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/about.scss' %}">
+{% endblock %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
+{% endblock %}
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block content %}
+  <div class="content inverted">
+    <div class="container">
+      <h5>Clubs tagged with {{ request.GET.tag }}</h5>
+
+      <div class="card-deck">
+        {% for entity in entities %}
+          {% include 'opensource_clubs/club_card.html' with club=entity %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
