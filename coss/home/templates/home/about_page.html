@@ -90,7 +90,7 @@
         </div>
         <div class="card-deck mt-4">
           {% for block in page.about.collaborators %}
-            {% include_block block %}
+            {% include_block block with card_size='cl-4' %}
           {% endfor %}
         </div>
       </div>

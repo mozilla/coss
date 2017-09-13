@@ -34,6 +34,8 @@ header {
     &.white-header {
         background: white;
 
+        --nav-link-color: white;
+
         .navbar-light {
             background-color: var(--primary-color);
         }

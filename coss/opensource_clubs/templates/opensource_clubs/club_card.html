@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="card">
+<div class="card {{ card_size }}">
   <h4 class="card-header">
     <a href="{% pageurl club %}">
       {{ club.title }}
@@ -15,7 +15,7 @@
   </h4>
   <div class="card-body">
     {% if club.get_first_image %}
-      {% image club.get_first_image fill-370x200 %}
+      {% image club.get_first_image max-525x300 %}
     {% endif %}
     {{ club.description|richtext }}
   </div>

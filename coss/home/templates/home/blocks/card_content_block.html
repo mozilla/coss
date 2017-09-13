@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
-<div class="card card-mini">
+<div class="card card-mini {{ card_size }}">
   {% if value.image %}
     {% image value.image fill-180x180 class="rounded-circle card-img" %}
   {% else %}
@@ -9,8 +9,6 @@
   <h4 class="card-header">{{ value.title }}</h4>
   <div class="card-body">
     {{ value.text }}
-  </div>
-  <div class="card-footer">
     <a href="{{ value.link }}" target="_blank" class="cta">{{ value.link_title }}</a>
   </div>
 </div>
