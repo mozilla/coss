@@ -3,20 +3,51 @@ from __future__ import absolute_import, unicode_literals
 from django.db import models
 from django.contrib.auth import get_user_model
 
-from modelcluster.fields import ParentalKey
+from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.contrib.taggit import ClusterTaggableManager
 from taggit.models import TaggedItemBase
 from wagtail.wagtailadmin.edit_handlers import (FieldPanel, InlinePanel,
                                                 StreamFieldPanel, MultiFieldPanel)
+
 from wagtail.wagtailcore import fields
 from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
 from coss.home.content_blocks import InputTextContentBlock, CardContentBlock
+from coss.opensource_clubs import forms
 
 
 UserModel = get_user_model()
+
+
+# Generic models used in the app.
+class ClubProfile(models.Model):
+    """User profile relevant only to the Open Source Clubs."""
+    user = models.OneToOneField(UserModel)
+    is_captain = models.BooleanField(default=False)
+    is_mentor = models.BooleanField(default=False)
+    title = models.CharField(max_length=128, blank=True, default='')
+    github_link = models.URLField(max_length=128, blank=True, default='')
+    mozillian_username = models.CharField(max_length=40, default='')
+    avatar_url = models.URLField(max_length=400, default='', blank=True)
+
+    def __str__(self):
+        return self.user.get_full_name() or self.user.username
+
+    # We define the panels here to exclude certain fields (avatar_url in this case)
+    panels = [
+        FieldPanel('user'),
+        FieldPanel('title'),
+        FieldPanel('github_link'),
+        FieldPanel('mozillian_username'),
+        MultiFieldPanel([
+            FieldPanel('is_captain'),
+            FieldPanel('is_mentor'),
+        ], heading='Club Profile attributes'),
+    ]
+
+    base_form_class = forms.ClubProfileForm
 
 
 class HomePage(Page):
@@ -117,9 +148,19 @@ class EntityPageTag(TaggedItemBase):
 
 class EntityDetailPage(Page):
     """Actual page for the Open Source clubs."""
+
     description = fields.RichTextField(blank=True)
     featured = models.BooleanField(default=False)
+    is_flagged = models.BooleanField(default=False)
+    club_name = models.CharField(max_length=128, default='')
+    discourse_link = models.URLField(verbose_name='Discourse Link', blank=True, default='')
+    contact_cta = models.URLField(verbose_name='Contact CTA link', blank=True)
+    description_link = models.URLField(verbose_name='Description link', blank=True, default='')
+    facebook_link = models.URLField(verbose_name='Facebook link', blank=True, default='')
+    contact_cta = models.URLField(verbose_name='Description social link', blank=True, default='')
+    members = ParentalManyToManyField(ClubProfile, blank=True, related_name='profiles')
     tags = ClusterTaggableManager(through=EntityPageTag, blank=True)
+    location = models.CharField(max_length=255, blank=True, default='')
 
     def get_first_image(self):
         item = self.gallery_images.first()
@@ -129,9 +170,19 @@ class EntityDetailPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('description', classname='full'),
-        FieldPanel('featured'),
+        FieldPanel('club_name'),
+        FieldPanel('contact_cta'),
+        FieldPanel('location'),
+        MultiFieldPanel([
+            FieldPanel('featured'),
+            FieldPanel('is_flagged'),
+        ], heading='Entity Attributes'),
+        FieldPanel('discourse_link'),
+        FieldPanel('description_link'),
+        FieldPanel('facebook_link'),
         FieldPanel('tags'),
-        InlinePanel('gallery_images', label='Gallery Images')
+        InlinePanel('gallery_images', label='Gallery Images'),
+        FieldPanel('members'),
     ]
 
 
@@ -226,10 +277,3 @@ class ActivitiesPage(Page):
         FieldPanel('description'),
         StreamFieldPanel('activity'),
     ]
-
-
-class ClubProfile(models.Model):
-    """User profile relevant only to the Open Source Clubs."""
-    user = models.OneToOneField(UserModel)
-    is_captain = models.BooleanField(default=False)
-    is_mentor = models.BooleanField(default=False)
