@@ -49,118 +49,115 @@
     }
 }
 
-.card-deck {
+.card {
+    align-self: flex-start;
+    background-color: var(--card-bg-color);
+    border: none;
+    box-shadow: 7px 7px 0 0 var(--card-shadow-color);
+    display: block;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-bottom: 20px;
+    max-width: 350px;
+    text-decoration: none;
 
-    .card {
-        align-self: flex-start;
+    &:not(:first-child) {
+        margin-left: 0;
+    }
+
+    .card-header {
         background-color: var(--card-bg-color);
-        border: none;
-        box-shadow: 7px 7px 0 0 var(--card-shadow-color);
-        display: block;
-        flex-basis: auto;
-        flex-grow: 0;
-        flex-shrink: 1;
-        margin-bottom: 20px;
-        max-width: 350px;
-        text-decoration: none;
+        border-bottom: none;
+        min-height: 100px;
 
-        &:not(:first-child) {
-            margin-left: 0;
+        a {
+            color: black;
+            font-weight: normal;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        svg {
+            margin-top: 12px;
+        }
+    }
+
+    .card-body {
+        margin: 0 15px 15px 15px;
+        overflow-x: hidden;
+
+        .rich-text {
+            color: dimgray;
+            font-weight: normal;
+            line-height: 22px;
+            max-height: calc(22px * 4);
+            overflow: hidden;
+            padding-top: 20px;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+    }
+
+    &.card-mini {
+        max-width: 520px;
+        min-width: 47%;
+
+        @media all and (max-width: 992px) {
+            max-width: 98%;
+            min-width: auto;
+            width: 100%;
+        }
+
+        .card-img {
+            float: left;
+            margin: 1rem 3rem 1rem 1rem;
+            max-height: 180px;
+            max-width: 180px;
+
+            @media all and (max-width: 768px) and (min-width: 575px) {
+                display: block;
+                float: none;
+                margin: 1rem auto 0 auto;
+            }
+
+            @media all and (max-width: 575px) {
+                margin: 1rem 2rem 0 1rem;
+                max-height: 110px;
+                max-width: 110px;
+            }
         }
 
         .card-header {
-            background-color: var(--card-bg-color);
             border-bottom: none;
-            min-height: 100px;
-
-            a {
-                color: black;
-                font-weight: normal;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-
-            svg {
-                margin-top: 12px;
-            }
+            min-height: auto;
         }
 
         .card-body {
-            margin: 0 15px 15px 15px;
-            overflow-x: hidden;
+            overflow-x: auto;
 
             .rich-text {
-                color: dimgray;
-                font-weight: normal;
-                line-height: 22px;
-                max-height: calc(22px * 4);
-                overflow: hidden;
-                padding-top: 20px;
-                text-overflow: ellipsis;
-                word-wrap: break-word;
+                min-height: auto;
+                padding: 10px 20px 10px 0;
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            @media all and (max-width: 768px) and (min-width: 575px) {
+                padding: 10px 20px;
             }
         }
 
-        &.card-mini {
-            max-width: 520px;
-            min-width: 47%;
+        .card-footer {
+            background-color: var(--card-bg-color);
+            border-top: none;
 
-            @media all and (max-width: 992px) {
-                max-width: 98%;
-                min-width: auto;
-                width: 100%;
-            }
-
-            .card-img {
-                float: left;
-                margin: 1rem 3rem 1rem 1rem;
-                max-height: 180px;
-                max-width: 180px;
-
-                @media all and (max-width: 768px) and (min-width: 575px) {
-                    display: block;
-                    float: none;
-                    margin: 1rem auto 0 auto;
-                }
-
-                @media all and (max-width: 575px) {
-                    margin: 1rem 2rem 0 1rem;
-                    max-height: 110px;
-                    max-width: 110px;
-                }
-            }
-
-            .card-header {
-                border-bottom: none;
-                min-height: auto;
-            }
-
-            .card-body {
-                overflow-x: auto;
-
-                .rich-text {
-                    min-height: auto;
-                    padding: 10px 20px 10px 0;
-
-                    p {
-                        margin-bottom: 0;
-                    }
-                }
-
-                @media all and (max-width: 768px) and (min-width: 575px) {
-                    padding: 10px 20px;
-                }
-            }
-
-            .card-footer {
-                background-color: var(--card-bg-color);
-                border-top: none;
-
-                a {
-                    text-decoration: underline;
-                }
+            a {
+                text-decoration: underline;
             }
         }
     }

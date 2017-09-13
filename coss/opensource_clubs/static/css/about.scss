@@ -81,6 +81,10 @@
             display: flex;
             position: relative;
 
+            &.resources {
+                margin-top: -30px;
+            }
+
             .body-image {
                 background-attachment: fixed;
                 background-position: center center;
@@ -101,6 +105,7 @@
                 margin: 40px auto;
                 padding: 2rem;
                 width: 770px;
+                box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 0.5);
 
                 @media (max-width: 768px) {
                     font-size: .9em;

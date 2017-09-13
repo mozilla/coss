@@ -1,0 +1,84 @@
+{% extends "home/about_page.html" %}
+{% load static wagtailcore_tags wagtailimages_tags gravatar %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/about.scss' %}">
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/resources.scss' %}">
+{% endblock %}
+
+{% block brand-logo %}
+  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
+{% endblock %}
+
+{% block jumbotron %}
+{% endblock %}
+
+{% block content %}
+  <div class="content">
+    {% if page.heading_text %}
+      {% if page.heading_image %}
+        {% image page.heading_image original as bg_photo %}
+      {% endif %}
+      <div id="body" class="body resources" data-bg-img="{{ bg_photo.url }}">
+        <div class="body-image"></div>
+        <div class="well">
+          {{ page.heading_text|richtext }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          {% if page.mentors_description %}
+            {% for block in page.mentors_description %}
+              <div class="info">
+                <h4>{{ block.value.title }}</h4>
+                {{ block.value.text }}
+                <a href="{{ block.value.link }}" class="cta">{{ block.value.link_title }}</a>
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% if page.get_mentors %}
+            {% for profile in page.get_mentors %}
+              <div class="profile-listing clearfix">
+                <div class="avatar">
+                  <img src="{% gravatar_url profile.user.email 160 %}" alt="fullname">
+                </div>
+                <div class="profile-details ml-3 mt-3">
+                  {{ profile.user.first_name }} {{ profile.user.last_name }}
+                  {% if profile.is_captain %}
+                    <div class="profile-title">Club Captain</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="col-md-5 ml-auto">
+          {% if page.guides %}
+            <div class="card">
+              <h4 class="card-header">{{ page.resources_title }}</h4>
+              <div class="card-body">
+                {{ page.guides|richtext }}
+              </div>
+              <div class="card-footer text-center">
+                <a href="{{ page.resources_cta_link }}">
+                  {{ page.resources_cta_text }}
+                  <svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>icon / right-arrow-black</title>
+                    <defs></defs>
+                    <g id="icon-/-right-arrow-black" fill="#000000">
+                      <polygon id="right-arrow-black" points="0 8.3203125 0 6.6796875 10.15625 6.6796875 5.5078125 1.9921875 6.6796875 0.8203125 13.359375 7.5 6.6796875 14.1796875 5.46875 13.0078125 10.15625 8.3203125"></polygon>
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

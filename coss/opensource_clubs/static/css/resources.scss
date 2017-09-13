@@ -1,0 +1,47 @@
+.content {
+
+    .row {
+        margin-top: 50px;
+
+        .info {
+            margin-top: 0;
+            padding: 0;
+        }
+    }
+
+    .card {
+
+        .card-header {
+            background-color: black;
+            color: white;
+            min-height: auto;
+            padding-left: 2rem;
+        }
+
+        .card-body {
+            padding: 10px;
+            background-color: var(--card-bg-color);
+        }
+
+        .card-footer {
+            background-color: var(--card-bg-color);
+            padding: 2rem;
+
+            a {
+                font-weight: bold;
+
+                svg {
+                    margin-left: 1rem;
+                    margin-bottom: -2px;
+                }
+
+                &:hover {
+
+                    svg > g {
+                        fill: var(--primary-color);
+                    }
+                }
+            }
+        }
+    }
+}
