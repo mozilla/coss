@@ -1,12 +1,73 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="30px" viewBox="0 0 16 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
-    <title>icon / facebook-black-large</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="icon-/-facebook-black-large" fill="#000000">
-            <path d="M9.58007812,1.875 C9.18945117,1.875 8.4326228,2.07519331 7.30957031,2.47558594 C6.18651782,2.87597856 5.625,4.03319355 5.625,5.94726562 L5.625,10.3125 L1.875,10.3125 L1.875,13.125 L5.625,13.125 L5.625,27.1875 L8.4375,27.1875 L8.4375,13.125 L12.5097656,13.125 L13.1835938,10.3125 L8.4375,10.3125 L8.4375,5.859375 L8.59863281,5.28808594 C8.70605522,4.90722466 9.09179355,4.71679688 9.75585938,4.71679688 L12.1875,4.71679688 L12.1875,1.90429688 L9.75585938,1.90429688 L9.71191406,1.88964844 C9.68261704,1.87988276 9.63867217,1.875 9.58007812,1.875 Z M9.58007812,0 C9.61914082,0 9.65820293,0.00488276367 9.69726562,0.0146484375 C9.73632832,0.0244141113 9.77539043,0.029296875 9.81445312,0.029296875 L12.2167969,0.029296875 C12.7246119,0.029296875 13.1591779,0.209959131 13.5205078,0.571289062 C13.8818377,0.932618994 14.0625,1.37695049 14.0625,1.90429688 L14.0625,4.71679688 C14.0625,5.22461191 13.876955,5.66406064 13.5058594,6.03515625 C13.1347638,6.40625186 12.695315,6.59179688 12.1875,6.59179688 L10.3125,6.59179688 L10.3125,8.4375 L13.1835938,8.4375 C13.476564,8.4375 13.7548815,8.50097593 14.0185547,8.62792969 C14.2822279,8.75488345 14.5019522,8.94531123 14.6777344,9.19921875 C14.8535165,9.43359492 14.9707028,9.6923814 15.0292969,9.97558594 C15.0878909,10.2587905 15.0683599,10.5468735 14.9707031,10.8398438 L14.3261719,13.6523438 C14.2089838,14.0429707 13.9843767,14.3652331 13.6523438,14.6191406 C13.3203108,14.8730481 12.9394553,15 12.5097656,15 L10.3125,15 L10.3125,27.1582031 C10.3125,27.6855495 10.126955,28.129881 9.75585938,28.4912109 C9.38476377,28.8525409 8.94531504,29.0332031 8.4375,29.0332031 L5.625,29.0332031 C5.09765361,29.0332031 4.65332212,28.8525409 4.29199219,28.4912109 C3.93066226,28.129881 3.75,27.6855495 3.75,27.1582031 L3.75,15 L1.875,15 C1.36718496,15 0.92773623,14.814455 0.556640625,14.4433594 C0.18554502,14.0722638 0,13.632815 0,13.125 L0,10.3125 C0,10.0585925 0.0488276367,9.81933706 0.146484375,9.59472656 C0.244141113,9.37011606 0.380858496,9.16992275 0.556640625,8.99414062 C0.732422754,8.8183585 0.932616064,8.68164111 1.15722656,8.58398438 C1.38183706,8.48632764 1.62109248,8.4375 1.875,8.4375 L3.75,8.4375 L3.75,5.94726562 C3.75,4.5019459 4.03320029,3.38379302 4.59960938,2.59277344 C5.16601846,1.80175386 5.74218457,1.23047051 6.328125,0.87890625 C6.95312813,0.507810645 7.56835635,0.268555225 8.17382812,0.161132812 C8.7792999,0.0537104004 9.24804521,0 9.58007812,0 Z" id="facebook-black-large"></path>
-        </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 29.999998 29.999998"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="facebook-f-icon.svg"
+   inkscape:version="0.92+devel unknown"
+   width="30"
+   height="30">
+  <metadata
+     id="metadata16">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Asset 1</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     inkscape:document-rotation="0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     id="namedview14"
+     showgrid="false"
+     inkscape:zoom="2.6078158"
+     inkscape:cx="133.44501"
+     inkscape:cy="133.44501"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#3c5a99;}</style>
+  </defs>
+  <title
+     id="title6">Asset 1</title>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     style="fill:#000000;fill-opacity:1"
+     transform="matrix(0.11240586,0,0,0.11240586,0,-1.4648438e-5)">
+    <g
+       id="Blue"
+       style="fill:#000000;fill-opacity:1">
+      <path
+         class="cls-1"
+         d="M 252.16,0 H 14.73 A 14.73,14.73 0 0 0 0,14.73 v 237.43 a 14.73,14.73 0 0 0 14.73,14.73 H 142.56 V 163.54 h -34.79 v -40.28 h 34.78 V 93.55 c 0,-34.47 21.05,-53.24 51.81,-53.24 a 285.41,285.41 0 0 1 31.08,1.59 v 36 h -21.33 c -16.72,0 -20,7.95 -20,19.61 v 25.72 H 224 l -5.19,40.28 h -34.66 v 103.38 h 68 a 14.73,14.73 0 0 0 14.73,-14.73 V 14.73 A 14.73,14.73 0 0 0 252.16,0 Z"
+         id="path8"
+         style="fill:#000000;fill-opacity:1"
+         inkscape:connector-curvature="0" />
     </g>
+  </g>
 </svg>

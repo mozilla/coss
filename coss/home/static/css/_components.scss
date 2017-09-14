@@ -65,6 +65,20 @@
     }
 }
 
+.btn-outline-danger {
+    border-color: #ff8c8e;
+    color: #fb8e92;
+    padding: 0.5rem 3rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: white;
+        border-color: #ff8c8e;
+        color: #fb8e92;
+    }
+}
+
 .badge-primary {
     background-color: var(--primary-color);
     border-radius: 0;
@@ -308,6 +322,32 @@
             height: 10px;
             max-width: 10px;
         }
+    }
+}
+
+.social-share {
+    border-top: 4px solid var(--primary-color);
+
+    @media (max-width: 576px) {
+        text-align: center;
+    }
+
+    h6 {
+        font-style: italic;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-right: 25px;
+        font-family: OpenSans;
+
+        @media (max-width: 576px) {
+            display: block;
+        }
+    }
+
+    a.share {
+        display: inline-block;
+        margin-left: 25px;
+        margin-right: 25px;
     }
 }
 

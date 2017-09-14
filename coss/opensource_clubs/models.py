@@ -161,6 +161,7 @@ class EntityDetailPage(Page):
     members = ParentalManyToManyField(ClubProfile, blank=True, related_name='profiles')
     tags = ClusterTaggableManager(through=EntityPageTag, blank=True)
     location = models.CharField(max_length=255, blank=True, default='')
+    flag_email = models.EmailField(blank=True, default='')
 
     def get_first_image(self):
         item = self.gallery_images.first()
@@ -177,6 +178,7 @@ class EntityDetailPage(Page):
             FieldPanel('featured'),
             FieldPanel('is_flagged'),
         ], heading='Entity Attributes'),
+        FieldPanel('flag_email'),
         FieldPanel('discourse_link'),
         FieldPanel('description_link'),
         FieldPanel('facebook_link'),
