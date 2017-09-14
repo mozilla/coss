@@ -6,8 +6,7 @@ from coss.opensource_clubs.models import ClubProfile
 class ClubProfileAdmin(ModelAdmin):
     menu_label = 'Open Source Clubs Profiles'
     model = ClubProfile
-    list_display = ('get_full_name', 'get_username', 'is_captain', 'is_mentor',
-                    'mozillian_username',)
+    list_display = ('get_full_name', 'get_username', 'is_captain', 'is_mentor',)
 
     def get_full_name(self, obj):
         return obj.user.get_full_name()

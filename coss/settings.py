@@ -181,8 +181,6 @@ AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN',
 # Media storage
 MEDIA_URL = config('MEDIA_URL', default='https://{0}/'.format(AWS_S3_CUSTOM_DOMAIN))
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# Avatars path
-AVATARS_PATH = 'users/%Y/%m/%d'
 
 ##########
 # Security
@@ -240,7 +238,7 @@ BASE_URL = config('BASE_URL', default='http://127.0.0.1:8000')
 # users.User settings
 WAGTAIL_USER_EDIT_FORM = 'coss.users.forms.CossUserEditForm'
 WAGTAIL_USER_CREATION_FORM = 'coss.users.forms.CossUserCreationForm'
-WAGTAIL_USER_CUSTOM_FIELD = ['site']
+WAGTAIL_USER_CUSTOM_FIELD = ['site', 'avatar', 'github']
 
 #####################
 # DEV, DEBUG Settings

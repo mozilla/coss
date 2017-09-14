@@ -15,7 +15,6 @@ from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
 from coss.home.content_blocks import InputTextContentBlock, CardContentBlock
-from coss.opensource_clubs import forms
 
 
 UserModel = get_user_model()
@@ -25,12 +24,9 @@ UserModel = get_user_model()
 class ClubProfile(models.Model):
     """User profile relevant only to the Open Source Clubs."""
     user = models.OneToOneField(UserModel)
+    title = models.CharField(max_length=128, blank=True, default='')
     is_captain = models.BooleanField(default=False)
     is_mentor = models.BooleanField(default=False)
-    title = models.CharField(max_length=128, blank=True, default='')
-    github_link = models.URLField(max_length=128, blank=True, default='')
-    mozillian_username = models.CharField(max_length=40, default='')
-    avatar_url = models.URLField(max_length=400, default='', blank=True)
 
     def __str__(self):
         return self.user.get_full_name() or self.user.username
@@ -39,15 +35,11 @@ class ClubProfile(models.Model):
     panels = [
         FieldPanel('user'),
         FieldPanel('title'),
-        FieldPanel('github_link'),
-        FieldPanel('mozillian_username'),
         MultiFieldPanel([
             FieldPanel('is_captain'),
             FieldPanel('is_mentor'),
         ], heading='Club Profile attributes'),
     ]
-
-    base_form_class = forms.ClubProfileForm
 
 
 class HomePage(Page):
