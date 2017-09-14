@@ -92,8 +92,8 @@
             {% for member in members %}
               <div class="profile-listing clearfix">
                 <div class="avatar">
-                  {% if member.user.avatar_url %}
-                    <img src="{{ member.user.avatar_url }}" alt="{{ member }}">
+                  {% if member.user.avatar %}
+                    <img src="{{ member.user.avatar }}" alt="{{ member }}">
                   {% else %}
                     <img src="{% gravatar_url member.user.email 160 %}" alt="{{ member }}">
                   {% endif %}
