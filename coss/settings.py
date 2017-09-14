@@ -210,9 +210,11 @@ CSP_IMG_SRC = (
     "'self'",
     'https://*.s3.amazonaws.com',
     '*.gravatar.com',
+    '*.google-analytics.com',
 )
 CSP_SCRIPT_SRC = (
     "'self'",
+    'https://*.google-analytics.com',
 )
 CSP_STYLE_SRC = (
     "'self'",
