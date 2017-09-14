@@ -1,26 +1,23 @@
-{% extends "home/about_page.html" %}
+{% extends "opensource_clubs/category_base.html" %}
 {% load static wagtailcore_tags %}
 
 {% block extra_css %}
   <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">
-  <link rel="stylesheet" type="text/scss" href="{% static 'css/about.scss' %}">
 {% endblock %}
 
-{% block brand-logo %}
-  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
-{% endblock %}
+{% block header_class %}white-header{% endblock %}
 
 {% block jumbotron %}
 {% endblock %}
 
 {% block content %}
-  <div class="content inverted">
+  <div class="content">
     <div class="container">
-      <h5>Clubs tagged with {{ request.GET.tag }}</h5>
+      <h4>Clubs tagged with {{ request.GET.tag }}</h4>
 
       <div class="card-deck">
         {% for entity in entities %}
-          {% include 'opensource_clubs/club_card.html' with club=entity %}
+          {% include 'opensource_clubs/club_card.html' with club=entity card_size='cl-4' %}
         {% endfor %}
       </div>
     </div>
