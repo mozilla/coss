@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals # noqa
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import json
 import os
 
 from decouple import config, Csv
@@ -65,7 +66,9 @@ INSTALLED_APPS = [
     # django-compressor
     'compressor',
     # django-storages
-    'storages'
+    'storages',
+    # Sentry
+    'raven.contrib.django.raven_compat'
 ]
 
 MIDDLEWARE = [
@@ -227,6 +230,9 @@ CSP_EXCLUDE_URL_PREFIXES = ('/cms-admin',)
 # mozillians.org API
 MOZILLIANS_API_URL = config('MOZILLIANS_API_URL', default='https://mozillians.org/api/v2/')
 MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default='')
+
+# Sentry setup
+RAVEN_CONFIG = config('RAVEN_CONFIG', cast=json.loads, default='{}')
 ##################
 # Wagtail Settings
 ##################
