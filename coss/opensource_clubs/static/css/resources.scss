@@ -21,6 +21,10 @@
         .card-body {
             padding: 10px;
             background-color: var(--card-bg-color);
+
+            .rich-text {
+                max-height: none;
+            }
         }
 
         .card-footer {

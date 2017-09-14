@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="social-share">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-8">
+        <h6>share this {{ entity_name }} on social:</h6>
+        <a href="https://www.twitter.com/share?url={{ page.full_url }}&text={{ page.title }}" class="share">
+          <img src="{% static 'img/icons/twitter-black.svg' %}"></img>
+        </a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" class="share">
+          <img src="{% static 'img/icons/facebook-black-large.svg' %}"></img>
+        </a>
+      </div>
+      <div class="col-md-4 text-center text-sm-left text-md-right mt-3 mt-sm-0">
+        {% if flag_email %}
+          <a href="mailto:{{ flag_email }}" class="btn btn-outline-danger text-uppercase font-weight-bold">
+            <img src="{% static 'img/icons/flag-red.svg' %}" alt="flag" class="pr-2">
+            <span>Flag this {{ entity_name }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

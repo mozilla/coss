@@ -119,21 +119,11 @@
         {% include 'home/blocks/image_gallery.html' with gallery=page.gallery_images %}
       </div>
     </div>
-
-    <div class="row mt-5 mb-5">
-      <div class="col-md-6">
-        <h6>
-          SHARE THIS CLUB ON SOCIAL:
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}">
-            <img src="{% static 'img/icons/facebook-black-large.svg' %}"></img>
-          </a>
-          <a href="https://www.twitter.com/share?url={{ page.full_url }}&text={{ page.title }}">
-            <img src="{% static 'img/icons/twitter-black.svg' %}"></img>
-          </a>
-        </h6>
-      </div>
-    </div>
   </div>
+{% endblock %}
+
+{% block bottom_content %}
+  {% include 'home/blocks/social_share.html' with entity_name='club' flag_email=page.flag_email %}
 {% endblock %}
 
 {% block extra_js %}
