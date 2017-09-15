@@ -106,8 +106,8 @@
 {% endblock %}
 
 {% block bottom_content %}
-  {% if page.about.bottom_cta_title %}
-    {% include 'home/blocks/bottom_banner.html' with page=page.about %}
+  {% if page.about.bottom_content_block %}
+    {% include 'home/blocks/bottom_banner_content_block.html' with page=page.about %}
   {% endif %}
 {% endblock %}
 

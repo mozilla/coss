@@ -59,3 +59,22 @@ class CardContentBlock(InputTextContentBlock):
 
     class Meta:
         template = 'home/blocks/card_content_block.html'
+
+
+class BottomCTAContentBlock(InputTextContentBlock):
+    # Override text field to limit it to 100 chars.
+    text = blocks.RichTextBlock(max_length=100,
+                                required=False,
+                                blank=True,
+                                default='',
+                                help_text=('WYSIWYG Editor for general purpose content, '
+                                           '(max 100 chars)'))
+    cta_link = blocks.URLBlock(help_text='Optional field - accepts a URL (max 200 chars)',
+                               required=False,
+                               max_length=200)
+    cta_title = blocks.CharBlock(max_length=100,
+                                 required=False,
+                                 help_text='Optional field - Title of the link, (max 100 chars)')
+
+    class Meta:
+        template = 'home/blocks/bottom_banner_content_block.html'
