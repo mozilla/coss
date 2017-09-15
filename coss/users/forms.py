@@ -36,6 +36,10 @@ class CossUserEditForm(UserEditForm):
     github = forms.URLField(required=False,
                             label='GitHub Profile URL.')
 
+    def __init__(self, *args, **kwargs):
+        super(CossUserEditForm, self).__init__(*args, **kwargs)
+        self.fields['github'].initial = self.instance.github
+
     def clean(self, *args, **kwargs):
         """Clean method.
 
@@ -58,6 +62,7 @@ class CossUserEditForm(UserEditForm):
         Fetch data from mozillians.org to add the avatar url in the profile.
         """
         obj = super(CossUserEditForm, self).save(commit=False)
+        obj.github = self.cleaned_data.get('github')
         obj = populate_profile_from_mozillians(obj)
         obj.save()
         return obj
@@ -106,6 +111,7 @@ class CossUserCreationForm(UserCreationForm):
         Fetch data from mozillians.org to add the avatar url in the profile.
         """
         obj = super(CossUserCreationForm, self).save(commit=False)
+        obj.github = self.cleaned_data.get('github')
         obj = populate_profile_from_mozillians(obj)
         obj.save()
         return obj
