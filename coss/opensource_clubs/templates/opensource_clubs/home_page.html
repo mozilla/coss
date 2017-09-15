@@ -32,7 +32,7 @@
       {% if page.get_featured %}
         <div class="card-deck">
           {% for club in page.get_featured %}
-            {% include 'opensource_clubs/club_card.html' with club=club.specific card_size='cl-6' %}
+            {% include 'opensource_clubs/featured_club_card.html' with club=club.specific card_size='cl-6' %}
           {% endfor %}
         </div>
       {% endif %}
