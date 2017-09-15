@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 from __future__ import absolute_import, unicode_literals # noqa
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import json
 import os
 
 from decouple import config, Csv
@@ -232,7 +231,18 @@ MOZILLIANS_API_URL = config('MOZILLIANS_API_URL', default='https://mozillians.or
 MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default='')
 
 # Sentry setup
-RAVEN_CONFIG = config('RAVEN_CONFIG', cast=json.loads, default='{}')
+if config('MESOS_CLUSTER', default=False, cast=bool):
+    RAVEN_CONFIG = {
+        'dsn': config('RAVEN_CONFIG_DSN', default=''),
+        'release': config('MARATHON_APP_LABEL_VERSION', default=''),
+        'environment': config('MARATHON_APP_LABEL_ENV', default=''),
+        'serverName': config('HOST', default=''),
+        'tags': {
+            'container': config('HOSTNAME', default=''),
+            'mesos_task_id': config('MESOS_TASK_ID', default='')
+        }
+    }
+
 ##################
 # Wagtail Settings
 ##################
