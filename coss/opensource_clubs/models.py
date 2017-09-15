@@ -75,7 +75,7 @@ class HomePage(Page):
     bottom_cta2_link = models.URLField(verbose_name='Link', blank=True, default='')
 
     def get_featured(self):
-        return EntityDetailPage.objects.filter(featured=True).order_by('?')[:3]
+        return EntityDetailPage.objects.filter(featured=True).order_by('?')[:2]
 
     def get_category_page(self):
         try:
