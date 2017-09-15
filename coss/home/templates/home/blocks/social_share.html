@@ -1,14 +1,15 @@
 {% load static %}
+{% load coss_tags %}
 
 <div class="social-share">
   <div class="container py-5">
     <div class="row">
       <div class="col-md-8">
         <h6>share this {{ entity_name }} on social:</h6>
-        <a href="https://www.twitter.com/share?url={{ page.full_url }}&text={{ page.title }}" class="share">
+        <a href="{% share_page_twitter_url %}" class="share" target="_blank">
           <img src="{% static 'img/icons/twitter-black.svg' %}"></img>
         </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" class="share">
+        <a href="{% share_page_fb_url %}" class="share" target="_blank">
           <img src="{% static 'img/icons/facebook-black-large.svg' %}"></img>
         </a>
       </div>

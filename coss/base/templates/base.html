@@ -6,6 +6,13 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% block open_graph_meta %}
+      <meta property="og:url" content="{{ self.full_url }}"/>
+      <meta property="og:title" content="{{ self.title }}"/>
+      <meta property="og:image" content="{% absolutify_static '/img/mozilla.svg' %}"/>
+    {% endblock %}
+
     <title>
       {% block title %}
         {% if self.seo_title %}

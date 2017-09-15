@@ -184,6 +184,9 @@ AWS_S3_CUSTOM_DOMAIN = config('AWS_S3_CUSTOM_DOMAIN',
 MEDIA_URL = config('MEDIA_URL', default='https://{0}/'.format(AWS_S3_CUSTOM_DOMAIN))
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+# Social media
+SOCIAL_FB_APP_ID = config('SOCIAL_FB_APP_ID', default='118056745560883')
+
 ##########
 # Security
 ##########

@@ -1,4 +1,7 @@
 from django import template
+from django.conf import settings
+from django.utils.http import urlencode
+from django.templatetags.static import static
 
 register = template.Library()
 
@@ -19,3 +22,29 @@ def top_menu(context, parent, calling_page=None):
         'menuitems': menuitems,
         'request': context['request'],
     }
+
+
+@register.simple_tag(takes_context=True)
+def share_page_twitter_url(context):
+    base_url = 'https://www.twitter.com/intent/tweet?'
+    params = {
+        'text': context['page'].title,
+        'url': context['page'].full_url
+    }
+    return base_url + urlencode(params)
+
+
+@register.simple_tag(takes_context=True)
+def share_page_fb_url(context):
+    base_url = 'https://www.facebook.com/dialog/feed?'
+    params = {
+        'app_id': settings.SOCIAL_FB_APP_ID,
+        'link': context['page'].full_url,
+        'redirect_uri': context['page'].full_url
+    }
+    return base_url + urlencode(params)
+
+
+@register.simple_tag(takes_context=True)
+def absolutify_static(context, path):
+    return context['request'].build_absolute_uri(static(path))
