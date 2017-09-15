@@ -192,6 +192,22 @@
                 text-overflow: ellipsis;
                 word-wrap: break-word;
             }
+
+            .cta {
+                font-weight: bold;
+                margin-top: 25px;
+                text-align: center;
+
+                a {
+                    border-bottom: 1px solid black;
+                    display: inline-block;
+                    padding-bottom: 5px;
+
+                    &:hover {
+                        border-bottom: 1px solid var(--primary-color);
+                    }
+                }
+            }
         }
 
         &.card-mini {
@@ -333,11 +349,11 @@
     }
 
     h6 {
-        font-style: italic;
-        text-transform: uppercase;
         display: inline-block;
-        margin-right: 25px;
         font-family: OpenSans;
+        font-style: italic;
+        margin-right: 25px;
+        text-transform: uppercase;
 
         @media (max-width: 576px) {
             display: block;
