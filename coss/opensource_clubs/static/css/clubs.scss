@@ -90,6 +90,16 @@ header {
             color: var(--primary-color);
             font-size: .9em;
         }
+
+        .github {
+            position: absolute;
+            bottom: 20px;
+            left: 170px;
+
+            a {
+                font-style: italic;
+            }
+        }
     }
 }
 

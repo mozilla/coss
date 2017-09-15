@@ -1,0 +1,22 @@
+{% load static gravatar %}
+
+<div class="profile-listing clearfix">
+  <div class="avatar">
+    {% if profile.user.avatar %}
+      <img src="{{ profile.user.avatar }}" alt="{{ member }}">
+    {% else %}
+      <img src="{% gravatar_url profile.user.email 160 %}" alt="{{ member }}">
+    {% endif %}
+  </div>
+  <div class="profile-details ml-3 mt-3">
+    {{ profile }}
+    {% if profile.is_captain %}
+      <div class="profile-title">Club Captain</div>
+    {% endif %}
+    {% if profile.user.github %}
+      <div class="github">
+        <a href="{{ profile.user.github }}" target="_blank">Github profile</a>
+      </div>
+    {% endif %}
+  </div>
+</div>

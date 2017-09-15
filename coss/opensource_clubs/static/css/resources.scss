@@ -9,40 +9,44 @@
         }
     }
 
-    .card {
+    .card-deck {
+        justify-content: left;
 
-        .card-header {
-            background-color: black;
-            color: white;
-            min-height: auto;
-            padding-left: 2rem;
-        }
+        .card {
 
-        .card-body {
-            padding: 10px;
-            background-color: var(--card-bg-color);
-
-            .rich-text {
-                max-height: none;
+            .card-header {
+                background-color: black;
+                color: white;
+                min-height: auto;
+                padding-left: 2rem;
             }
-        }
 
-        .card-footer {
-            background-color: var(--card-bg-color);
-            padding: 2rem;
+            .card-body {
+                padding: 10px;
+                background-color: var(--card-bg-color);
 
-            a {
-                font-weight: bold;
-
-                svg {
-                    margin-left: 1rem;
-                    margin-bottom: -2px;
+                .rich-text {
+                    max-height: none;
                 }
+            }
 
-                &:hover {
+            .card-footer {
+                background-color: var(--card-bg-color);
+                padding: 2rem;
 
-                    svg > g {
-                        fill: var(--primary-color);
+                a {
+                    font-weight: bold;
+
+                    svg {
+                        margin-left: 1rem;
+                        margin-bottom: -2px;
+                    }
+
+                    &:hover {
+
+                        svg > g {
+                            fill: var(--primary-color);
+                        }
                     }
                 }
             }

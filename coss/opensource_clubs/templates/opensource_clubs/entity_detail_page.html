@@ -89,22 +89,8 @@
       <div class="col-md-6">
         {% with members=page.members.all %}
           {% if members.count %}
-            {% for member in members %}
-              <div class="profile-listing clearfix">
-                <div class="avatar">
-                  {% if member.user.avatar %}
-                    <img src="{{ member.user.avatar }}" alt="{{ member }}">
-                  {% else %}
-                    <img src="{% gravatar_url member.user.email 160 %}" alt="{{ member }}">
-                  {% endif %}
-                </div>
-                <div class="profile-details ml-3 mt-3">
-                  {{ member }}
-                  {% if member.is_captain %}
-                    <div class="profile-title">Club Captain</div>
-                  {% endif %}
-                </div>
-              </div>
+            {% for profile in members %}
+              {% include "opensource_clubs/profile.html" %}
             {% endfor %}
           {% endif %}
         {% endwith %}
