@@ -236,7 +236,7 @@ if config('MESOS_CLUSTER', default=False, cast=bool):
         'dsn': config('RAVEN_CONFIG_DSN', default=''),
         'release': config('MARATHON_APP_LABEL_VERSION', default=''),
         'environment': config('MARATHON_APP_LABEL_ENV', default=''),
-        'serverName': config('HOST', default=''),
+        'name': config('HOST', default=''),
         'tags': {
             'container': config('HOSTNAME', default=''),
             'mesos_task_id': config('MESOS_TASK_ID', default='')
