@@ -14,7 +14,7 @@ from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
-from coss.home.content_blocks import InputTextContentBlock, CardContentBlock
+from coss.home.content_blocks import InputTextContentBlock, CardContentBlock, BottomCTAContentBlock
 
 
 UserModel = get_user_model()
@@ -239,6 +239,9 @@ class ResourcesPage(Page):
                                           max_length=50)
     resources_cta_link = models.URLField(verbose_name='Link', blank=True, default='')
     guides = fields.RichTextField(verbose_name='Guides', blank=True)
+    bottom_content_block = fields.StreamField([
+        ('cta', BottomCTAContentBlock(),),
+    ], null=True, blank=True)
 
     def get_mentors(self):
         # TODO: Add filter for mentors that belong to each club
@@ -256,6 +259,7 @@ class ResourcesPage(Page):
             FieldPanel('resources_cta_link'),
             FieldPanel('guides'),
         ], heading='Resources'),
+        StreamFieldPanel('bottom_content_block'),
     ]
 
 

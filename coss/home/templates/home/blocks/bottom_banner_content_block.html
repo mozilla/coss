@@ -1,0 +1,18 @@
+<div class="bottom-banner">
+  <div class="container">
+    <div class="row">
+      {% for block in page.bottom_content_block %}
+        <div class="col-md-3">
+          <a href="{{ block.value.link }}" class="btn btn-default align-middle">{{ block.value.link_title }}</a>
+        </div>
+        <div class="col-md-6">
+          <h4>{{ block.value.title }}</h4>
+          <p>{{ block.value.text }}</p>
+        </div>
+        <div class="col-md-3">
+          <a href="{{ block.value.cta_link }}" class="btn btn-default">{{ block.value.cta_title }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
