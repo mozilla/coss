@@ -42,17 +42,7 @@
           {% endif %}
           {% if page.get_mentors %}
             {% for profile in page.get_mentors %}
-              <div class="profile-listing clearfix">
-                <div class="avatar">
-                  <img src="{% gravatar_url profile.user.email 160 %}" alt="fullname">
-                </div>
-                <div class="profile-details ml-3 mt-3">
-                  {{ profile.user.first_name }} {{ profile.user.last_name }}
-                  {% if profile.is_captain %}
-                    <div class="profile-title">Club Captain</div>
-                  {% endif %}
-                </div>
-              </div>
+              {% include "opensource_clubs/profile.html" %}
             {% endfor %}
           {% endif %}
         </div>
