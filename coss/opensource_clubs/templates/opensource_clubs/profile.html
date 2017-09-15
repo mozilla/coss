@@ -13,10 +13,11 @@
     {% if profile.is_captain %}
       <div class="profile-title">Club Captain</div>
     {% endif %}
-    {% if profile.user.github %}
-      <div class="github">
-        <a href="{{ profile.user.github }}" target="_blank">Github profile</a>
-      </div>
-    {% endif %}
   </div>
+  {% if profile.user.github %}
+    <div class="github">
+      <img src="{% static 'img/icons/github-black.svg' %}" alt="github">
+      <a href="{{ profile.user.github }}" target="_blank">Github profile</a>
+    </div>
+  {% endif %}
 </div>
