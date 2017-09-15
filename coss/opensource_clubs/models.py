@@ -149,7 +149,6 @@ class EntityDetailPage(Page):
     contact_cta = models.URLField(verbose_name='Contact CTA link', blank=True)
     description_link = models.URLField(verbose_name='Description link', blank=True, default='')
     facebook_link = models.URLField(verbose_name='Facebook link', blank=True, default='')
-    contact_cta = models.URLField(verbose_name='Description social link', blank=True, default='')
     members = ParentalManyToManyField(ClubProfile, blank=True, related_name='profiles')
     tags = ClusterTaggableManager(through=EntityPageTag, blank=True)
     location = models.CharField(max_length=255, blank=True, default='')
