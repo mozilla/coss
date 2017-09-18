@@ -6,10 +6,14 @@
 Welcome to CoSS's documentation!
 ================================
 
+Community Support Software [`Source Code <https://github.com/mozilla/coss>`_]
+
+Contents:
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   installation
 
 
 Indices and tables
