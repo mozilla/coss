@@ -1,0 +1,34 @@
+{
+    "name": "CoSS",
+    "description": "Mozilla's Community Support Software",
+    "repository": {
+        "url": "https://github.com/mozilla/coss/",
+        "license": "MPL 2.0"
+    },
+    "participate": {
+        "home": "https://wiki.mozilla.org/ParticipationSystems",
+        "docs": "http://coss.readthedocs.org",
+        "irc": "irc://irc.mozilla.org/#participationsystems",
+        "irc-contacts": [
+            "tasos",
+            "nikos",
+            "yalam96",
+            "nemo-yiannis"
+        ]
+    },
+    "bugs": {
+        "list": "https://github.com/mozilla/coss/issues/",
+        "report": "https://github.com/mozilla/coss/issues/new"
+    },
+    "urls": {
+        "prod": "https://opensource.mozilla.community",
+        "stage": "https://opensource.coss-staging.mozilla.community"
+    },
+    "keywords": [
+        "python",
+        "django",
+        "html",
+        "javascript",
+        "css"
+    ]
+}
