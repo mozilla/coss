@@ -63,16 +63,9 @@ class HomePage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
-    bottom_cta_title = models.CharField(verbose_name='Title', blank=True, default='',
-                                        max_length=50)
-    bottom_cta_text = models.CharField(verbose_name='Text', blank=True, default='',
-                                       max_length=100)
-    bottom_cta1_text = models.CharField(verbose_name='Text', blank=True, default='',
-                                        max_length=20)
-    bottom_cta1_link = models.URLField(verbose_name='Link', blank=True, default='')
-    bottom_cta2_text = models.CharField(verbose_name='Text', blank=True, default='',
-                                        max_length=20)
-    bottom_cta2_link = models.URLField(verbose_name='Link', blank=True, default='')
+    bottom_content_block = fields.StreamField([
+        ('cta', BottomCTAContentBlock(),),
+    ], null=True, blank=True)
 
     def get_featured(self):
         return EntityDetailPage.objects.filter(featured=True).order_by('?')[:2]
@@ -91,18 +84,7 @@ class HomePage(Page):
         ], heading='Heading'),
         SnippetChooserPanel('discourse'),
         SnippetChooserPanel('testimonial'),
-        MultiFieldPanel([
-            FieldPanel('bottom_cta_title'),
-            FieldPanel('bottom_cta_text'),
-        ], heading='Bottom CTA'),
-        MultiFieldPanel([
-            FieldPanel('bottom_cta1_text'),
-            FieldPanel('bottom_cta1_link'),
-        ], heading='Bottom CTA Left button'),
-        MultiFieldPanel([
-            FieldPanel('bottom_cta2_text'),
-            FieldPanel('bottom_cta2_link'),
-        ], heading='Bottom CTA Right Button')
+        StreamFieldPanel('bottom_content_block')
     ]
 
 
