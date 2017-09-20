@@ -31,15 +31,13 @@ h1, h2, h3, h4 {
     font-family: ZillaSlab;
 }
 
-.breadcrumbs {
-    font-size: .9em;
+.rich-text a {
+    text-decoration: underline;
 
-    a {
-        color: black;
-
-        &:hover {
-            text-decoration: none;
-        }
+    &:hover,
+    &:active,
+    &:focus {
+        color: var(--primary-color);
     }
 }
 
