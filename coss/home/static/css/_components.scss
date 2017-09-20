@@ -235,6 +235,10 @@
             .card-header {
                 border-bottom: none;
                 min-height: auto;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0.75rem 0.75rem 0.75rem 0;
             }
 
             .card-body {
