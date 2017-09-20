@@ -6,7 +6,7 @@
   {% else %}
     <img src="{% static 'img/clubs-illustration.svg'%}" class="rounded-circle card-img" alt="{{ value.title }}">
   {% endif %}
-  <h4 class="card-header">{{ value.title }}</h4>
+  <h5 class="card-header">{{ value.title }}</h5>
   <div class="card-body">
     {{ value.text }}
     <a href="{{ value.link }}" target="_blank" class="cta">{{ value.link_title }}</a>
