@@ -235,10 +235,10 @@
             .card-header {
                 border-bottom: none;
                 min-height: auto;
-                white-space: nowrap;
                 overflow: hidden;
-                text-overflow: ellipsis;
                 padding: 0.75rem 0.75rem 0.75rem 0;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
 
             .card-body {
@@ -255,8 +255,12 @@
                 }
 
                 .cta {
-                    display: inline-block;
+                    display: block;
                     margin-top: 10px;
+                    overflow: hidden;
+                    text-align: left;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                 }
             }
         }

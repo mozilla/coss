@@ -9,6 +9,7 @@
   <h5 class="card-header">{{ value.title }}</h5>
   <div class="card-body">
     {{ value.text }}
-    <a href="{{ value.link }}" target="_blank" class="cta">{{ value.link_title }}</a>
+    <a href="{{ value.link }}" target="_blank" class="cta"
+       data-toggle="tooltip" data-placement="bottom" title="{{ value.link_title }}">{{ value.link_title }}</a>
   </div>
 </div>
