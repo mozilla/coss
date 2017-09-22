@@ -31,6 +31,12 @@ header {
     background: var(--primary-color);
     background: linear-gradient(to top right, var(--primary-color), var(--gradient-color));
 
+    img.sticky {
+        display: none;
+        width: auto;
+        height: 30px;
+    }
+
     &.white-header {
         background: white;
 

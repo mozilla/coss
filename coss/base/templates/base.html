@@ -47,7 +47,7 @@
     <div class="page-wrap">
 
       <header class="{% block header_class %}{% endblock %}">
-        <nav id="nav-top" class="navbar navbar-light navbar-toggleable-md" role="navigation">
+        <nav id="nav-top" class="navbar fixed-top navbar-light navbar-toggleable-md" role="navigation">
           {% get_site_root as site_root %}
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
                   aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,6 +64,7 @@
           </div>
         </nav>
 
+        <div class="clear-head"></div>
         {% block jumbotron %}{% endblock %}
       </header>
 
@@ -110,6 +111,7 @@
       <script type="text/javascript" src="{% static 'lib/popper.js/dist/umd/popper.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'lib/dnt-helper/js/dnt-helper.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/google-analytics.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/coss.js' %}"></script>
 

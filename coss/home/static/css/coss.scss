@@ -45,12 +45,11 @@ header {
     background-color: var(--primary-color);
 
     .navbar-light {
-        font-family: OpenSans;
         background-color: white;
+        font-family: OpenSans;
         padding: 1rem;
 
         .navbar-toggler {
-            margin: 20px 0;
 
             .navbar-toggler-icon {
                 background-image: url('/static/img/hamburger.svg');
@@ -61,6 +60,7 @@ header {
         .navbar-collapse {
 
             .nav-item {
+                margin: 0 1.5rem;
                 padding: 8px;
 
                 a.nav-link {
@@ -87,6 +87,10 @@ header {
                 width: 140px;
             }
         }
+    }
+
+    .clear-head {
+        height: 100px;
     }
 
     .jumbotron {
