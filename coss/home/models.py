@@ -6,6 +6,7 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailcore import fields
+from wagtail.wagtailcore.models import Site
 from wagtail.wagtailsnippets.models import register_snippet
 
 from coss.home.content_blocks import InputTextContentBlock, CardContentBlock, BottomCTAContentBlock
@@ -107,3 +108,23 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.person
+
+
+@register_snippet
+class FooterLink(models.Model):
+    """Model for dynamic Footer links."""
+
+    OPTIONS = ['Discourse', 'Github', 'Facebook', 'Twitter', 'Code of Conduct']
+
+    option = models.CharField(choices=zip(OPTIONS, OPTIONS), max_length=50)
+    url = models.URLField()
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+
+    panels = [
+        FieldPanel('option'),
+        FieldPanel('url'),
+        FieldPanel('site'),
+    ]
+
+    def __str__(self):
+        return '{0}: {1}'.format(self.site, self.option)

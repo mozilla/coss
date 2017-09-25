@@ -78,12 +78,6 @@
       <div class="container text-center">
         <div class="icon-container">
           <div class="icon">
-            <img class="footer-icon" src="{% static 'img/footer/github.svg' %}">
-            <a href="https://github.com/mozilla/coss" target="_blank">Contribute</a>
-          </div>
-        </div>
-        <div class="icon-container">
-          <div class="icon">
             <img class="footer-icon" src="{% static 'img/footer/legal.svg' %}">
             <a href="https://www.mozilla.org/about/legal/" target="_blank">Legal</a>
           </div>
@@ -94,6 +88,13 @@
             <a href="https://www.mozilla.org/privacy/" target="_blank">Privacy</a>
           </div>
         </div>
+        <div class="icon-container">
+          <div class="icon">
+            <img class="footer-icon" src="{% static 'img/footer/license.svg' %}">
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">License</a>
+          </div>
+        </div>
+        {% footer_links %}
       </div>
 
       <div class="footer-content">

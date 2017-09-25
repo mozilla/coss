@@ -3,6 +3,8 @@ from django.conf import settings
 from django.utils.http import urlencode
 from django.templatetags.static import static
 
+from coss.home.models import FooterLink
+
 register = template.Library()
 
 
@@ -21,6 +23,15 @@ def top_menu(context, parent, calling_page=None):
         'calling_page': calling_page,
         'menuitems': menuitems,
         'request': context['request'],
+    }
+
+
+@register.inclusion_tag('tags/footer_links.html', takes_context=True)
+def footer_links(context):
+    site = context['page'].get_site().id
+    links = FooterLink.objects.filter(site=site)
+    return {
+        'links': links
     }
 
 
