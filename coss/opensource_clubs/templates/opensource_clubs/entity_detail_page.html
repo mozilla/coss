@@ -1,5 +1,16 @@
 {% extends "opensource_clubs/category_base.html" %}
-{% load static wagtailcore_tags wagtailimages_tags gravatar %}
+{% load static wagtailcore_tags wagtailimages_tags gravatar coss_tags %}
+
+{% block open_graph_meta %}
+  <meta property="og:url" content="{{ self.full_url }}">
+  <meta property="og:title" content="{{ self.title }}">
+  {% if page.get_first_image %}
+    {% image page.get_first_image original as og_photo %}
+    <meta property="og:image" content="{% absolutify_media og_photo.url %}">
+  {% else %}
+    <meta property="og:image" content="{% absolutify_static '/img/ossn.jpg' %}">
+  {% endif %}
+{% endblock %}
 
 {% block extra_css %}
   <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">

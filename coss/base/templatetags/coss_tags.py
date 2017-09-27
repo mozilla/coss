@@ -48,3 +48,8 @@ def share_page_fb_url(context):
 @register.simple_tag(takes_context=True)
 def absolutify_static(context, path):
     return context['request'].build_absolute_uri(static(path))
+
+
+@register.simple_tag(takes_context=True)
+def absolutify_media(context, path):
+    return context['request'].build_absolute_uri(path)
