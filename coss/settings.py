@@ -221,6 +221,8 @@ CSP_IMG_SRC = (
 CSP_SCRIPT_SRC = (
     "'self'",
     'https://*.google-analytics.com',
+    'https://*.googletagmanager.com',
+    'https://tagmanager.google.com'
 )
 
 CSP_STYLE_SRC = (

@@ -7,6 +7,11 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    {% compress js %}
+      <script type="text/javascript" src="{% static 'lib/dnt-helper/js/dnt-helper.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/google-analytics.js' %}"></script>
+    {% endcompress %}
+
     {% block open_graph_meta %}
       <meta property="og:url" content="{{ self.full_url }}"/>
       <meta property="og:title" content="{{ self.title }}"/>
@@ -110,9 +115,7 @@
       <script type="text/javascript" src="{% static 'lib/jquery/dist/jquery.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'lib/popper.js/dist/umd/popper.min.js' %}"></script>
       <script type="text/javascript" src="{% static 'lib/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-      <script type="text/javascript" src="{% static 'lib/dnt-helper/js/dnt-helper.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/navbar.js' %}"></script>
-      <script type="text/javascript" src="{% static 'js/google-analytics.js' %}"></script>
       <script type="text/javascript" src="{% static 'js/coss.js' %}"></script>
 
       {% block extra_js %}
