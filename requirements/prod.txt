@@ -172,9 +172,9 @@ boto3==1.4.7 \
 django-storages==1.6.5 \
     --hash=sha256:bc8e4c1f483608c5dd1212072fd41042f3ef2d2a2896ec4fb12dbc62c82996a0 \
     --hash=sha256:ab6be1538cf29511400bce83d0e5ca74d2e935cad82086063bcf5e7edacc1661
-botocore==1.7.22 \
-    --hash=sha256:773ceae86a52304c021676c3e2f59e401ea500bfb10540f0c0d08d4eb5479f0e \
-    --hash=sha256:8a1a16e9e23cbab3b4b505bff62a1efa5e6b201cef5270f77902d5debb492569
+botocore==1.7.23 \
+    --hash=sha256:d93dc3f95054222d0f7f4f7b117ffcff286bccff271f8ffee3f1a15e2142c99e \
+    --hash=sha256:df025e52ee5c90f395e31de11e9c0c5ab5dcc19b865693157f4ce5358d8f527a
 docutils==0.14 \
     --hash=sha256:7a4bd47eaf6596e1295ecb11361139febe29b084a87bf005bf899f9a42edc3c6 \
     --hash=sha256:02aec4bd92ab067f6ff27a38a38a41173bf01bed8f89157768c1573f53e474a6 \
