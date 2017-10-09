@@ -41,6 +41,14 @@ h1, h2, h3, h4 {
     }
 }
 
+.container {
+
+    @media (min-width: 1500px) {
+        max-width: 100%;
+        width: 1440px;
+    }
+}
+
 header {
     background-color: var(--primary-color);
 
