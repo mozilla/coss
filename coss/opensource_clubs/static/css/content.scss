@@ -49,20 +49,6 @@ header {
         margin-top: 60px;
     }
 
-    .nav-about {
-        background-color: #f9f9f9;
-
-        .nav-link {
-            color: black;
-
-            &:active,
-            &:hover {
-                color: var(--primary-color);
-                text-decoration: underline;
-            }
-        }
-    }
-
     .nav-details {
 
         .nav-link {

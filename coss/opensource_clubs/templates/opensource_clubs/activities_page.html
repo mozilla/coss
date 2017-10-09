@@ -1,20 +1,5 @@
-{% extends "home/about_page.html" %}
+{% extends "opensource_clubs/category_page.html" %}
 {% load static wagtailcore_tags coss_tags %}
-
-{% block open_graph_meta %}
-  <meta property="og:url" content="{{ self.full_url }}">
-  <meta property="og:title" content="{{ self.title }}">
-  <meta property="og:image" content="{% absolutify_static '/img/ossn.jpg' %}">
-{% endblock %}
-
-{% block extra_css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'css/clubs.scss' %}">
-  <link rel="stylesheet" type="text/scss" href="{% static 'css/about.scss' %}">
-{% endblock %}
-
-{% block brand-logo %}
-  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
-{% endblock %}
 
 {% block jumbotron %}
 {% endblock %}
