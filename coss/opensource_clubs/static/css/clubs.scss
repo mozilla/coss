@@ -33,8 +33,23 @@ header {
 
     img.sticky {
         display: none;
-        width: auto;
-        height: 30px;
+    }
+
+    .navbar-light {
+
+        .navbar-brand {
+            width: 0;
+
+            img {
+                height: 60px;
+                width: 180px;
+
+                &.sticky {
+                    height: 30px;
+                    width: 140px;
+                }
+            }
+        }
     }
 
     &.white-header {
