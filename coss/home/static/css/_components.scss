@@ -114,11 +114,12 @@
         flex-grow: 0;
         flex-shrink: 1;
         margin-bottom: 20px;
+        margin-right: 15px;
         text-decoration: none;
         width: 350px;
 
         &.cl-6 {
-            width: 525px;
+            width: 555px;
 
             .card-body > img {
                 height: 300px;
@@ -127,7 +128,7 @@
         }
 
         &.cl-4 {
-            width: 350px;
+            width: 360px;
 
             .card-body > img {
                 height: 200px;
@@ -146,13 +147,6 @@
 
         @media all and (max-width: 575px) {
             max-width: 100%;
-        }
-
-        @media all and (max-width: 992px) {
-
-            &:not(:last-child) {
-                margin-right: 0;
-            }
         }
 
         &:not(:first-child) {
