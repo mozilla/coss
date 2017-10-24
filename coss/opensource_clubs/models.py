@@ -73,8 +73,8 @@ class HomePage(Page):
     def get_category_page(self):
         try:
             return CategoryLandingPage.objects.get()
-        except:
-            return None
+        except (CategoryLandingPage.DoesNotExist, CategoryLandingPage.MultipleObjectsReturned):
+            return CategoryLandingPage.objects.none()
 
     content_panels = Page.content_panels + [
         MultiFieldPanel([
