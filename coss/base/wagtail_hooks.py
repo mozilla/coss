@@ -1,6 +1,15 @@
+from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.utils.html import format_html
+
 from wagtail.contrib.modeladmin.options import ModelAdmin, ModelAdminGroup, modeladmin_register
+from wagtail.wagtailcore import hooks
 
 from coss.opensource_clubs.models import ClubProfile
+
+
+@hooks.register('insert_global_admin_css')
+def global_admin_css():
+    return format_html('<link rel="stylesheet" href="{0}">', static('css/admin.css'))
 
 
 class ClubProfileAdmin(ModelAdmin):
