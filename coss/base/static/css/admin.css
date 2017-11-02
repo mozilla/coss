@@ -1,4 +1,126 @@
-body header .avatar {
+@font-face {
+    font-family: 'OpenSans Light';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/opensans-light.woff2') format('woff2'),
+        url('../fonts/opensans-light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/opensans-semibold.woff2') format('woff2'),
+        url('../fonts/opensans-semibold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/opensans-lightitalic.woff2') format('woff2'),
+        url('../fonts/opensans-lightitalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'OpenSans Light';
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/opensans-semibolditalic.woff2') format('woff2'),
+        url('../fonts/opensans-semibolditalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/opensans-regular.woff2') format('woff2'),
+        url('../fonts/opensans-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/opensans-bold.woff2') format('woff2'),
+        url('../fonts/opensans-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/opensans-italic.woff2') format('woff2'),
+        url('../fonts/opensans-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSans;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/opensans-bolditalic.woff2') format('woff2'),
+        url('../fonts/opensans-bolditalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Regular.woff2') format('woff2'),
+        url('../fonts/ZillaSlab-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlab-Bold.woff2') format('woff2'),
+        url('../fonts/ZillaSlab-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-Italic.woff2') format('woff2'),
+        url('../fonts/ZillaSlab-Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlab;
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/ZillaSlab-BoldItalic.woff2') format('woff2'),
+        url('../fonts/ZillaSlab-BoldItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Regular.woff2') format('woff2'),
+        url('../fonts/ZillaSlabHighlight-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: ZillaSlabHighlight;
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/ZillaSlabHighlight-Bold.woff2') format('woff2'),
+        url('../fonts/ZillaSlabHighlight-Bold.woff') format('woff');
+}
+
+body {
+    font-family: 'OpenSans Light', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+    font-family: ZillaSlab;
+}
+
+header .avatar {
     display: none;
 }
 
