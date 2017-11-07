@@ -1,3 +1,7 @@
+body header .avatar {
+    display: none;
+}
+
 .brand-logo {
     width: 140px;
     height: 40px;
