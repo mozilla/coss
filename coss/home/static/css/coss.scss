@@ -17,13 +17,21 @@ body {
 }
 
 .page-wrap {
-    margin-bottom: calc(var(--footer-height) * -1);
+    margin-bottom: -170px;
     min-height: 100%;
+
+    @media (max-width: 575px) {
+        margin-bottom: -300px;
+    }
 
     &:after {
         content: '';
         display: block;
-        height: var(--footer-height);
+        height: 170px;
+
+        @media (max-width: 575px) {
+            height: 300px;
+        }
     }
 }
 
