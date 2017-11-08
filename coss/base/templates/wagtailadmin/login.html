@@ -1,0 +1,12 @@
+{% extends "wagtailadmin/login.html" %}
+{% load staticfiles %}
+
+{% block above_login %}
+  <img src="{% static 'img/mozilla.svg' %}" alt="mozilla" class="brand-logo">
+{% endblock %}
+
+{% block branding_login %}
+  CoSS Website Utility
+
+  <div class="subheading">Log in to your account</div>
+{% endblock %}
