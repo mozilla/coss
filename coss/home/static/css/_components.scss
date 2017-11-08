@@ -407,8 +407,12 @@ footer {
     background: black;
     color: white;
     display: block;
-    height: var(--footer-height);
+    height: 170px;
     padding: 35px;
+
+    @media (max-width: 575px) {
+        height: 300px;
+    }
 
     .icon-container {
         display: inline-block;
