@@ -2,7 +2,7 @@
 {% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block brand-logo %}
-  <img src="{% static 'img/clubs-black.svg' %}" alt="mozilla">
+  {% image page.logo original %}
 {% endblock %}
 
 {% block jumbotron %}
@@ -12,7 +12,7 @@
         {% include 'home/blocks/home_heading.html' %}
       </div>
       <div class="col-md-7 text-right hidden-sm-down">
-        <img class="img-fluid" src="{% static 'img/laptop-illustration.svg' %}" alt="Open Source Clubs">
+        {% image page.heading_image original class="img-fluid" %}
       </div>
     </div>
   </div>
