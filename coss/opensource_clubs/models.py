@@ -45,10 +45,24 @@ class ClubProfile(models.Model):
 class HomePage(Page):
     """Landing HomePage for OpenSource clubs."""
 
+    logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     heading_text = fields.RichTextField(verbose_name='Text', blank=True, default='',)
     heading_cta_text = models.CharField(verbose_name='CTA Text', blank=True, default='',
                                         max_length=50)
     heading_cta_link = models.URLField(verbose_name='CTA Link', blank=True, default='')
+    heading_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
     discourse = models.ForeignKey(
         'discourse.DiscourseCategory',
         null=True,
@@ -77,10 +91,12 @@ class HomePage(Page):
             return CategoryLandingPage.objects.none()
 
     content_panels = Page.content_panels + [
+        FieldPanel('logo'),
         MultiFieldPanel([
             FieldPanel('heading_text'),
             FieldPanel('heading_cta_text'),
             FieldPanel('heading_cta_link'),
+            FieldPanel('heading_image'),
         ], heading='Heading'),
         SnippetChooserPanel('discourse'),
         SnippetChooserPanel('testimonial'),
