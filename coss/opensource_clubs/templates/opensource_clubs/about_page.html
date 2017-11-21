@@ -1,10 +1,10 @@
 {% extends "home/about_page.html" %}
-{% load static wagtailcore_tags coss_tags %}
+{% load static wagtailcore_tags wagtailimages_tags coss_tags %}
 
 {% block open_graph_meta %}
   <meta property="og:url" content="{{ self.full_url }}">
   <meta property="og:title" content="{{ self.title }}">
-  <meta property="og:image" content="{% absolutify_static '/img/ossn.jpg' %}">
+  <meta property="og:image" content="{{ page.opengraph_image.url }}">
 {% endblock %}
 
 {% block extra_css %}
@@ -13,5 +13,5 @@
 {% endblock %}
 
 {% block brand-logo %}
-  <img src="{% static 'img/clubs-white.svg' %}" alt="mozilla">
+  {% image page.logo original %}
 {% endblock %}

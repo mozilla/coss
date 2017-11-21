@@ -33,15 +33,17 @@
       {% if page.about.body_image %}
         {% image page.about.body_image original as bg_photo %}
       {% endif %}
-      <div id="body" class="body" data-bg-img="{{ bg_photo.url }}">
-        <div class="body-image"></div>
-        <div class="well">
-          {% if page.about.body_title %}
-            <h4>{{ page.about.body_title }}</h4>
-          {% endif %}
-          {{ page.about.body_text|richtext }}
+      {% with default_bg_image='/static/img/alex-wong.jpg' %}
+        <div id="body" class="body" data-bg-img="{% if bg_photo.url %}{{ bg_photo.url }}{% else %}{{ default_bg_image }}{% endif %}">
+          <div class="body-image"></div>
+          <div class="well">
+            {% if page.about.body_title %}
+              <h4>{{ page.about.body_title }}</h4>
+            {% endif %}
+            {{ page.about.body_text|richtext }}
+          </div>
         </div>
-      </div>
+      {% endwith %}
     {% endif %}
 
     {% if page.about.info_text %}
