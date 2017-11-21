@@ -200,9 +200,27 @@ class AboutPage(Page):
         on_delete=models.SET_NULL,
         related_name='+'
     )
+    opengraph_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Open Graph Image'
+    )
+    logo = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Logo'
+    )
 
     content_panels = Page.content_panels + [
         SnippetChooserPanel('about'),
+        FieldPanel('opengraph_image'),
+        FieldPanel('logo')
     ]
 
 
