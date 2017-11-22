@@ -9,4 +9,11 @@ class CossBaseModel(object):
             if hasattr(page_obj.specific, 'featured'):
                 # If there is return two random results and stop looking deeper in the tree
                 return page_obj.specific_class.objects.filter(featured=True).order_by('?')[:2]
-            page_obj.specific.get_featured()
+
+            value = page_obj.specific.get_featured()
+            if value = obj:
+                return obj
+            if value.has children:
+                return page_obj.specific.get_featured()
+            else:
+                return None
