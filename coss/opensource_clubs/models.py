@@ -14,6 +14,7 @@ from wagtail.wagtailcore.models import Orderable, Page
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsnippets.edit_handlers import SnippetChooserPanel
 
+from coss.base.models import CossBaseModel
 from coss.home.content_blocks import InputTextContentBlock, CardContentBlock, BottomCTAContentBlock
 
 
@@ -42,7 +43,7 @@ class ClubProfile(models.Model):
     ]
 
 
-class HomePage(Page):
+class HomePage(Page, CossBaseModel):
     """Landing HomePage for OpenSource clubs."""
 
     logo = models.ForeignKey(
@@ -81,10 +82,7 @@ class HomePage(Page):
         ('cta', BottomCTAContentBlock(),),
     ], null=True, blank=True)
 
-    def get_featured(self):
-        return EntityDetailPage.objects.filter(featured=True).order_by('?')[:2]
-
-    def get_category_page(self):
+    def get_category_landing_page(self):
         try:
             return CategoryLandingPage.objects.get()
         except (CategoryLandingPage.DoesNotExist, CategoryLandingPage.MultipleObjectsReturned):
@@ -104,7 +102,7 @@ class HomePage(Page):
     ]
 
 
-class CategoryLandingPage(Page):
+class CategoryLandingPage(Page, CossBaseModel):
     """Category Landing page for Open Source Clubs."""
     heading_text = fields.RichTextField(verbose_name='Text', blank=True, default='',)
     heading_cta_text = models.CharField(verbose_name='CTA Text', blank=True, default='',
@@ -120,7 +118,7 @@ class CategoryLandingPage(Page):
     ]
 
 
-class EntityTagIndexPage(Page):
+class EntityTagIndexPage(Page, CossBaseModel):
     """Returns all the entities with the same tag."""
 
     def get_context(self, request):
@@ -136,7 +134,7 @@ class EntityPageTag(TaggedItemBase):
     content_object = ParentalKey('EntityDetailPage', related_name='tagged_items')
 
 
-class EntityDetailPage(Page):
+class EntityDetailPage(Page, CossBaseModel):
     """Actual page for the Open Source clubs."""
 
     description = fields.RichTextField(blank=True)
@@ -190,7 +188,7 @@ class EntityImageGallery(Orderable):
     ]
 
 
-class AboutPage(Page):
+class AboutPage(Page, CossBaseModel):
     """About page for Open source clubs."""
 
     about = models.ForeignKey(
@@ -216,15 +214,17 @@ class AboutPage(Page):
         related_name='+',
         verbose_name='Logo'
     )
+    featured = models.BooleanField(default=False)
 
     content_panels = Page.content_panels + [
         SnippetChooserPanel('about'),
         FieldPanel('opengraph_image'),
-        FieldPanel('logo')
+        FieldPanel('logo'),
+        FieldPanel('featured')
     ]
 
 
-class FAQPage(Page):
+class FAQPage(Page, CossBaseModel):
     """FAQ Page for Open Source Clubs."""
     faq = fields.StreamField([
         ('question', InputTextContentBlock(required=True),),
@@ -235,7 +235,7 @@ class FAQPage(Page):
     ]
 
 
-class ResourcesPage(Page):
+class ResourcesPage(Page, CossBaseModel):
     """Resources Page for Open Source Clubs."""
     heading_text = fields.RichTextField(verbose_name='Text', blank=True)
     heading_image = models.ForeignKey(
@@ -279,7 +279,7 @@ class ResourcesPage(Page):
     ]
 
 
-class ActivitiesPage(Page):
+class ActivitiesPage(Page, CossBaseModel):
     """Activities Page for Open Source Clubs."""
     description = fields.RichTextField(blank=True)
     activity = fields.StreamField([

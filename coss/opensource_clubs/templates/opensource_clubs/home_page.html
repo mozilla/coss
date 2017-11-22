@@ -29,17 +29,19 @@
         </div>
       {% endif %}
 
-      {% if page.get_featured %}
-        <div class="card-deck">
-          {% for club in page.get_featured %}
-            {% include 'opensource_clubs/featured_club_card.html' with club=club.specific card_size='cl-6' %}
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% with featured_items=page.get_featured %}
+        {% if featured_items %}
+          <div class="card-deck">
+            {% for club in featured_items %}
+              {% include 'opensource_clubs/featured_club_card.html' with club=club.specific card_size='cl-6' %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
 
-      {% if page.get_category_page %}
+      {% if page.get_category_landing_page %}
         <div class="text-center mt-4">
-          <a href="{% pageurl page.get_category_page %}">
+          <a href="{% pageurl page.get_category_landing_page %}">
             See All Of Our Clubs
             <img class="ml-2" src="{% static 'img/icons/right-arrow-black.svg' %}" alt="more">
           </a>
