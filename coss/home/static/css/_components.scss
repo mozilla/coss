@@ -372,9 +372,14 @@
 .bottom-banner {
     background: var(--primary-color);
     background: linear-gradient(to left, var(--primary-color), var(--gradient-color));
+    color: var(--gradient-text-color);
     margin-top: 30px;
     padding: 2em;
     text-align: center;
+
+    a {
+        color: var(--gradient-text-color);
+    }
 
     .row div {
         align-items: center;
