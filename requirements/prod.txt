@@ -191,8 +191,9 @@ s3transfer==0.1.11 \
 python-dateutil==2.6.1 \
     --hash=sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca \
     --hash=sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c
-django-axes==3.0.2 \
-    --hash=sha256:214c62a8a936845fa0c5e55bdace96aaec9aa81b97a2b673ed49fbbe866f8f1b
+django-axes==3.0.3 \
+    --hash=sha256:70d60d38ea60b440a9ab9341d38729c284dc28c0fdd648803cc70dcbb69995de \
+    --hash=sha256:5a5af294353e4db676cc6ece5d028d2043bdcf6f844eaefa74923c306ef69f26
 setuptools==37.0.0 \
     --hash=sha256:a1d38d97b3759b3fede089e240b6aefaae50d21361c2c2d4ac92c3de4ebe3d50 \
     --hash=sha256:0b95db16abf74d435217f17774245fce1ea5a583e5ae8098d98f4ab0145491e3
