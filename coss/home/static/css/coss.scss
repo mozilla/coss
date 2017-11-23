@@ -117,6 +117,12 @@ header {
 
         .rich-text {
             color: black;
+            color: var(--gradient-text-color);
+
+            a {
+                color: black;
+                color: var(--gradient-text-color);
+            }
         }
 
         .row {
