@@ -1,0 +1,11 @@
+{% extends "opensource_clubs/category_base.html" %}
+{% load static %}
+
+{% block extra_css %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/scss" href="{% static 'css/content.scss' %}">
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'js/content.js' %}"></script>
+{% endblock %}

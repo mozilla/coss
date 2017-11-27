@@ -1,0 +1,165 @@
+header {
+    background-color: #f9f9f9;
+
+    .navbar-light {
+        background-color: var(--primary-color);
+
+        .navbar-collapse {
+
+            .nav-item {
+
+                a.nav-link {
+                    color: white;
+
+                    &:hover,
+                    &:active,
+                    &:focus,
+                    &.active {
+                        border-bottom: 1px solid white;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .jumbotron {
+        background-color: white;
+        color: black;
+        font-family: ZillaSlab;
+
+        .rich-text {
+            font-size: 1.8em;
+            margin: 0 auto;
+            max-width: 770px;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.content {
+    margin-top: 0;
+
+    .activities,
+    .faq {
+        margin-top: 60px;
+    }
+
+    .nav-details {
+
+        .nav-link {
+
+            &:active,
+            &:hover {
+                color: white;
+                opacity: 1;
+            }
+        }
+    }
+
+    .body {
+        display: flex;
+        font-family: OpenSans;
+        position: relative;
+
+        &.resources {
+            margin-top: -30px;
+        }
+
+        .body-image {
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0.7;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .well {
+            background-color: white;
+            box-shadow: 7px 7px 0 0 rgba(0, 0, 0, 0.5);
+            margin: 40px auto;
+            padding: 2rem;
+            width: 770px;
+
+            @media (max-width: 768px) {
+                font-size: .9em;
+                max-width: 90%;
+            }
+        }
+    }
+
+    .info {
+        margin: 40px auto;
+        max-width: 810px;
+        padding: 2rem;
+
+        h4 {
+
+            @media (min-width: 575px) {
+                overflow: hidden;
+                white-space: nowrap;
+
+                &:after {
+                    color: var(--primary-color);
+                    content: ' / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / ';
+                }
+            }
+        }
+    }
+
+    .details {
+        background: var(--primary-color);
+        background: linear-gradient(var(--primary-color), var(--gradient-color));
+        padding: 2rem;
+
+        h4 {
+            color: white;
+            padding-left: 16px;
+        }
+
+        nav {
+            background-color: inherit;
+            margin-bottom: 20px;
+
+            .nav-link {
+                color: black;
+                font-weight: bold;
+                opacity: 0.4;
+
+                &.active {
+                    border-bottom: 1px solid white;
+                    color: white;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .well {
+            background-color: white;
+            padding: 2em;
+
+            .nav-content {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .collaborators {
+        min-height: 200px;
+    }
+}

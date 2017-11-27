@@ -149,13 +149,21 @@ header {
     padding: 30px 0;
 
     .nav-about {
+        background-color: #f9f9f9;
 
-        a.nav-link {
+        .nav-link {
+            color: black;
             font-weight: normal;
             margin: 0 3em;
 
             @media (max-width: 768px) {
                 margin: 0 .3em;
+            }
+
+            &:active,
+            &:hover {
+                color: var(--primary-color);
+                text-decoration: underline;
             }
         }
     }
