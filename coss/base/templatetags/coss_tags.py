@@ -57,4 +57,4 @@ def absolutify_media(context, path):
 
 @register.filter
 def replace_space_with_dash(string):
-    return string.replace(' ', '-')
+    return string.replace(' ', '-').lower()
