@@ -137,13 +137,13 @@ class EntityPageTag(TaggedItemBase):
 class EntityDetailPage(Page, CossBaseModel):
     """Actual page for the Open Source clubs."""
 
-    description = fields.RichTextField(blank=True)
+    body_text = fields.RichTextField(blank=True)
+    body_link = models.URLField(verbose_name='Description link', blank=True, default='')
     featured = models.BooleanField(default=False)
     is_flagged = models.BooleanField(default=False)
     club_name = models.CharField(max_length=128, default='')
     discourse_link = models.URLField(verbose_name='Discourse Link', blank=True, default='')
     contact_cta = models.URLField(verbose_name='Contact CTA link', blank=True)
-    description_link = models.URLField(verbose_name='Description link', blank=True, default='')
     facebook_link = models.URLField(verbose_name='Facebook link', blank=True, default='')
     members = ParentalManyToManyField(ClubProfile, blank=True, related_name='profiles')
     tags = ClusterTaggableManager(through=EntityPageTag, blank=True)
@@ -157,7 +157,8 @@ class EntityDetailPage(Page, CossBaseModel):
         return None
 
     content_panels = Page.content_panels + [
-        FieldPanel('description', classname='full'),
+        FieldPanel('body_text', classname='full'),
+        FieldPanel('body_link'),
         FieldPanel('club_name'),
         FieldPanel('contact_cta'),
         FieldPanel('location'),
@@ -167,7 +168,6 @@ class EntityDetailPage(Page, CossBaseModel):
         ], heading='Entity Attributes'),
         FieldPanel('flag_email'),
         FieldPanel('discourse_link'),
-        FieldPanel('description_link'),
         FieldPanel('facebook_link'),
         FieldPanel('tags'),
         InlinePanel('gallery_images', label='Gallery Images'),

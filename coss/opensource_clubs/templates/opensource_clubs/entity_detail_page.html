@@ -56,13 +56,13 @@
       <div class="row">
         <div class="col-md-4">
           <div class="mb-4">
-            {% if page.description_link %}
+            {% if page.body_link %}
               <div class="mb-1 text-truncate">
                 <div class="icon d-inline-block mr-2">
                   <img src="{% static 'img/icons/world-black.svg' %}" alt="web" class="img-fluid">
                 </div>
                 <img src="{% static 'img/icons/right-arrow-black.svg' %}" alt="web" class="pr-2">
-                <a href="{{ page.description_link }}" target="_blank">{{ page.description_link }}</a>
+                <a href="{{ page.body_link }}" target="_blank">{{ page.body_link }}</a>
               </div>
             {% endif %}
             {% if page.facebook_link %}
@@ -91,7 +91,7 @@
           {% endwith %}
         </div>
         <div class="col-md-8 mt-3 mt-md-0">
-          {{ page.description|richtext }}
+          {{ page.body_text|richtext }}
         </div>
       </div>
     </div>
