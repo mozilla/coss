@@ -2,7 +2,8 @@
 {% load compress wagtailcore_tags coss_tags %}
 
 <!DOCTYPE html>
-<html id="root-node-{{ self.get_site.root_page.title }}">
+{% get_site_root as site_root %}
+<html id="root-node-{{ site_root.title|replace_space_with_dash }}">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +57,6 @@
 
       <header class="{% block header_class %}{% endblock %}">
         <nav id="nav-top" class="navbar fixed-top navbar-light navbar-toggleable-md" role="navigation">
-          {% get_site_root as site_root %}
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarContent"
                   aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

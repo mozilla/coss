@@ -53,3 +53,8 @@ def absolutify_static(context, path):
 @register.simple_tag(takes_context=True)
 def absolutify_media(context, path):
     return context['request'].build_absolute_uri(path)
+
+
+@register.filter
+def replace_space_with_dash(string):
+    return string.replace(' ', '-')
