@@ -32,8 +32,8 @@
       {% with featured_items=page.get_featured %}
         {% if featured_items %}
           <div class="card-deck">
-            {% for club in featured_items %}
-              {% include 'opensource_clubs/featured_club_card.html' with club=club.specific card_size='cl-6' %}
+            {% for item in featured_items %}
+              {% include 'opensource_clubs/featured_item.html' with item=item.specific card_size='cl-6' %}
             {% endfor %}
           </div>
         {% endif %}

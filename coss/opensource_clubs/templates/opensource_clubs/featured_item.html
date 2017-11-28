@@ -1,0 +1,23 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="card {{ card_size }}">
+  <h4 class="card-header">
+    {% if item.about %}
+      {{ item.about.title }}
+    {% else %}
+      {{ item.title }}
+    {% endif %}
+  </h4>
+  <div class="card-body">
+    {% if item.about %}
+      {% image item.about.body_image max-525x300 %}
+      {{ item.about.body_text|richtext }}
+    {% else  %}
+      {% image item.get_first_image max-525x300 %}
+      {{ item.body_text|richtext }}
+    {% endif %}
+    <div class="cta">
+      <a href="{% pageurl item %}">See more</a>
+    </div>
+  </div>
+</div>
