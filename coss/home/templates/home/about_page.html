@@ -101,6 +101,21 @@
       </div>
     {% endif %}
 
+    {% if page.about.optional_text_block_title %}
+      <div id="optional-text-block" class="container">
+        <div class="row">
+          {% if page.about.optional_text_block_title %}
+            <h4>{{ page.about.optional_text_block_title }}</h4>
+          {% endif %}
+          <div class="row">
+            <div class="col-md-12 ml-auto well">
+              {% include_block page.about.optional_text_block %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
     {% block extra_about %}
     {% endblock %}
 
