@@ -53,6 +53,11 @@ class AboutSnippet(models.Model):
     bottom_content_block = fields.StreamField([
         ('cta', BottomCTAContentBlock(),),
     ], null=True, blank=True)
+    optional_text_block_title = models.CharField(verbose_name='Title', blank=True, default='',
+                                                 max_length=50)
+    optional_text_block = fields.StreamField([
+        ('secondary_section', InputTextContentBlock(),),
+    ], null=True, blank=True, verbose_name='Blocks')
 
     panels = [
         FieldPanel('title'),
@@ -78,6 +83,10 @@ class AboutSnippet(models.Model):
             StreamFieldPanel('collaborators'),
         ], heading='Collaborators Section'),
         StreamFieldPanel('bottom_content_block'),
+        MultiFieldPanel([
+            FieldPanel('optional_text_block_title'),
+            StreamFieldPanel('optional_text_block'),
+        ], heading='Secondary Input block'),
     ]
 
     class Meta:
