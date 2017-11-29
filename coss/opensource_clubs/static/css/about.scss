@@ -35,7 +35,11 @@
                 margin: 0 auto;
                 max-width: 770px;
                 color: black;
-                text-align: center;
+                text-align: center; 
+                
+                a {
+                    color: black;
+                }
 
                 @media (max-width: 768px) {
                     padding: 0;
