@@ -83,10 +83,12 @@ class HomePage(Page, CossBaseModel):
     ], null=True, blank=True)
 
     def get_category_landing_page(self):
-        try:
-            return CategoryLandingPage.objects.get()
-        except (CategoryLandingPage.DoesNotExist, CategoryLandingPage.MultipleObjectsReturned):
-            return CategoryLandingPage.objects.none()
+        if self.get_children().type(CategoryLandingPage):
+            try:
+                return CategoryLandingPage.objects.get()
+            except (CategoryLandingPage.DoesNotExist, CategoryLandingPage.MultipleObjectsReturned):
+                pass
+        return CategoryLandingPage.objects.none()
 
     content_panels = Page.content_panels + [
         FieldPanel('logo'),
