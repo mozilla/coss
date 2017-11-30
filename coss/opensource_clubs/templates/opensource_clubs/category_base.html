@@ -4,7 +4,7 @@
 {% block open_graph_meta %}
   <meta property="og:url" content="{{ self.full_url }}">
   <meta property="og:title" content="{{ self.title }}">
-  <meta property="og:image" content="{% absolutify_static '/img/ossn.jpg' %}">
+  <meta property="og:image" content="{% opengraph_image_or_static '/img/ossn.jpg' %}">
 {% endblock %}
 
 {% block extra_css %}

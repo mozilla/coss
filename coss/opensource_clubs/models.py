@@ -82,6 +82,15 @@ class HomePage(Page, CossBaseModel):
         ('cta', BottomCTAContentBlock(),),
     ], null=True, blank=True)
 
+    opengraph_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+',
+        verbose_name='Open Graph Image'
+    )
+
     def get_category_landing_page(self):
         if self.get_children().type(CategoryLandingPage):
             try:
@@ -92,6 +101,7 @@ class HomePage(Page, CossBaseModel):
 
     content_panels = Page.content_panels + [
         FieldPanel('logo'),
+        FieldPanel('opengraph_image'),
         MultiFieldPanel([
             FieldPanel('heading_text'),
             FieldPanel('heading_cta_text'),

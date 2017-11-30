@@ -58,3 +58,11 @@ def absolutify_media(context, path):
 @register.filter
 def replace_space_with_dash(string):
     return string.replace(' ', '-').lower()
+
+
+@register.simple_tag(takes_context=True)
+def opengraph_image_or_static(context, static):
+    page = context['page']
+    if getattr(page, 'opengraph_image', None):
+        return absolutify_media(context, page.opengraph_image.file.url)
+    return absolutify_static(context, static)
