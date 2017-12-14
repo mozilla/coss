@@ -166,9 +166,9 @@ rcssmin==1.0.6 \
 django-appconf==1.0.2 \
     --hash=sha256:6a4d9aea683b4c224d97ab8ee11ad2d29a37072c0c6c509896dd9857466fb261 \
     --hash=sha256:ddab987d14b26731352c01ee69c090a4ebfc9141ed223bef039d79587f22acd9
-boto3==1.4.8 \
-    --hash=sha256:edd35eb7cd8d56f08e65b112206936cf9f76bb406fb15f63075ff72331ef6f5f \
-    --hash=sha256:332c6a17fd695581dd6f9ed825ce13c2d5ee3a6f5e1b079bed0ff7293809faf0
+boto3==1.5.0 \
+    --hash=sha256:a29dcc184a3e27d6e9cb5e48822d9030bab5725a1dfa91753e1ae0fa8d044bb1 \
+    --hash=sha256:02f92bdfa316524b94647efaed31b0e1b0d1343fcaffda20c2b5331d02a4dda6
 django-storages==1.6.5 \
     --hash=sha256:bc8e4c1f483608c5dd1212072fd41042f3ef2d2a2896ec4fb12dbc62c82996a0 \
     --hash=sha256:ab6be1538cf29511400bce83d0e5ca74d2e935cad82086063bcf5e7edacc1661
