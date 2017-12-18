@@ -4,9 +4,9 @@ wagtail==1.13.1 \
 Django==1.11.7 \
     --hash=sha256:75ce405d60f092f6adf904058d023eeea0e6d380f8d9c36134bac73da736023d \
     --hash=sha256:8918e392530d8fc6965a56af6504229e7924c27265893f3949aa0529cd1d4b99
-html5lib==0.999999999 \
-    --hash=sha256:b8934484cf22f1db684c0fae27569a0db404d0208d20163fbf51cc537245d008 \
-    --hash=sha256:ee747c0ffd3028d2722061936b5c65ee4fe13c8e4613519b4447123fc4546298
+html5lib==1.0.1 \
+    --hash=sha256:20b159aa3badc9d5ee8f5c647e5efd02ed2a66ab8d354930bd9ff139fc1dc0a3 \
+    --hash=sha256:66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736
 django-modelcluster==3.1 \
     --hash=sha256:9edde7fb87b413c1114df47f928e95fbd6878de17f9f2caeea90e77766e272b5
 Pillow==4.3.0 \
