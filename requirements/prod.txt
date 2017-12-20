@@ -68,9 +68,9 @@ Unidecode==0.04.21 \
 django-taggit==0.22.1 \
     --hash=sha256:87eeae942a2db48bf6e78c081e29d863d8aeab7430427bea3f08b46e801a5191 \
     --hash=sha256:969a68dc244fd3051589b6b917e26777cdf186f95dd51bf2f023f5446e2ca89e
-djangorestframework==3.6.4 \
-    --hash=sha256:0f9bfbac702f3376dfb2db4971ad8af4e066bfa35393b1b85e085f7e8b91189a \
-    --hash=sha256:de8ac68b3cf6dd41b98e01dcc92dc0022a5958f096eafc181a17fa975d18ca42
+djangorestframework==3.7.4 \
+    --hash=sha256:8056370cc36e67ddbc0a8258b853ef1f696c58fcd2e4e2caf370a5d2fb39aabc \
+    --hash=sha256:03182f37d9975d00ba7c97f4fd8969d1dfa70f8efcad3d1718afacb073b9cb63
 requests==2.18.4 \
     --hash=sha256:6a1b267aa90cac58ac3a765d067950e7dbbf75b1da07e895d1f594193a40a38b \
     --hash=sha256:9c443e7324ba5b85070c4a818ade28bfabedf16ea10206da1132edaa6dda237e
