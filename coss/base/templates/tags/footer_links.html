@@ -1,0 +1,14 @@
+{% load static %}
+
+{% if links %}
+  {% for link in links %}
+    <div class="icon-container">
+      <div class="icon">
+        {% with 'img/footer/'|add:link.option|lower|cut:" "|add:'.svg' as link_image %}
+          <img class="footer-icon" src="{% static link_image %}">
+        {% endwith %}
+        <a href="{{ link.url }}" target="_blank">{{ link.option }}</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
