@@ -195,9 +195,9 @@ python-dateutil==2.6.1 \
 django-axes==4.0.1 \
     --hash=sha256:f28272d4145f7bef94a58b8bea40b782487ed210855e406dd915ba50184f4138 \
     --hash=sha256:ee110c444249c1fb9ef4b349a0ef6c5b82f85fff4cc2bfbb844d5670413dccb1
-setuptools==38.2.5 \
-    --hash=sha256:bcf0d4f3e2f7890e658db11e218b8643afffb905a0e2f2a7d5a6a3e949bb87e6 \
-    --hash=sha256:b080f276cc868670540b2c03cee06cc14d2faf9da7bec0f15058d1b402c94507
+setuptools==38.3.0 \
+    --hash=sha256:fda35bd4d6d6047cc4aa66e381c836e8d57d396df97eb577bfca9fbaaf757dc1 \
+    --hash=sha256:11b4a4d6a25affaf2494443228335cb88f600c96a62feb7d8781f900eba0f4df
 django_csp==3.3 \
     --hash=sha256:a95eeeb04df155b6270612238700f16abd2b0cc3d32dbcfca8c7fd06d26dacba \
     --hash=sha256:db082b75075672fb9cf4a622c75c94ee624cb566ffe9d2a645687e58598b6d39
