@@ -65,9 +65,9 @@ ipython==5.5.0 \
     --hash=sha256:66469e894d1f09d14a1f23b971a410af131daa9ad2a19922082e02e0ddfd150f
 simplegeneric==0.8.1 \
     --hash=sha256:dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173
-decorator==4.1.2 \
-    --hash=sha256:95a26b17806e284452bfd97fa20aa1e8cb4ee23542bda4dbac5e4562aa1642cd \
-    --hash=sha256:7cb64d38cb8002971710c8899fbdfb859a23a364b7c99dab19d1f719c2ba16b5
+decorator==4.2.0 \
+    --hash=sha256:72b457ffb547d0b80c7e361b09533cb4aabbae1537b1dc944b00b9bb15aee0ed \
+    --hash=sha256:e2b4f92f540e4a36f9bebb1bd1abbb60245f0fdbee1157242292a1ba6303f09c
 Sphinx==1.6.6 \
     --hash=sha256:b8baed19394af85b21755c68c7ec4eac57e8a482ed89cd01cd5d5ff72200fe0f \
     --hash=sha256:c39a6fa41bd3ec6fc10064329a664ed3a3ca2e27640a823dc520c682e4433cdb
