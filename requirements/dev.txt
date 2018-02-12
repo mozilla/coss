@@ -33,9 +33,9 @@ backports.shutil_get_terminal_size==1.0.0 \
 Pygments==2.2.0 \
     --hash=sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d \
     --hash=sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc
-pexpect==4.3.1 \
-    --hash=sha256:144939a072a46d32f6e5ecc866509e1d613276781f7182148a08df52eaa7b022 \
-    --hash=sha256:8e287b171dbaf249d0b06b5f2e88cb7e694651d2d0b8c15bccb83170d3c55575
+pexpect==4.4.0 \
+    --hash=sha256:6ff881b07aff0cb8ec02055670443f784434395f90c3285d2ae470f921ade52a \
+    --hash=sha256:67b85a1565968e3d5b5e7c9283caddc90c3947a2625bed1905be27bd5a03e47d
 pathlib2==2.3.0 \
     --hash=sha256:db3e43032d23787d3e9aec8c7ef1e0d2c3c589d5f303477661ebda2ca6d4bfba \
     --hash=sha256:d32550b75a818b289bd4c1f96b60c89957811da205afcceab75bc8b4857ea5b3
