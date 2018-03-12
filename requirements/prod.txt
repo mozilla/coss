@@ -179,9 +179,9 @@ futures==3.1.1 \
 s3transfer==0.1.13 \
     --hash=sha256:c7a9ec356982d5e9ab2d4b46391a7d6a950e2b04c472419f5fdec70cc0ada72f \
     --hash=sha256:90dc18e028989c609146e241ea153250be451e05ecc0c2832565231dacdf59c1
-python-dateutil==2.6.1 \
-    --hash=sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca \
-    --hash=sha256:95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c
+python-dateutil==2.7.0 \
+    --hash=sha256:07009062406cffd554a9b4135cd2ff167c9bf6b7aac61fe946c93e69fad1bbd8 \
+    --hash=sha256:8f95bb7e6edbb2456a51a1fb58c8dca942024b4f5844cae62c90aa88afe6e300
 django-axes==4.1.0 \
     --hash=sha256:719c2fc8ea4d6a20300f474ba4cbd772599f6849a07a006ba2f2155813fbe713 \
     --hash=sha256:563882a99deb67e826575152ab8caa3b77e15bc3298a7a44674fba587d57fbc0
