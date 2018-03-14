@@ -75,7 +75,9 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
@@ -169,10 +171,13 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 CACHES = {
     'default': {
         'BACKEND': config('CACHE_BACKEND',
-                          default='django.core.cache.backends.memcached.MemcachedCache'),
-        'LOCATION': config('CACHE_URL', default='127.0.0.1:11211'),
+                          default='django.core.cache.backends.locmem.LocMemCache'),
+        'LOCATION': 'coss-cache',
     }
 }
+
+# Cache for 1 hour
+CACHE_MIDDLEWARE_SECONDS = 3600
 
 # S3 storage
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME', default='')

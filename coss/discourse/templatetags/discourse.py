@@ -1,6 +1,8 @@
-from django import template
-from datetime import datetime, timezone, timedelta
+from datetime import timedelta
 from dateutil.parser import parse
+
+from django import template
+from django.utils.timezone import now
 
 register = template.Library()
 
@@ -27,10 +29,6 @@ def date_to_activity_str(d):
     else:
         activity_str = d.strftime('%b %d')
     return activity_str
-
-
-def now():
-    return datetime.now(timezone.utc)
 
 
 @register.inclusion_tag('discourse/tags/discourse_latest.html')

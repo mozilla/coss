@@ -46,5 +46,5 @@ class DiscourseCategory(models.Model):
         if value is None:
             r = requests.get(path)
             value = r.json()
-            cache.set(path, value, 900)
+            cache.set(path, value)
         return value
