@@ -171,8 +171,8 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 CACHES = {
     'default': {
         'BACKEND': config('CACHE_BACKEND',
-                          default='django.core.cache.backends.locmem.LocMemCache'),
-        'LOCATION': 'coss-cache',
+                          default='django.core.cache.backends.db.DatabaseCache'),
+        'LOCATION': 'coss_cache',
     }
 }
 
