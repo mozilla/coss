@@ -257,6 +257,9 @@ if config('MESOS_CLUSTER', default=False, cast=bool):
         }
     }
 
+# Discourse
+DISCOURSE_URL = config('DISCOURSE_URL', default='https://discourse.mozilla.org')
+
 ##################
 # Wagtail Settings
 ##################
