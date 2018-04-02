@@ -54,9 +54,9 @@ scandir==1.7 \
 wcwidth==0.1.7 \
     --hash=sha256:f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c \
     --hash=sha256:3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e
-ipython==6.2.1 \
-    --hash=sha256:fcc6d46f08c3c4de7b15ae1c426e15be1b7932bcda9d83ce1a4304e8c1129df3 \
-    --hash=sha256:51c158a6c8b899898d1c91c6b51a34110196815cc905f9be0fa5878e19355608
+ipython==6.3.0 \
+    --hash=sha256:938da96f2f5f50d82add1947958b7432e9f330cef7703210bffd1a783d7720ab \
+    --hash=sha256:c785ab502b1a63624baeb89fedb873a118d4da6c9a796ae06e4f4aaef74e9ea0
 simplegeneric==0.8.1 \
     --hash=sha256:dc972e06094b9af5b855b3df4a646395e43d1c9d0d39ed345b7393560d0b9173
 decorator==4.2.1 \
