@@ -197,5 +197,5 @@ raven==6.6.0 \
 contextlib2==0.5.5 \
     --hash=sha256:f5260a6e679d2ff42ec91ec5252f4eeffdcf21053db9113bd0a8e4d953769c00 \
     --hash=sha256:509f9419ee91cdd00ba34443217d5ca51f5a364a404e1dce9e8979cea969ca48
-django-ipware==2.0.1 \
-    --hash=sha256:3fba8821298c8533ce5609debf31dc8a22f228c50e100f42d97637a9f9357d43
+django-ipware==2.0.2 \
+    --hash=sha256:abf2bfbf0ec6c04679372a55c25889c9b08f55ec404bca3dfc08f3cf6c832a11
