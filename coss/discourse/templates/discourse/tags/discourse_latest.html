@@ -1,6 +1,6 @@
 {% load discourse %}
 <div class="discourse-topics">
-  <h2 class="h4"><img src="/images/discourse.png" alt="Discourse"> Latest Discussion</h2>
+  <h2 class="h4"><img src="/static/img/discourse.png" alt="Discourse"> Latest Discussion</h2>
   <ul>
   {% for topic in topics %}
     <li><a href="https://discourse.mozilla.org/t/{{topic.id}}">{{ topic.title }}</a></li>
