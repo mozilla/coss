@@ -179,14 +179,21 @@ header {
 
     h2 {
         font-family: "Zilla Slab", sans-serif;
+        position: relative;
+        padding-left: 1.5em;
     }
 
     h2 img {
         height: 1em;
         margin-right: .125em;
+        position: absolute;
+        left: 0;
+        top: .125em;
     }
 
     ul {
+        padding-left: 0;
+
         @media (min-width: 769px) {
             margin-left: 30px;
         }
@@ -194,6 +201,23 @@ header {
 
     li {
         list-style: none;
-        margin-bottom: 1em;
+        margin-bottom: .5em;
+        border-bottom: 1px solid var(--card-shadow-color);
+        padding-bottom: .5em;
+        position: relative;
+        overflow: hidden;
+
+        a {
+            width: calc( 100% - 7em );
+            float: left;
+        }
+
+        span {
+            font-size: .75em;
+            margin-right: 2em;
+            float: left;
+            width: 6em;
+            margin-top: .25em;
+        }
     }
 }
