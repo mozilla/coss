@@ -62,9 +62,9 @@ simplegeneric==0.8.1 \
 decorator==4.2.1 \
     --hash=sha256:94d1d8905f5010d74bbbd86c30471255661a14187c45f8d7f3e5aa8540fdb2e5 \
     --hash=sha256:7d46dd9f3ea1cf5f06ee0e4e1277ae618cf48dfb10ada7c8427cd46c42702a0e
-Sphinx==1.7.1 \
-    --hash=sha256:41ae26acc6130ccf6ed47e5cca73742b80d55a134f0ab897c479bba8d3640b8e \
-    --hash=sha256:da987de5fcca21a4acc7f67a86a363039e67ac3e8827161e61b91deb131c0ee8
+Sphinx==1.7.4 \
+    --hash=sha256:2e7ad92e96eff1b2006cf9f0cdb2743dacbae63755458594e9e8238b0c3dc60b \
+    --hash=sha256:e9b1a75a3eae05dded19c80eb17325be675e0698975baae976df603b6ed1eb10
 sphinxcontrib-websupport==1.0.1 \
     --hash=sha256:7a85961326aa3a400cd4ad3c816d70ed6f7c740acd7ce5d78cd0a67825072eb9 \
     --hash=sha256:f4932e95869599b89bf4f80fc3989132d83c9faa5bf633e7b5e0c25dffb75da2
@@ -106,3 +106,6 @@ pyparsing==2.2.0 \
     --hash=sha256:b8b3117ed9bdf45e14dcc89345ce638ec7e0e29b2b579fa1ecf32ce45ebac8a5 \
     --hash=sha256:8f1e18d3fd36c6795bb7e02a39fd05c611ffc2596c1e0d995d34d67630426c18 \
     --hash=sha256:e4d45427c6e20a59bf4f88c639dcc03ce30d193112047f94012102f235853a58
+backcall==0.1.0 \
+    --hash=sha256:38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4 \
+    --hash=sha256:bbbf4b1e5cd2bdb08f915895b51081c041bac22394fdfcfdfbe9f14b77c08bf2
