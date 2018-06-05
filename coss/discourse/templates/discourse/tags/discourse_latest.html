@@ -1,9 +1,12 @@
 {% load discourse %}
 <div class="discourse-topics">
-  <h2 class="h4"><img src="/static/img/discourse.png" alt="Discourse">Latest Announcements</h2>
-  <ul>
-  {% for topic in topics %}
-    <li><span>{{ topic.last_posted_at | activity }}</span> <a href="https://discourse.mozilla.org/t/{{topic.id}}" target="_blank">{{ topic.title }}</a></li>
-  {% endfor %}
-  </ul>
+  <div>
+    <h2 class="h4"><img src="/static/img/discourse.png" alt="Discourse">Latest Announcements</h2>
+    <ul>
+    {% for topic in topics %}
+      <li><span>{{ topic.last_posted_at | activity }}</span> <a href="https://discourse.mozilla.org/t/{{topic.id}}" target="_blank">{{ topic.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+  <a href="https://discourse.mozilla.org/c/ossn">Go to all OSSN Announcements</a>
 </div>

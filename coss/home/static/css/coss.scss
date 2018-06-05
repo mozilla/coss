@@ -166,15 +166,32 @@ header {
     box-shadow: 7px 7px 0 0 var(--card-shadow-color);
     padding: 30px;
     margin-bottom: 30px;
+    text-align: right;
 
-    @media (min-width: 769px) {
-        margin-right: 15px;
-        display: flex;
+    > div {
+        text-align: left;
+
+        @media (min-width: 769px) {
+            margin-right: 15px;
+            display: flex;
+        }
+
+        > h2,
+        > ul {
+            flex: 1;
+        }
     }
 
-    > h2,
-    > ul {
-        flex: 1;
+    > a {
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+        font-family: OpenSans, sans-serif;
+
+        &:hover {
+            color: var(--primary-color);
+            border-bottom: var(--primary-color);
+            text-decoration: none;
+        }
     }
 
     h2 {
@@ -221,3 +238,4 @@ header {
         }
     }
 }
+
