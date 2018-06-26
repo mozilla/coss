@@ -195,7 +195,7 @@ SOCIAL_FB_APP_ID = config('SOCIAL_FB_APP_ID', default='118056745560883')
 ##########
 
 # Django-axes
-AXES_PROXY_COUNT = 2
+AXES_PROXY_COUNT = 1
 # Security middleware
 SECURE_CONTENT_TYPE_NOSNIFF = config('SECURE_CONTENT_TYPE_NOSNIFF', default=True, cast=bool)
 SECURE_BROWSER_XSS_FILTER = config('SECURE_BROWSER_XSS_FILTER', default=True, cast=bool)
