@@ -1,6 +1,6 @@
-wagtail==1.13.1 \
-    --hash=sha256:c741ef3f85f62f27621ae98c9e4a7116be06aae9595927c9865f1151cf51ecab \
-    --hash=sha256:9c69b1fdc22e68315d86dfd7a7fc82d9efdeda4e37155dd042fc13d7ba2b6194
+wagtail==2.1 \
+    --hash=sha256:97fe49eba863b7b4a0ec671e6feada30dbb35cbcc339f2eac4a770d5e21250ad \
+    --hash=sha256:3cdaa2901e566688258ace14963c42e8f35e264a5a7c937fd99b7a17a867dee2
 Django==1.11.11 \
     --hash=sha256:fd186d544c7c2f835668cf11f77be071307c9eb22615a5b3a16bdb14c8357f41 \
     --hash=sha256:74077d7309b48b97dacdac2dfb35c968028becf00a7a684e7f29b2af1b980edc
