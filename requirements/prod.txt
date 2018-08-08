@@ -7,8 +7,8 @@ Django==1.11.11 \
 html5lib==0.999999999 \
     --hash=sha256:b8934484cf22f1db684c0fae27569a0db404d0208d20163fbf51cc537245d008 \
     --hash=sha256:ee747c0ffd3028d2722061936b5c65ee4fe13c8e4613519b4447123fc4546298
-django-modelcluster==3.1 \
-    --hash=sha256:9edde7fb87b413c1114df47f928e95fbd6878de17f9f2caeea90e77766e272b5
+django-modelcluster==4.2 \
+    --hash=sha256:42bd7fa91af9996d7dfd34e6b027445acbece188d371d63abd19dde4c7ac8fc8
 Pillow==5.1.0 \
     --hash=sha256:f0d4433adce6075efd24fc0285135248b0b50f5a58129c7e552030e04fe45c7f \
     --hash=sha256:81762cf5fca9a82b53b7b2d0e6b420e0f3b06167b97678c81d00470daa622d58 \
