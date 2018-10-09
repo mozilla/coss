@@ -56,8 +56,8 @@ Pillow==5.1.0 \
 Willow==1.0 \
     --hash=sha256:0a2e1665a24cded9d74b3d2254fb17e63bdde922d231610cdf0ced880a241845 \
     --hash=sha256:dba768a03591973254b5a0242d11ebae00f1cb971e6f3a2ee592ff8e230b6090
-django-treebeard==4.2.1 \
-    --hash=sha256:474275b1de849eba8ead8e197edb5f6c2c835598eafa1ddfe3e3166a3e6c2d1f
+django-treebeard==4.3 \
+    --hash=sha256:c21db06a8d4943bf2a28d9d7a119058698fb76116df2679ecbf15a46a501de42
 Unidecode==1.0.22 \
     --hash=sha256:72f49d3729f3d8f5799f710b97c1451c5163102e76d64d20e170aedbbd923582 \
     --hash=sha256:8c33dd588e0c9bc22a76eaa0c715a5434851f726131bd44a6c26471746efabf5
