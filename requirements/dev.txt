@@ -39,10 +39,10 @@ pexpect==4.4.0 \
 pathlib2==2.3.0 \
     --hash=sha256:db3e43032d23787d3e9aec8c7ef1e0d2c3c589d5f303477661ebda2ca6d4bfba \
     --hash=sha256:d32550b75a818b289bd4c1f96b60c89957811da205afcceab75bc8b4857ea5b3
-prompt_toolkit==2.0.3 \
-    --hash=sha256:2e684ce7278eefb2eb6715e026169031376b60711eb62b3faf1f0d21f158280f \
-    --hash=sha256:12e671b1faea1cdcb60a9f58454a7b8dbffb3a0fd3bcf395c4b5436b30b59710 \
-    --hash=sha256:d9ea14304a2633e4b40dde874c63da6b94a075f61e837011e035ffcd5bb39a1d
+prompt_toolkit==2.0.7 \
+    --hash=sha256:d4c47f79b635a0e70b84fdb97ebd9a274203706b1ee5ed44c10da62755cf3ec9 \
+    --hash=sha256:c1d6aff5252ab2ef391c2fe498ed8c088066f66bc64a8d5c095bbf795d9fec34 \
+    --hash=sha256:fd17048d8335c1e6d5ee403c3569953ba3eb8555d710bfc548faf0712666ea39
 ipython_genutils==0.2.0 \
     --hash=sha256:72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8 \
     --hash=sha256:eb2e116e75ecef9d4d228fdc66af54269afa26ab4463042e33785b887c628ba8
