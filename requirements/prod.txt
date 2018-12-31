@@ -70,10 +70,10 @@ djangorestframework==3.6.4 \
 requests==2.19.1 \
     --hash=sha256:63b52e3c866428a224f97cab011de738c36aec0185aa91cfacd418b5d58911d1 \
     --hash=sha256:ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a
-beautifulsoup4==4.6.0 \
-    --hash=sha256:7015e76bf32f1f574636c4288399a6de66ce08fb7b2457f628a8d70c0fbabb11 \
-    --hash=sha256:11a9a27b7d3bddc6d86f59fb76afb70e921a25ac2d6cc55b40d072bd68435a76 \
-    --hash=sha256:808b6ac932dccb0a4126558f7dfdcf41710dd44a4ef497a0bb59a77f9f078e89
+beautifulsoup4==4.7.0 \
+    --hash=sha256:6a7f5e0efc563cd1ffeefba6d528b97aa0d313c02dd126ba6c455e5fe5bd48eb \
+    --hash=sha256:1ed70a0e99742653953d68462378a1a8eb65dca5f7c8fa44a05a2a0b3545df67 \
+    --hash=sha256:e394827904cc4923f443e8dd2e9968343669c8e1ad7a8d62d7541e780884acb8
 pytz==2018.3 \
     --hash=sha256:ed6509d9af298b7995d69a440e2822288f2eca1681b8cce37673dbb10091e5fe \
     --hash=sha256:f93ddcdd6342f94cea379c73cddb5724e0d6d0a1c91c9bdef364dc0368ba4fda \
