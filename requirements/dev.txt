@@ -1,8 +1,8 @@
 -r prod.txt
 
-flake8==3.5.0 \
-    --hash=sha256:c7841163e2b576d435799169b78703ad6ac1bbb0f199994fc05f700b2a90ea37 \
-    --hash=sha256:7253265f7abd8b313e3892944044a365e3f4ac3fcdcfb4298f55ee9ddf188ba0
+flake8==3.7.5 \
+    --hash=sha256:c3ba1e130c813191db95c431a18cb4d20a468e98af7a77e2181b68574481ad36 \
+    --hash=sha256:fd9ddf503110bf3d8b1d270e8c673aab29ccb3dd6abf29bae1f54e5116ab4a91
 pyflakes==2.0.0 \
     --hash=sha256:f661252913bc1dbe7fcfcbf0af0db3f42ab65aabd1a6ca68fe5d466bace94dae \
     --hash=sha256:9a7662ec724d0120012f6e29d6248ae3727d821bba522a0e6b356eff19126a49
