@@ -30,9 +30,9 @@ traitlets==4.3.2 \
 backports.shutil_get_terminal_size==1.0.0 \
     --hash=sha256:0975ba55054c15e346944b38956a4c9cbee9009391e41b86c68990effb8c1f64 \
     --hash=sha256:713e7a8228ae80341c70586d1cc0a8caa5207346927e23d09dcbcaf18eadec80
-Pygments==2.2.0 \
-    --hash=sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d \
-    --hash=sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc
+Pygments==2.7.4 \
+    --hash=sha256:bc9591213a8f0e0ca1a5e68a479b4887fdc3e75d0774e5c71c31920c427de435 \
+    --hash=sha256:df49d09b498e83c1a73128295860250b0b7edd4c723a32e9bc0d295c7c2ec337
 pexpect==4.4.0 \
     --hash=sha256:6ff881b07aff0cb8ec02055670443f784434395f90c3285d2ae470f921ade52a \
     --hash=sha256:67b85a1565968e3d5b5e7c9283caddc90c3947a2625bed1905be27bd5a03e47d
